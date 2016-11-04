@@ -1,4 +1,4 @@
-# CDIO DEL 3 (Gruppe 40)
+# CDIO DEL 3 (Group 40)
 
 This project is created in cooperation with 02313, 02314 and 02315 at DTU.
 
