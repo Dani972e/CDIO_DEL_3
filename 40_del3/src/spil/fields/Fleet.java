@@ -1,18 +1,19 @@
 package spil.fields;
 
-import java.awt.Color;
-
 import spil.models.Player;
 
 public final class Fleet extends Ownable {
 
-	protected Fleet(Color bgColor, Color fgColor, String title, String subText, String desc, Player owner, int price) {
-		super(bgColor, fgColor, title, subText, desc, owner, price);
-	}
+	private int[] rents = { 500, 1000, 2000, 4000 };
 
 	@Override
 	public void landOnField(Player player) {
-		
+
+	}
+
+	@Override
+	public int getRent() {
+		return 0;
 	}
 
 }
