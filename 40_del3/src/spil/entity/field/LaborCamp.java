@@ -1,10 +1,10 @@
-package spil.fields;
+package spil.entity.field;
 
-import spil.models.Player;
+import spil.entity.Player;
 
-public final class Territory extends Ownable {
+public final class LaborCamp extends Ownable {
 
-	private int rent;
+	private int baseRent;
 
 	@Override
 	public void landOnField(Player player) {

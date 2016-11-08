@@ -1,6 +1,6 @@
-package spil.fields;
+package spil.entity.field;
 
-import spil.models.Player;
+import spil.entity.Player;
 
 public abstract class Ownable extends Field {
 

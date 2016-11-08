@@ -1,4 +1,4 @@
-package spil.models;
+package spil.entity;
 
 public final class GameBoard {
 

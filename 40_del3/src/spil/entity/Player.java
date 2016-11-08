@@ -1,4 +1,4 @@
-package spil.models;
+package spil.entity;
 
 /**
  * @author Daniel Larsen (s151641)
