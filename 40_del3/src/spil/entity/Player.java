@@ -3,7 +3,7 @@ package spil.entity;
 public final class Player {
 
 	private String name;
-	private final BankAccount acc;
+	private BankAccount acc;
 
 	public Player(String name, int maxCoinAmount, int minCoinAmount, int coins) {
 		this.name = name;
