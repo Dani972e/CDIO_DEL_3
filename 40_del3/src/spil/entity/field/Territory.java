@@ -6,6 +6,11 @@ public final class Territory extends Ownable {
 
 	private int rent;
 
+	public Territory(int price, int rent) {
+		super(price);
+		this.rent = rent;
+	}
+
 	@Override
 	public void landOnField(Player player) {
 
@@ -13,7 +18,7 @@ public final class Territory extends Ownable {
 
 	@Override
 	public int getRent() {
-		return 0;
+		return rent;
 	}
 
 }
