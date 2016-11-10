@@ -11,12 +11,11 @@ public class PlayerList {
 	private List<Player> playerList = new ArrayList<Player>();
 
 	public PlayerList(int playerCount) {
-
-		if (playerCount > MAX_PLAYER_COUNT) {
+		if (playerCount > MAX_PLAYER_COUNT)
 			playerCount = MAX_PLAYER_COUNT;
-		} else if (playerCount < MIN_PLAYER_COUNT) {
+
+		if (playerCount < MIN_PLAYER_COUNT)
 			playerCount = MIN_PLAYER_COUNT;
-		}
 
 		for (int i = 0; i < playerCount; i++) {
 			// test
