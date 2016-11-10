@@ -13,7 +13,8 @@ public final class Territory extends Ownable {
 
 	@Override
 	public void landOnField(Player player) {
-
+		player.addCoins(-rent);
+		
 	}
 
 	@Override

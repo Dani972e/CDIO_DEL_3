@@ -13,7 +13,7 @@ public final class LaborCamp extends Ownable {
 
 	@Override
 	public void landOnField(Player player) {
-
+		
 	}
 
 	@Override
