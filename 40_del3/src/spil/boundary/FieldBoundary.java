@@ -8,12 +8,12 @@ public final class FieldBoundary {
 
 	}
 
-	public static Color[][] fieldColors = { { Color.DARK_GRAY, Color.BLACK }, { Color.DARK_GRAY, Color.BLACK },
-			{ Color.DARK_GRAY, Color.BLACK }, { Color.DARK_GRAY, Color.BLACK }, { Color.DARK_GRAY, Color.BLACK },
-			{ Color.DARK_GRAY, Color.BLACK }, { Color.DARK_GRAY, Color.BLACK }, { Color.DARK_GRAY, Color.BLACK },
-			{ Color.DARK_GRAY, Color.BLACK }, { Color.DARK_GRAY, Color.BLACK }, { Color.DARK_GRAY, Color.BLACK },
-			{ Color.YELLOW, Color.BLACK }, { Color.YELLOW, Color.BLACK }, { Color.RED, Color.BLACK },
-			{ Color.RED, Color.BLACK }, { Color.BLUE, Color.BLACK }, { Color.BLUE, Color.BLACK },
+	public static Color[][] fieldColors = { { Color.DARK_GRAY, Color.WHITE }, { Color.DARK_GRAY, Color.WHITE },
+			{ Color.DARK_GRAY, Color.WHITE }, { Color.DARK_GRAY, Color.WHITE }, { Color.DARK_GRAY, Color.WHITE },
+			{ Color.DARK_GRAY, Color.WHITE }, { Color.DARK_GRAY, Color.WHITE }, { Color.DARK_GRAY, Color.WHITE },
+			{ Color.DARK_GRAY, Color.WHITE }, { Color.DARK_GRAY, Color.WHITE }, { Color.DARK_GRAY, Color.WHITE },
+			{ Color.YELLOW, Color.BLACK }, { Color.YELLOW, Color.BLACK }, { Color.RED, Color.WHITE },
+			{ Color.RED, Color.WHITE }, { Color.BLUE, Color.WHITE }, { Color.BLUE, Color.WHITE },
 			{ Color.CYAN, Color.BLACK }, { Color.CYAN, Color.BLACK }, { Color.CYAN, Color.BLACK },
 			{ Color.CYAN, Color.BLACK }, };
 

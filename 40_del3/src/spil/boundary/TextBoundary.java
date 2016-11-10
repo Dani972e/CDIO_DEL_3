@@ -7,9 +7,9 @@ public final class TextBoundary {
 	}
 
 	public static String[][] fieldText = { { "1. Tribe Encampment", "Territory", "Rent: 100\nPrice: 1000" },
-			{ "2. Crater", "Territory", "Rent: 300\nPrice: 1500" },
-			{ "3. Mountain", "Territory", "Rent: 300\nPrice: 1500" },
-			{ "4. Territory", "Cold Desert", "Rent: 300\nPrice: 1500" },
+			{ "2. Crater", "Territory", "Rent: 300 - Price: 1500" },
+			{ "3. Mountain", "Territory", "Rent: 300 -- Price: 1500" },
+			{ "4. Territory", "Cold Desert", "Rent: 300/nPrice: 1500" },
 			{ "5. Black cave", "Territory", "Rent: 300\nPrice: 1500" },
 			{ "6. The Werewall", "Territory", "Rent: 300\nPrice: 1500" },
 			{ "7. Mountain village", "Territory", "Rent: 300\nPrice: 1500" },
