@@ -11,11 +11,12 @@ public final class DiceCup {
 	private List<Die> diceList = new ArrayList<Die>();
 
 	public DiceCup(int dieCount, int maxFaceValue) {
-		if (dieCount > MAX_DIE_COUNT)
+		
+		if (dieCount > MAX_DIE_COUNT) {
 			dieCount = MAX_DIE_COUNT;
-
-		if (dieCount < MIN_DIE_COUNT)
+		} else if (dieCount < MIN_DIE_COUNT) {
 			dieCount = MIN_DIE_COUNT;
+		}
 
 		for (int i = 0; i < dieCount; i++) {
 			diceList.add(new Die(maxFaceValue));

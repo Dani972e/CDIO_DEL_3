@@ -17,11 +17,12 @@ public final class Die {
 	private int faceValue = 1;
 
 	public Die(int currMaxFaceValue) {
-		if (currMaxFaceValue > MAX_FACE_VALUE)
-			currMaxFaceValue = MAX_FACE_VALUE;
 
-		if (currMaxFaceValue < MIN_FACE_VALUE)
+		if (currMaxFaceValue > MAX_FACE_VALUE) {
+			currMaxFaceValue = MAX_FACE_VALUE;
+		} else if (currMaxFaceValue < MIN_FACE_VALUE) {
 			currMaxFaceValue = MIN_FACE_VALUE;
+		}
 
 		this.currMaxFaceValue = currMaxFaceValue;
 	}
