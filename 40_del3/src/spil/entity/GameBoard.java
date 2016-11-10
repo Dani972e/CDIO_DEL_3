@@ -80,7 +80,7 @@ public final class GameBoard {
 
 	public spil.entity.field.Field[][] fields = { { new Territory(1000, 100), new Territory(1500, 300), new Territory(2000, 500), new Territory(3000, 700),
 			new Territory(4000, 1000), new Territory(4300, 1300), new Territory(4750, 1600), new Territory(5000, 2000), new Territory(5500, 2600), new Territory(6000, 3200),
-			new Territory(8000, 4000), new Refugee(), new Refugee(), new LaborCamp(00), new LaborCamp(00), new Tax(), new Tax(),
+			new Territory(8000, 4000), new Refugee(5000), new Refugee(500), new LaborCamp(00), new LaborCamp(00), new Tax(), new Tax(),
 			new Fleet(00), new Fleet(00), new Fleet(00), new Fleet(00) } };
 
 	public GameBoard() {
