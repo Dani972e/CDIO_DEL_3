@@ -3,9 +3,10 @@ package spil.entity;
 public final class Player {
 
 	private String name;
-	private final BankAccount acc;
 	private int position;
 	
+	private BankAccount acc;
+
 	public Player(String name, int maxCoinAmount, int minCoinAmount, int coins) {
 		this.name = name;
 		acc = new BankAccount(maxCoinAmount, minCoinAmount, coins);
