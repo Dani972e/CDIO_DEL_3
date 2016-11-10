@@ -1,4 +1,5 @@
 package test;
+//Test PlayerList
 
 import spil.entity.PlayerList;
 
