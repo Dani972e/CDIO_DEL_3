@@ -1,16 +1,15 @@
 package spil.entity;
 
-import java.util.ArrayList;
-import java.util.List;
 
 public class PlayerList {
 
 	private final int MAX_PLAYER_COUNT = 10;
 	private final int MIN_PLAYER_COUNT = 2;
 
-	private List<Player> playerList = new ArrayList<Player>();
+	private Player[] playerList;
 
 	public PlayerList(int playerCount) {
+		playerList = new Player[playerCount];
 		if (playerCount > MAX_PLAYER_COUNT)
 			playerCount = MAX_PLAYER_COUNT;
 
@@ -19,7 +18,7 @@ public class PlayerList {
 
 		for (int i = 0; i < playerCount; i++) {
 			// test
-			playerList.add(new Player(Integer.toString(i), 0, 0, 0));
+			playerList[i]=new Player(Integer.toString(i), 0, 0, 0);
 		}
 	}
 
