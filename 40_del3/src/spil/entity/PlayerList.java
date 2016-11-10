@@ -1,6 +1,5 @@
 package spil.entity;
 
-
 public class PlayerList {
 
 	private final int MAX_PLAYER_COUNT = 10;
@@ -16,9 +15,9 @@ public class PlayerList {
 		if (playerCount < MIN_PLAYER_COUNT)
 			playerCount = MIN_PLAYER_COUNT;
 
-		for (int i = 0; i < playerCount; i++) 
-			playerList[i]=new Player(Integer.toString(i), 0, 0, 0);
-		
+		for (int i = 0; i < playerCount; i++)
+			playerList[i] = new Player(Integer.toString(i), 0, 0, 0);
+
 	}
 
 }
