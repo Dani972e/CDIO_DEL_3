@@ -27,7 +27,7 @@ public final class TextBoundary {
 			{ "12. Walled city", "Refugee", "Receive: 5000" }, { "13. Monastery", "Refugee", "Receive: 500" },
 			{ "14. Huts in the Mountain", "Labor camp", "Pay: 100 * dice ~ Price: 2500" },
 			{ "15. The Pit", "Labor camp", "Pay: 100 * dice ~ Price: 2500" }, { "16. Gold Mine", "Tax", "Pay: 2000" },
-			{ "17. Caravan", "Tax", "Pay: 4000 or 10% of Player coins" },
+			{ "17. Caravan", "Tax", "Pay: 4000 or 10% of your coins" },
 			{ "18. Second Sail", "Fleet", "Pay: 500-4000 ~ Price: 4000" },
 			{ "19. Sea Grover", "Fleet", "Pay: 500-4000 ~ Price: 4000" },
 			{ "20. The Buccaneers", "Fleet", "Pay: 500-4000 ~ Price: 4000" },
