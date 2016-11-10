@@ -26,4 +26,6 @@ public final class TextBoundary {
 			{ "20. The Buccaneers", "Fleet", "Pay: 500-4000\nPrice: 4000" },
 			{ "21. Privateer armade", "Fleet", "Pay: 500-4000\nPrice: 4000" }, };
 
+	public static String playerName = "Player";
+
 }

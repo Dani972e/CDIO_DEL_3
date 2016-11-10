@@ -1,5 +1,7 @@
 package spil.entity;
 
+import spil.boundary.TextBoundary;
+
 public class PlayerList {
 
 	private final int MAX_PLAYER_COUNT = 10;
@@ -7,7 +9,7 @@ public class PlayerList {
 
 	private Player[] playerList;
 
-	public PlayerList(int playerCount) {
+	public PlayerList(int playerCount, int maxCoinAmount, int minCoinAmount, int coins) {
 		playerList = new Player[playerCount];
 
 		if (playerCount > MAX_PLAYER_COUNT) {
@@ -17,21 +19,21 @@ public class PlayerList {
 		}
 
 		for (int i = 0; i < playerCount; i++)
-			playerList[i] = new Player(Integer.toString(i), 0, 0, 0);
+			playerList[i] = new Player(TextBoundary.playerName + " " + (i + 1), maxCoinAmount, minCoinAmount, coins);
 	}
-	
-	public void move(int playerIndex, int amount){
-		int newPosition = playerList[playerIndex].getPosition()+amount;
-		int numberOfField = 21; //TODO ROBUST
-		
-		while(newPosition>numberOfField){
+
+	public void move(int playerIndex, int amount) {
+		int newPosition = playerList[playerIndex].getPosition() + amount;
+		int numberOfField = 21; // TODO ROBUST
+
+		while (newPosition > numberOfField) {
 			newPosition -= numberOfField;
 		}
-		
+
 		playerList[playerIndex].setPosition(newPosition);
 	}
-	
-	public int getPosition(int playerIndex){
+
+	public int getPosition(int playerIndex) {
 		return playerList[playerIndex].getPosition();
 	}
 
