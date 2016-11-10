@@ -14,8 +14,8 @@ public final class BankAccount {
 
 	public void addCoins(int amount) {
 		int newBalance = coins + amount;
-		
-		if (MIN_COIN_AMOUNT<=newBalance && newBalance<=MAX_COIN_AMOUNT)
+
+		if (MIN_COIN_AMOUNT <= newBalance && newBalance <= MAX_COIN_AMOUNT)
 			coins = newBalance;
 	}
 
