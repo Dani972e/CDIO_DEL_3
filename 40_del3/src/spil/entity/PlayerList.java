@@ -20,5 +20,20 @@ public class PlayerList {
 			playerList[i]=new Player(Integer.toString(i), 0, 0, 0);
 		
 	}
+	
+	public void move(int playerIndex, int amount){
+		int newPosition = playerList[playerIndex].getPosition()+amount;
+		int numberOfField = 21; //TODO ROBUST
+		
+		while(newPosition>numberOfField){
+			newPosition -= numberOfField;
+		}
+		
+		playerList[playerIndex].setPosition(newPosition);
+	}
+	
+	public int getPosition(int playerIndex){
+		return playerList[playerIndex].getPosition();
+	}
 
 }
