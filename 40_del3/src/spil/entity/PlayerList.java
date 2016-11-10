@@ -16,10 +16,9 @@ public class PlayerList {
 		if (playerCount < MIN_PLAYER_COUNT)
 			playerCount = MIN_PLAYER_COUNT;
 
-		for (int i = 0; i < playerCount; i++) {
-			// test
+		for (int i = 0; i < playerCount; i++) 
 			playerList[i]=new Player(Integer.toString(i), 0, 0, 0);
-		}
+		
 	}
 
 }
