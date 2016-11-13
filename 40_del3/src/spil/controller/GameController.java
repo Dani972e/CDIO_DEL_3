@@ -1,5 +1,5 @@
 package spil.controller;
 
-public final class GameController {
+public class GameController {
 
 }

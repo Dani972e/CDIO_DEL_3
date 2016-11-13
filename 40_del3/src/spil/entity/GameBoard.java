@@ -1,6 +1,5 @@
 package spil.entity;
 
-import desktop_fields.Field;
 import desktop_fields.Street;
 import desktop_resources.GUI;
 import spil.boundary.FieldBoundary;
@@ -11,9 +10,9 @@ import spil.entity.field.Refugee;
 import spil.entity.field.Tax;
 import spil.entity.field.Territory;
 
-public final class GameBoard {
+public class GameBoard {
 
-	private final Field[] guiFields = {
+	private final desktop_fields.Field[] guiFields = {
 			new Street.Builder().setBgColor(FieldBoundary.fieldColors[0][0]).setFgColor(FieldBoundary.fieldColors[0][1])
 					.setTitle(TextBoundary.fieldText[0][0]).setSubText(TextBoundary.fieldText[0][1])
 					.setDescription(TextBoundary.fieldText[0][2]).build(),
@@ -78,10 +77,11 @@ public final class GameBoard {
 					.setFgColor(FieldBoundary.fieldColors[20][1]).setTitle(TextBoundary.fieldText[20][0])
 					.setSubText(TextBoundary.fieldText[20][1]).setDescription(TextBoundary.fieldText[20][2]).build(), };
 
-	public spil.entity.field.Field[][] fields = { { new Territory(1000, 100), new Territory(1500, 300), new Territory(2000, 500), new Territory(3000, 700),
-			new Territory(4000, 1000), new Territory(4300, 1300), new Territory(4750, 1600), new Territory(5000, 2000), new Territory(5500, 2600), new Territory(6000, 3200),
-			new Territory(8000, 4000), new Refugee(5000), new Refugee(500), new LaborCamp(00), new LaborCamp(00), new Tax(2000), new Tax(4000),
-			new Fleet(00), new Fleet(00), new Fleet(00), new Fleet(00) } };
+	private final spil.entity.field.Field[][] fields = { { new Territory(1000, 100), new Territory(1500, 300),
+			new Territory(2000, 500), new Territory(3000, 700), new Territory(4000, 1000), new Territory(4300, 1300),
+			new Territory(4750, 1600), new Territory(5000, 2000), new Territory(5500, 2600), new Territory(6000, 3200),
+			new Territory(8000, 4000), new Refugee(5000), new Refugee(500), new LaborCamp(00), new LaborCamp(00),
+			new Tax(2000), new Tax(4000), new Fleet(00), new Fleet(00), new Fleet(00), new Fleet(00) } };
 
 	public GameBoard() {
 		// test

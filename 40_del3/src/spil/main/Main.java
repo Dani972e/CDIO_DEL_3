@@ -1,14 +1,11 @@
 package spil.main;
 
-import spil.entity.GameBoard;
+import spil.controller.GameController;
 
 public final class Main {
 
 	public static void main(String[] args) {
-
-	 GameBoard gameBoard = new GameBoard();
-		
-		
+		new GameController();
 	}
 
 }

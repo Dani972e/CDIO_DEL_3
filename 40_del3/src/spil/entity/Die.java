@@ -1,6 +1,6 @@
 package spil.entity;
 
-public final class Die {
+public class Die {
 
 	private final int MAX_FACE_VALUE = 10;
 	private final int MIN_FACE_VALUE = 6;
@@ -28,8 +28,7 @@ public final class Die {
 		return faceValue;
 	}
 
-	// spørg ronnie
-	public String toString() {
+	public String toString() { // spoerg ronnie
 		return Integer.toString(faceValue);
 	}
 

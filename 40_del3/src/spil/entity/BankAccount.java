@@ -1,6 +1,6 @@
 package spil.entity;
 
-public final class BankAccount {
+public class BankAccount {
 
 	private final int MAX_COIN_AMOUNT;
 	private final int MIN_COIN_AMOUNT;
@@ -15,7 +15,7 @@ public final class BankAccount {
 	public void addCoins(int amount) {
 		int newBalance = coins + amount;
 
-		if (MIN_COIN_AMOUNT <= newBalance && newBalance <= MAX_COIN_AMOUNT)
+		if (MIN_COIN_AMOUNT <= newBalance && MAX_COIN_AMOUNT >= newBalance)
 			coins = newBalance;
 	}
 

@@ -2,7 +2,7 @@ package spil.boundary;
 
 import java.awt.Color;
 
-public final class FieldBoundary {
+public class FieldBoundary {
 
 	private FieldBoundary() {
 
@@ -16,5 +16,4 @@ public final class FieldBoundary {
 			{ Color.RED, Color.WHITE }, { Color.BLUE, Color.WHITE }, { Color.BLUE, Color.WHITE },
 			{ Color.CYAN, Color.BLACK }, { Color.CYAN, Color.BLACK }, { Color.CYAN, Color.BLACK },
 			{ Color.CYAN, Color.BLACK }, };
-
 }

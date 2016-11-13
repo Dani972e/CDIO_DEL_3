@@ -1,6 +1,6 @@
 package spil.entity;
 
-public final class DiceCup {
+public class DiceCup {
 
 	private final int MAX_DIE_COUNT = 1000;
 	private final int MIN_DIE_COUNT = 2;
@@ -18,7 +18,6 @@ public final class DiceCup {
 
 		for (int i = 0; i < dieCount; i++) {
 			diceList[i] = new Die(maxFaceValue);
-
 		}
 	}
 

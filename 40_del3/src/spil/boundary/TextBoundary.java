@@ -1,13 +1,6 @@
 package spil.boundary;
 
-import spil.entity.field.Field;
-import spil.entity.field.Fleet;
-import spil.entity.field.LaborCamp;
-import spil.entity.field.Refugee;
-import spil.entity.field.Tax;
-import spil.entity.field.Territory;
-
-public final class TextBoundary {
+public class TextBoundary {
 
 	private TextBoundary() {
 

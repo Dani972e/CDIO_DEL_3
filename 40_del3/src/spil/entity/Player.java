@@ -1,24 +1,16 @@
 package spil.entity;
 
-public final class Player {
+public class Player {
 
 	private String name;
 	private int position;
-	
+
 	private BankAccount acc;
 
 	public Player(String name, int maxCoinAmount, int minCoinAmount, int coins) {
 		this.name = name;
 		acc = new BankAccount(maxCoinAmount, minCoinAmount, coins);
 		position = 0;
-	}
-	
-	public void setPosition(int position){
-		this.position=position;
-	}
-	
-	public int getPosition(){
-		return position;
 	}
 
 	public void addCoins(int amount) {
@@ -31,6 +23,14 @@ public final class Player {
 
 	public int getCoins() {
 		return acc.getCoins();
+	}
+
+	public void setPosition(int position) {
+		this.position = position;
+	}
+
+	public int getPosition() {
+		return position;
 	}
 
 }
