@@ -16,4 +16,8 @@ public class FieldBoundary {
 			{ Color.RED, Color.WHITE }, { Color.BLUE, Color.WHITE }, { Color.BLUE, Color.WHITE },
 			{ Color.CYAN, Color.BLACK }, { Color.CYAN, Color.BLACK }, { Color.CYAN, Color.BLACK },
 			{ Color.CYAN, Color.BLACK }, };
+	
+	public static int[] fieldPrices = {};
+	
+	public static int[] fieldRents = {};
 }
