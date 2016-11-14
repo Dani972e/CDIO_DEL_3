@@ -30,7 +30,7 @@ public class FieldBoundary {
 	public static int[] laborCampPrices = {2500, 2500};
 	
 	public static int[] taxRents = {2000, 4000};
-	
+	 
 	
 
 }
