@@ -8,14 +8,12 @@ public class FieldBoundary {
 
 	}
 
-	public static Color[][] fieldColors = { { Color.DARK_GRAY, Color.WHITE }, { Color.DARK_GRAY, Color.WHITE },
-			{ Color.DARK_GRAY, Color.WHITE }, { Color.DARK_GRAY, Color.WHITE }, { Color.DARK_GRAY, Color.WHITE },
-			{ Color.DARK_GRAY, Color.WHITE }, { Color.DARK_GRAY, Color.WHITE }, { Color.DARK_GRAY, Color.WHITE },
-			{ Color.DARK_GRAY, Color.WHITE }, { Color.DARK_GRAY, Color.WHITE }, { Color.DARK_GRAY, Color.WHITE },
-			{ Color.YELLOW, Color.BLACK }, { Color.YELLOW, Color.BLACK }, { Color.RED, Color.WHITE },
-			{ Color.RED, Color.WHITE }, { Color.BLUE, Color.WHITE }, { Color.BLUE, Color.WHITE },
-			{ Color.CYAN, Color.BLACK }, { Color.CYAN, Color.BLACK }, { Color.CYAN, Color.BLACK },
-			{ Color.CYAN, Color.BLACK }, };
+	public static Color[][] fieldColors = { { Color.DARK_GRAY, Color.WHITE }, { Color.DARK_GRAY, Color.WHITE }, { Color.DARK_GRAY, Color.WHITE },
+			{ Color.DARK_GRAY, Color.WHITE }, { Color.DARK_GRAY, Color.WHITE }, { Color.DARK_GRAY, Color.WHITE }, { Color.DARK_GRAY, Color.WHITE },
+			{ Color.DARK_GRAY, Color.WHITE }, { Color.DARK_GRAY, Color.WHITE }, { Color.DARK_GRAY, Color.WHITE }, { Color.DARK_GRAY, Color.WHITE },
+			{ Color.YELLOW, Color.BLACK }, { Color.YELLOW, Color.BLACK }, { Color.RED, Color.WHITE }, { Color.RED, Color.WHITE },
+			{ Color.BLUE, Color.WHITE }, { Color.BLUE, Color.WHITE }, { Color.CYAN, Color.BLACK }, { Color.CYAN, Color.BLACK },
+			{ Color.CYAN, Color.BLACK }, { Color.CYAN, Color.BLACK }, };
 
 	public static int[] territoryPrices = { 1000, 1500, 2000, 3000, 4000, 4300, 4750, 5000, 5500, 6000, 8000 };
 
