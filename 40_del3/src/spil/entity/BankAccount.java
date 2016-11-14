@@ -12,7 +12,7 @@ public class BankAccount {
 		this.coins = coins;
 	}
 
-	public void addCoins(int amount) {
+	public void addBalance(int amount) {
 		int newBalance = coins + amount;
 
 		if (newBalance < MIN_COIN_AMOUNT) {

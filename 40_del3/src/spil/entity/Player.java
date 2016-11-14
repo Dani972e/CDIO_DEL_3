@@ -13,8 +13,8 @@ public class Player {
 		position = 0;
 	}
 
-	public void addCoins(int amount) {
-		acc.addCoins(amount);
+	public void addBalance(int amount) {
+		acc.addBalance(amount);
 	}
 
 	public String getName() {

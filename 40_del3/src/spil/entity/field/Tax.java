@@ -13,7 +13,7 @@ public final class Tax extends Field {
 	
 	@Override
 	public void landOnField(Player player) {
-		player.addCoins(-taxAmount);
+		player.addBalance(-taxAmount);
 	}
 
 }
