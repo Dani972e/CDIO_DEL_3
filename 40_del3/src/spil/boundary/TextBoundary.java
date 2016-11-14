@@ -1,5 +1,7 @@
 package spil.boundary;
 
+import spil.entity.Player;
+
 public class TextBoundary {
 
 	private TextBoundary() {
@@ -27,5 +29,16 @@ public class TextBoundary {
 			{ "21. Privateer Armade", "Fleet", "Pay: 500-4000 ~ Price: 4000" }, };
 
 	public static String playerName = "Player";
+
+	public static String purchaseFieldMessage = "This field is available. Do you want to purchase this field?";
+
+	public static String alreadyPurchasedMessage(Player owner) {
+		StringBuilder sb = new StringBuilder();
+		sb.append("The field is already purchased. You'll need to pay a rent to the owner, " + owner.getName() + ".");
+		return sb.toString();
+	}
+
+	public static String buttonYesMessage = "Yes";
+	public static String buttonNoMessage = "No";
 
 }

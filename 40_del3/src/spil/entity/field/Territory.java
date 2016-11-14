@@ -1,6 +1,7 @@
 package spil.entity.field;
 
 import desktop_resources.GUI;
+import spil.boundary.GUIBoundary;
 import spil.entity.Player;
 
 public final class Territory extends Ownable {
@@ -15,14 +16,11 @@ public final class Territory extends Ownable {
 	@Override
 	public void landOnField(Player player) {
 		if (owner == null) {
-			String svar = GUI.getUserButtonPressed("Vil du købe feltet?", "Ja", "Nej");
-			if (svar.equals("Ja")) {
+			if (GUIBoundary.purchaseField()) {
 				owner = player;
 			}
 		} else {
-			GUI.showMessage("Feltet er allerede købt. Derfor skal du betale en rente til ejeren " + owner.getName());
-			owner.addCoins(rent);
-			player.addCoins(-rent);
+			GUIBoundary.alreadyPurchased(owner);
 		}
 	}
 
