@@ -7,9 +7,9 @@ public class Player {
 
 	private BankAccount acc;
 
-	public Player(String name, int maxCoinAmount, int minCoinAmount, int coins) {
+	public Player(String name, int maxBalance, int minBalance, int balance) {
 		this.name = name;
-		acc = new BankAccount(maxCoinAmount, minCoinAmount, coins);
+		acc = new BankAccount(maxBalance, minBalance, balance);
 		position = 0;
 	}
 

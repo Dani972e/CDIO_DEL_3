@@ -2,33 +2,33 @@ package spil.entity;
 
 public class BankAccount {
 
-	private final int MAX_COIN_AMOUNT;
-	private final int MIN_COIN_AMOUNT;
-	private int coins;
+	private final int MAX_BALANCE;
+	private final int MIN_BALANCE;
+	private int balance;
 
-	public BankAccount(int maxCoinAmount, int minCoinAmount, int coins) {
-		this.MAX_COIN_AMOUNT = maxCoinAmount;
-		this.MIN_COIN_AMOUNT = minCoinAmount;
-		this.coins = coins;
+	public BankAccount(int maxBalance, int minBalance, int balance) {
+		this.MAX_BALANCE = maxBalance;
+		this.MIN_BALANCE = minBalance;
+		this.balance = balance;
 	}
 
 	public void addBalance(int amount) {
-		int newBalance = coins + amount;
+		int newBalance = balance + amount;
 
-		if (newBalance < MIN_COIN_AMOUNT) {
-			newBalance = MIN_COIN_AMOUNT;
-		} else if (newBalance > MAX_COIN_AMOUNT) {
-			newBalance = MAX_COIN_AMOUNT;
+		if (newBalance < MIN_BALANCE) {
+			newBalance = MIN_BALANCE;
+		} else if (newBalance > MAX_BALANCE) {
+			newBalance = MAX_BALANCE;
 		}
-		coins = newBalance;
+		balance = newBalance;
 	}
 
 	public int getBalance() {
-		return coins;
+		return balance;
 	}
 
 	public boolean isBankrupt() {
-		if (coins == MIN_COIN_AMOUNT) {
+		if (balance == MIN_BALANCE) {
 			return true;
 		}
 		return false;
