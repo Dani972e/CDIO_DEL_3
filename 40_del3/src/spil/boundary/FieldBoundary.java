@@ -19,13 +19,15 @@ public class FieldBoundary {
 
 	public static int[] territoryPrices = { 1000, 1500, 2000, 3000, 4000, 4300, 4750, 5000, 5500, 6000, 8000 };
 
-	public static int[] laborCampPrices = { 2500, 2500 };
+	public static int[] territoryRents = { 100, 300, 500, 700, 1000, 1300, 1600, 2000, 2600, 3200, 4000 };
 
 	public static int[] fleetPrices = { 4000, 4000, 4000, 4000 };
 
-	public static int[] territoryRents = { 100, 300, 500, 700, 1000, 1300, 1600, 2000, 2600, 3200, 4000 };
+	public static int[] fleetRents = { 500, 1000, 2000, 4000 };
 
 	public static int[] refugeeReceive = { 5000, 500 };
 
-	public static int[] fleetPay = { 500, 1000, 2000, 4000 };
+	public static int[] laborCampPrices = { 2500, 2500 };
+
+	public static int[] taxRents = { 2000, 4000 };
 }
