@@ -15,12 +15,23 @@ public class BankAccount {
 	public void addCoins(int amount) {
 		int newBalance = coins + amount;
 
-		if (MIN_COIN_AMOUNT <= newBalance && MAX_COIN_AMOUNT >= newBalance)
-			coins = newBalance;
+		if (newBalance < MIN_COIN_AMOUNT) {
+			newBalance = MIN_COIN_AMOUNT;
+		} else if (newBalance > MAX_COIN_AMOUNT) {
+			newBalance = MAX_COIN_AMOUNT;
+		}
+		coins = newBalance;
 	}
 
 	public int getCoins() {
 		return coins;
+	}
+	
+	public boolean isBankrupt() {
+		if (coins == MIN_COIN_AMOUNT) {
+			return true;
+		}
+		return false;
 	}
 
 }

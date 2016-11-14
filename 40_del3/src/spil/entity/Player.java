@@ -33,4 +33,8 @@ public class Player {
 		return position;
 	}
 
+	public boolean isBankrupt() {
+		return acc.isBankrupt();
+	}
+
 }
