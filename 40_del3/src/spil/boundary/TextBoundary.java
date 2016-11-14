@@ -38,6 +38,8 @@ public class TextBoundary {
 		return sb.toString();
 	}
 
+	public static String purchaseConfirmedMessage = "Field purchased!";
+
 	public static String buttonYesMessage = "Yes";
 	public static String buttonNoMessage = "No";
 

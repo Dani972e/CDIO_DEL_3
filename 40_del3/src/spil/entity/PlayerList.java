@@ -37,4 +37,13 @@ public class PlayerList {
 		return playerList[playerIndex].getPosition();
 	}
 
+	public int getPlayersLeft() {
+		int left = 0;
+		for (Player player : playerList) {
+			if (!player.isBankrupt())
+				left++;
+		}
+		return left;
+	}
+
 }

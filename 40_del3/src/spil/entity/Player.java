@@ -21,8 +21,12 @@ public class Player {
 		return name;
 	}
 
-	public int getCoins() {
-		return acc.getCoins();
+	public int getBalance() {
+		return acc.getBalance();
+	}
+
+	public boolean isBankrupt() {
+		return acc.isBankrupt();
 	}
 
 	public void setPosition(int position) {
@@ -31,10 +35,6 @@ public class Player {
 
 	public int getPosition() {
 		return position;
-	}
-
-	public boolean isBankrupt() {
-		return acc.isBankrupt();
 	}
 
 }

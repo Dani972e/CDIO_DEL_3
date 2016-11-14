@@ -1,6 +1,5 @@
 package spil.entity.field;
 
-import desktop_resources.GUI;
 import spil.boundary.GUIBoundary;
 import spil.entity.Player;
 
@@ -18,9 +17,11 @@ public final class Territory extends Ownable {
 		if (owner == null) {
 			if (GUIBoundary.purchaseField()) {
 				owner = player;
+				owner.addCoins(-price);
 			}
 		} else {
 			GUIBoundary.alreadyPurchased(owner);
+			player.addCoins(-rent);
 		}
 	}
 

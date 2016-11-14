@@ -23,7 +23,7 @@ public class BankAccount {
 		coins = newBalance;
 	}
 
-	public int getCoins() {
+	public int getBalance() {
 		return coins;
 	}
 	
