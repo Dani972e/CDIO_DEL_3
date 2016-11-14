@@ -26,7 +26,7 @@ public class BankAccount {
 	public int getBalance() {
 		return coins;
 	}
-	
+
 	public boolean isBankrupt() {
 		if (coins == MIN_COIN_AMOUNT) {
 			return true;
