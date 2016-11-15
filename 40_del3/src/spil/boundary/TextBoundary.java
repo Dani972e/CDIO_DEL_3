@@ -8,7 +8,7 @@ public class TextBoundary {
 
 	}
 
-	public static String[][] fieldText = { { "1. Tribe Encampment", "Territory", "Rent: 100 ~ Price: 1000" },
+	public static final String[][] fieldText = { { "1. Tribe Encampment", "Territory", "Rent: 100 ~ Price: 1000" },
 			{ "2. Crater", "Territory", "Rent: 300 ~ Price: 1500" },
 			{ "3. Mountain", "Territory", "Rent: 500 ~ Price: 2000" },
 			{ "4. Cold Desert", "Territory", "Rent: 700 ~ Price: 3000" },
@@ -28,9 +28,9 @@ public class TextBoundary {
 			{ "20. The Buccaneers", "Fleet", "Pay: 500-4000 ~ Price: 4000" },
 			{ "21. Privateer Armade", "Fleet", "Pay: 500-4000 ~ Price: 4000" }, };
 
-	public static String playerName = "Player";
+	public static final String playerName = "Player";
 
-	public static String purchaseFieldMessage = "This field is available. Do you want to purchase this field?";
+	public static final String purchaseFieldMessage = "This field is available. Do you want to purchase this field?";
 
 	public static String alreadyPurchasedMessage(Player owner) {
 		StringBuilder sb = new StringBuilder();
@@ -38,9 +38,9 @@ public class TextBoundary {
 		return sb.toString();
 	}
 
-	public static String purchaseConfirmedMessage = "Field purchased!";
+	public static final String purchaseConfirmedMessage = "Field purchased!";
 
-	public static String buttonYesMessage = "Yes";
-	public static String buttonNoMessage = "No";
+	public static final String buttonYesMessage = "Yes";
+	public static final String buttonNoMessage = "No";
 
 }
