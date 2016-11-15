@@ -23,8 +23,15 @@ public class BankAccount {
 		balance = newBalance;
 	}
 
-	public int getBalance() {
-		return balance;
+	public void removeBalance(int amount) {
+		int newBalance = balance - amount;
+
+		if (newBalance < MIN_BALANCE) {
+			newBalance = MIN_BALANCE;
+		} else if (newBalance > MAX_BALANCE) {
+			newBalance = MAX_BALANCE;
+		}
+		balance = newBalance;
 	}
 
 	public boolean isBankrupt() {
@@ -32,6 +39,10 @@ public class BankAccount {
 			return true;
 		}
 		return false;
+	}
+
+	public int getBalance() {
+		return balance;
 	}
 
 }
