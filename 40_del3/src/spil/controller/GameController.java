@@ -1,4 +1,6 @@
-package spil.controller;
+package spil.controller;public static playervoid move(int x, int index) {
+	playerList
+}
 
 import desktop_resources.GUI;
 import spil.entity.DiceCup;

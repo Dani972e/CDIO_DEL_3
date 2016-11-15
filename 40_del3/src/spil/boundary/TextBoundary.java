@@ -29,8 +29,20 @@ public class TextBoundary {
 			{ "21. Privateer Armade", "Fleet", "Pay: 500-4000 ~ Price: 4000" }, };
 
 	public static final String playerName = "Player";
+	public static final String buttonYesMessage = "Yes";
+	public static final String buttonNoMessage = "No";
 
-	public static final String purchaseFieldMessage = "This field is available. Do you want to purchase this field?";
+	public static final String purchaseFieldMessage(Player player) {
+		StringBuilder sb = new StringBuilder();
+		sb.append("This field is available. Does " + player.getName() + " want to purchase this field?");
+		return sb.toString();
+	}
+
+	public static final String purchaseConfirmedMessage(Player player) {
+		StringBuilder sb = new StringBuilder();
+		sb.append(player.getName() + " bought the field!");
+		return sb.toString();
+	}
 
 	public static String alreadyPurchasedMessage(Player owner) {
 		StringBuilder sb = new StringBuilder();
@@ -38,9 +50,10 @@ public class TextBoundary {
 		return sb.toString();
 	}
 
-	public static final String purchaseConfirmedMessage = "Field purchased!";
-
-	public static final String buttonYesMessage = "Yes";
-	public static final String buttonNoMessage = "No";
+	public static String bonusMessage(Player player) {
+		StringBuilder sb = new StringBuilder();
+		sb.append(player.getName() + " earned a bonus of ...!");
+		return sb.toString();
+	}
 
 }

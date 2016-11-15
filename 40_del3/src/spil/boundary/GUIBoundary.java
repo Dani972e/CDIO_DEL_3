@@ -10,18 +10,18 @@ public class GUIBoundary {
 
 	}
 
-	public static boolean purchaseField() {
-		String result = GUI.getUserButtonPressed(TextBoundary.purchaseFieldMessage, TextBoundary.buttonYesMessage,
-				TextBoundary.buttonNoMessage);
+	public static boolean purchaseField(Player player) {
+		String result = GUI.getUserButtonPressed(TextBoundary.purchaseFieldMessage(player),
+				TextBoundary.buttonYesMessage, TextBoundary.buttonNoMessage);
 		if (result.equals(TextBoundary.buttonYesMessage)) {
-			GUI.showMessage(TextBoundary.purchaseConfirmedMessage);
+			print((TextBoundary.purchaseConfirmedMessage(player)));
 			return true;
 		}
 		return false;
 	}
 
-	public static void alreadyPurchased(Player owner) {
-		GUI.showMessage(TextBoundary.alreadyPurchasedMessage(owner));
+	public static void print(String message) {
+		GUI.showMessage(message);
 	}
 
 	public static void initFields(Field[] fields) {

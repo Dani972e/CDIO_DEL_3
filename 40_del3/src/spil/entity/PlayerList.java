@@ -1,4 +1,4 @@
-package spil.entity;
+ package spil.entity;
 
 import spil.boundary.TextBoundary;
 

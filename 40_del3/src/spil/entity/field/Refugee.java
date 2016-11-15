@@ -1,5 +1,7 @@
 package spil.entity.field;
 
+import spil.boundary.GUIBoundary;
+import spil.boundary.TextBoundary;
 import spil.entity.Player;
 
 public final class Refugee extends Field {
@@ -12,6 +14,7 @@ public final class Refugee extends Field {
 
 	@Override
 	public void landOnField(Player player) {
+		GUIBoundary.print(TextBoundary.bonusMessage(player));
 		player.addBalance(bonus);
 	}
 
