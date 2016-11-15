@@ -1,5 +1,7 @@
 package spil.entity.field;
 
+import spil.boundary.GUIBoundary;
+import spil.boundary.TextBoundary;
 import spil.entity.Player;
 
 public abstract class Ownable extends Field {
@@ -12,5 +14,21 @@ public abstract class Ownable extends Field {
 	}
 
 	public abstract int getRent();
+
+	public boolean purchaseField(Player player, int price, int rent) {
+		if (owner == null) {
+			if (GUIBoundary.purchaseField(player, price)) {
+				owner = player;
+				owner.removeBalance(price);
+			}
+			return true;
+		} else {
+			GUIBoundary.print(TextBoundary.alreadyPurchasedMessage(owner, rent));
+			player.removeBalance(rent);
+			owner.addBalance(rent);
+			return false;
+		}
+
+	}
 
 }

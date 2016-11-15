@@ -30,7 +30,7 @@ public class GUIBoundary {
 
 	public static boolean taxChoice(Player player, int taxAmount) {
 		String btn1 = Integer.toString(taxAmount);
-		String btn2 = "10% of balance";
+		String btn2 = "10% of your balance";
 
 		String result = GUI.getUserButtonPressed(TextBoundary.taxChoiceMessage(player), btn1, btn2);
 

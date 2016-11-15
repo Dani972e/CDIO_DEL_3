@@ -15,15 +15,7 @@ public final class Territory extends Ownable {
 
 	@Override
 	public void landOnField(Player player) {
-		if (owner == null) {
-			if (GUIBoundary.purchaseField(player, price)) {
-				owner = player;
-				owner.removeBalance(price);
-			}
-		} else {
-			GUIBoundary.print(TextBoundary.alreadyPurchasedMessage(owner, rent));
-			player.removeBalance(rent);
-		}
+		super.purchaseField(player, price, rent);
 	}
 
 	@Override
