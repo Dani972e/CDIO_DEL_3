@@ -46,7 +46,7 @@ public class TextBoundary {
 
 	public static String alreadyPurchasedMessage(Player owner) {
 		StringBuilder sb = new StringBuilder();
-		sb.append("The field is already purchased. You'll need to pay a rent to the owner, " + owner.getName() + ".");
+		sb.append("The field is already purchased. You'll need to pay a rent of to the owner, " + owner.getName() + ".");
 		return sb.toString();
 	}
 

@@ -7,7 +7,7 @@ public class testPlayerList {
 		PlayerList players = new PlayerList(2, 0, 0, 0);
 
 		players.move(0, 21);
-
+		
 		System.out.println(players.getPosition(0));
 		players.move(0, 6);
 

@@ -4,6 +4,7 @@ import desktop_fields.Street;
 import spil.boundary.FieldBoundary;
 import spil.boundary.GUIBoundary;
 import spil.boundary.TextBoundary;
+import spil.entity.field.Field;
 import spil.entity.field.Fleet;
 import spil.entity.field.LaborCamp;
 import spil.entity.field.Refugee;
@@ -101,6 +102,10 @@ public class GameBoard {
 
 	public void initFields() {
 		GUIBoundary.initFields(guiFields);
+	}
+	
+	public Field getField(int index) {
+		return fields[index];
 	}
 
 }
