@@ -22,7 +22,7 @@ public final class Territory extends Ownable {
 		} else {
 			GUIBoundary.alreadyPurchased(owner);
 			
-			player.removeBalance(rent);
+			player.removeBalance(rent);			
 		}
 	}
 

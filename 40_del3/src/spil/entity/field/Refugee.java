@@ -18,4 +18,4 @@ public final class Refugee extends Field {
 		player.addBalance(bonus);
 	}
 
-}
+}			
