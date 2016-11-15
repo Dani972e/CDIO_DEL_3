@@ -17,6 +17,10 @@ public class Player {
 		acc.addBalance(amount);
 	}
 
+	public void removeBalance(int amount) {
+		acc.removeBalance(amount);
+	}
+
 	public String getName() {
 		return name;
 	}

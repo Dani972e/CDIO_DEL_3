@@ -17,11 +17,11 @@ public final class Territory extends Ownable {
 		if (owner == null) {
 			if (GUIBoundary.purchaseField()) {
 				owner = player;
-				owner.addBalance(-price);
+				owner.removeBalance(price);
 			}
 		} else {
 			GUIBoundary.alreadyPurchased(owner);
-			player.addBalance(-rent);
+			player.removeBalance(rent);
 		}
 	}
 
