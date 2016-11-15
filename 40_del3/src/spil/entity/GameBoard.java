@@ -77,23 +77,7 @@ public class GameBoard {
 					.setFgColor(FieldBoundary.fieldColors[20][1]).setTitle(TextBoundary.fieldText[20][0])
 					.setSubText(TextBoundary.fieldText[20][1]).setDescription(TextBoundary.fieldText[20][2]).build(), };
 
-	private final spil.entity.field.Field[][] fields = {
-			{ new Territory(FieldBoundary.territoryPrices[0], FieldBoundary.territoryRents[0]),
-					new Territory(FieldBoundary.territoryPrices[1], FieldBoundary.territoryRents[1]),
-					new Territory(FieldBoundary.territoryPrices[2], FieldBoundary.territoryRents[2]),
-					new Territory(FieldBoundary.territoryPrices[3], FieldBoundary.territoryRents[3]),
-					new Territory(FieldBoundary.territoryPrices[4], FieldBoundary.territoryRents[4]),
-					new Territory(FieldBoundary.territoryPrices[5], FieldBoundary.territoryRents[5]),
-					new Territory(FieldBoundary.territoryPrices[6], FieldBoundary.territoryRents[6]),
-					new Territory(FieldBoundary.territoryPrices[7], FieldBoundary.territoryRents[7]),
-					new Territory(FieldBoundary.territoryPrices[8], FieldBoundary.territoryRents[8]),
-					new Territory(FieldBoundary.territoryPrices[9], FieldBoundary.territoryRents[9]),
-					new Territory(FieldBoundary.territoryPrices[10], FieldBoundary.territoryRents[10]),
-					new Refugee(FieldBoundary.refugeeReceive[0]), new Refugee(FieldBoundary.refugeeReceive[1]),
-					new LaborCamp(FieldBoundary.laborCampPrices[0]), new LaborCamp(FieldBoundary.laborCampPrices[1]),
-					new Tax(FieldBoundary.taxRents[0]), new Tax(FieldBoundary.taxRents[1]),
-					new Fleet(FieldBoundary.fleetPrices[0]), new Fleet(FieldBoundary.fleetPrices[1]),
-					new Fleet(FieldBoundary.fleetPrices[2]), new Fleet(FieldBoundary.fleetPrices[3]) } };
+	private final spil.entity.field.Field[] fields = { new Territory(FieldBoundary.territoryPrices[0], FieldBoundary.territoryRents[0]), new Territory(FieldBoundary.territoryPrices[1], FieldBoundary.territoryRents[1]), new Territory(FieldBoundary.territoryPrices[2], FieldBoundary.territoryRents[2]), new Territory(FieldBoundary.territoryPrices[3], FieldBoundary.territoryRents[3]), new Territory(FieldBoundary.territoryPrices[4], FieldBoundary.territoryRents[4]), new Territory(FieldBoundary.territoryPrices[5], FieldBoundary.territoryRents[5]), new Territory(FieldBoundary.territoryPrices[6], FieldBoundary.territoryRents[6]), new Territory(FieldBoundary.territoryPrices[7], FieldBoundary.territoryRents[7]), new Territory(FieldBoundary.territoryPrices[8], FieldBoundary.territoryRents[8]), new Territory(FieldBoundary.territoryPrices[9], FieldBoundary.territoryRents[9]), new Territory(FieldBoundary.territoryPrices[10], FieldBoundary.territoryRents[10]), new Refugee(FieldBoundary.refugeeReceive[0]), new Refugee(FieldBoundary.refugeeReceive[1]), new LaborCamp(FieldBoundary.laborCampPrices[0]), new LaborCamp(FieldBoundary.laborCampPrices[1]), new Tax(FieldBoundary.taxRents[0]), new Tax(FieldBoundary.taxRents[1]), new Fleet(FieldBoundary.fleetPrices[0]), new Fleet(FieldBoundary.fleetPrices[1]), new Fleet(FieldBoundary.fleetPrices[2]), new Fleet(FieldBoundary.fleetPrices[3]) };
 
 	public GameBoard() {
 
