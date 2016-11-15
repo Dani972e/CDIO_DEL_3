@@ -1,6 +1,7 @@
 package spil.entity.field;
 
 import spil.boundary.GUIBoundary;
+import spil.boundary.TextBoundary;
 import spil.entity.Player;
 
 public final class Territory extends Ownable {
@@ -16,12 +17,11 @@ public final class Territory extends Ownable {
 	public void landOnField(Player player) {
 		if (owner == null) {
 			if (GUIBoundary.purchaseField(player)) {
-				owner = player;			
+				owner = player;
 				owner.removeBalance(price);
 			}
 		} else {
-			GUIBoundary.alreadyPurchased(owner);
-			
+			GUIBoundary.print(TextBoundary.alreadyPurchasedMessage(owner));
 			player.removeBalance(rent);
 		}
 	}
