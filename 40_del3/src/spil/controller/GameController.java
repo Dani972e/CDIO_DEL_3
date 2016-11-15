@@ -6,6 +6,7 @@ import spil.entity.GameBoard;
 import spil.entity.PlayerList;
 import spil.entity.field.Field;
 import spil.entity.field.Tax;
+import spil.entity.field.Territory;
 
 public class GameController {
 
@@ -23,13 +24,13 @@ public class GameController {
 		GUI.addPlayer(p1.getName(), p1.getBalance());
 		GUI.addPlayer(p2.getName(), p2.getBalance());
 
-		Field f1 = new Tax(1000);
-		Field f2 = new Tax(1000);
-
-		p1.setPosition(16);
+		Field f1 = new Territory(1000, 100);
+		Field f2 = new Territory(1000, 100);
 
 		f1.landOnField(p1);
 		GUI.setBalance(p1.getName(), p1.getBalance());
+		f1.landOnField(p2);
+		GUI.setBalance(p2.getName(), p2.getBalance());
 
 	}
 
