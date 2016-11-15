@@ -4,6 +4,7 @@ public class Player {
 
 	private String name;
 	private int position;
+	private int currentRoll;
 
 	private BankAccount acc;
 
@@ -39,6 +40,14 @@ public class Player {
 
 	public int getPosition() {
 		return position;
+	}
+
+	public int getCurrentRoll() {
+		return currentRoll;
+	}
+
+	public void setCurrentRoll(int currentRoll) {
+		this.currentRoll = currentRoll;
 	}
 
 }

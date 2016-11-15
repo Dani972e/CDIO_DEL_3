@@ -32,28 +32,29 @@ public class TextBoundary {
 	public static final String buttonYesMessage = "Yes";
 	public static final String buttonNoMessage = "No";
 
-	public static final String purchaseFieldMessage(Player player) {
-		StringBuilder sb = new StringBuilder();
-		sb.append("This field is available. Does " + player.getName() + " want to purchase this field?");
-		return sb.toString();
+	public static final String purchaseFieldMessage(Player player, int price) {
+		return "This field is available. Does " + player.getName() + " want to purchase this field for " + price;
 	}
 
-	public static final String purchaseConfirmedMessage(Player player) {
-		StringBuilder sb = new StringBuilder();
-		sb.append(player.getName() + " bought the field!");
-		return sb.toString();
+	public static final String purchaseConfirmedMessage(Player player, int price) {
+		return player.getName() + " bought the field for the price " + price;
 	}
 
-	public static String alreadyPurchasedMessage(Player owner) {
-		StringBuilder sb = new StringBuilder();
-		sb.append("The field is already purchased. You'll need to pay a rent of to the owner, " + owner.getName() + ".");
-		return sb.toString();
+	public static String alreadyPurchasedMessage(Player owner, int rent) {
+		return "The field is already purchased. You'll need to pay a rent of " + rent + " for the owner, "
+				+ owner.getName() + ".";
 	}
 
-	public static String bonusMessage(Player player) {
-		StringBuilder sb = new StringBuilder();
-		sb.append(player.getName() + " earned a bonus of ...!");
-		return sb.toString();
+	public static String bonusMessage(Player player, int bonus) {
+		return player.getName() + " earned a bonus of " + bonus + "!";
+	}
+
+	public static String taxMessage(int rent) {
+		return "You pay " + rent + " for landing on a Tax field.";
+	}
+
+	public static String taxChoiceMessage(Player player) {
+		return player.getName() + " choose one button.";
 	}
 
 }

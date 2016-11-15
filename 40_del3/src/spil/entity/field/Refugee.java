@@ -14,8 +14,8 @@ public final class Refugee extends Field {
 
 	@Override
 	public void landOnField(Player player) {
-		GUIBoundary.print(TextBoundary.bonusMessage(player));
+		GUIBoundary.print(TextBoundary.bonusMessage(player, bonus));
 		player.addBalance(bonus);
 	}
 
-}			
+}

@@ -1,5 +1,6 @@
 package spil.entity.field;
 
+import spil.boundary.FieldBoundary;
 import spil.entity.Player;
 
 public final class LaborCamp extends Ownable {
@@ -13,12 +14,12 @@ public final class LaborCamp extends Ownable {
 
 	@Override
 	public void landOnField(Player player) {
-		
+		player.removeBalance(FieldBoundary.DICE_MULTIPLIER * player.getCurrentRoll());
 	}
 
 	@Override
 	public int getRent() {
-		return 0;
+		return baseRent;
 	}
 
 }
