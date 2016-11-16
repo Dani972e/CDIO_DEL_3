@@ -25,7 +25,7 @@ public class PlayerList {
 		}
 	}
 
-	public void move(int playerIndex, int amount) {
+	public void movePlayer(int playerIndex, int amount) {
 		int newPosition = playerList[playerIndex].getPosition() + amount;
 		int numberOfField = 21; // TODO ROBUST
 
@@ -34,6 +34,7 @@ public class PlayerList {
 		}
 
 		playerList[playerIndex].setPosition(newPosition);
+		GUIBoundary.placePlayer(playerList[playerIndex]);
 	}
 
 	public Player getPlayer(int index) {
@@ -42,6 +43,10 @@ public class PlayerList {
 
 	public int getPosition(int index) {
 		return playerList[index].getPosition();
+	}
+
+	public int getTotalPlayers() {
+		return playerList.length;
 	}
 
 	public int getPlayersLeft() {

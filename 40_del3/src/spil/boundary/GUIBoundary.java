@@ -36,6 +36,10 @@ public class GUIBoundary {
 		GUI.setBalance(player.getName(), player.getBalance());
 	}
 
+	public static void placePlayer(Player player) {
+		GUI.setCar(player.getPosition(), player.getName());
+	}
+
 	public static boolean decideTaxChoice(Player player, int taxAmount) {
 		String btn1 = Integer.toString(taxAmount);
 		String btn2 = TextBoundary.btnBalancePercentage;

@@ -34,7 +34,7 @@ public class TextBoundary {
 
 	public static final String playerName = "Player";
 
-	public static final String[] btnArray = { "2", "3", "4", "5", "6"};
+	public static final String[] btnArray = { "2", "3", "4", "5", "6" };
 
 	public static final String buttonYesMessage = "Yes";
 	public static final String buttonNoMessage = "No";
@@ -57,6 +57,24 @@ public class TextBoundary {
 
 	public static final String purchaseDeniedMessage(Player player) {
 		return player.getName() + " did not purchase " + getFieldName(player) + ".";
+	}
+
+	public static String rollMessage(Player player, int[] rollValues) {
+		StringBuilder sb = new StringBuilder();
+
+		sb.append("[");
+		for (int i = 0, n = rollValues.length; i < n; i++) {
+
+			if (i == rollValues.length - 1) {
+				sb.append(Integer.toString(rollValues[i]));
+				break;
+			}
+
+			sb.append(Integer.toString(rollValues[i]) + ", ");
+		}
+		sb.append("]");
+
+		return player.getName() + " rolled " + sb.toString() + "!";
 	}
 
 	public static final String ownFieldMessage(Player player) {

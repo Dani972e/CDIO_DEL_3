@@ -107,5 +107,9 @@ public class GameBoard {
 		fields[player.getPosition()].landOnField(player);
 		GUIBoundary.updatePlayer(player);
 	}
+	
+	public void placePlayer(Player player) {
+		GUIBoundary.placePlayer(player);
+	}
 
 }
