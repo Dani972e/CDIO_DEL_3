@@ -11,7 +11,7 @@ public final class Fleet extends Ownable {
 	private int[] rents = { FieldBoundary.fleetRents[0], FieldBoundary.fleetRents[1], FieldBoundary.fleetRents[2],
 			FieldBoundary.fleetRents[3] };
 
-	private List<Player> ownerList = new ArrayList<Player>();
+	private static List<String> ownerNameList = new ArrayList<String>();
 
 	public Fleet(int price) {
 		super(price);

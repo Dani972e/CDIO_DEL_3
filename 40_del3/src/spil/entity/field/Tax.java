@@ -22,7 +22,7 @@ public final class Tax extends Field {
 				player.removeBalance((int) (FieldBoundary.TAX_MULTIPLICITY * player.getBalance()));
 			}
 		} else {
-			GUIBoundary.print(TextBoundary.taxMessage(taxAmount));
+			GUIBoundary.print(TextBoundary.taxMessage(player, taxAmount));
 			player.removeBalance(taxAmount);
 		}
 	}

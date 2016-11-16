@@ -8,7 +8,7 @@ import spil.entity.Player;
 
 public final class LaborCamp extends Ownable {
 
-	private List<Player> ownerList = new ArrayList<Player>();
+	private static List<String> ownerNameList = new ArrayList<String>();
 
 	private int baseRent;
 
@@ -16,13 +16,19 @@ public final class LaborCamp extends Ownable {
 		super(price);
 	}
 
-	//	Dette tal skal så ganges med antallet af Labor camps med den samme ejer.
+	// Dette tal skal så ganges med antallet af Labor camps med den samme ejer.
 
 	@Override
 	public void landOnField(Player player) {
-		int rent = (FieldBoundary.DICE_MULTIPLIER * player.getCurrentRoll());
-		if (super.purchaseField(player, price, rent)) {
-			ownerList.add(player);
+
+		// int sameOwnerCount = getSameOwnerCount();
+
+		// TESTING PURPOSES!!!
+		player.setCurrentRoll(6);
+
+		baseRent = ((FieldBoundary.DICE_MULTIPLIER * player.getCurrentRoll()) * sameOwnerCount);
+		if (super.purchaseField(player, price, baseRent)) {
+			ownerNameList.add(player.getName());
 		}
 
 	}

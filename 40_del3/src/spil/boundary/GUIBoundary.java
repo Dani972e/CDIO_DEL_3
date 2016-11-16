@@ -30,7 +30,7 @@ public class GUIBoundary {
 
 	public static boolean taxChoice(Player player, int taxAmount) {
 		String btn1 = Integer.toString(taxAmount);
-		String btn2 = "10% of your balance";
+		String btn2 = TextBoundary.btnBalancePercentage;
 
 		String result = GUI.getUserButtonPressed(TextBoundary.taxChoiceMessage(player), btn1, btn2);
 
@@ -39,4 +39,10 @@ public class GUIBoundary {
 		return false;
 	}
 
+	public static int decidePlayerAmount() {
+		String result = GUI.getUserSelection(TextBoundary.welcomeMessage, TextBoundary.btnArray[0],
+				TextBoundary.btnArray[1], TextBoundary.btnArray[2], TextBoundary.btnArray[3], TextBoundary.btnArray[4],
+				TextBoundary.btnArray[5], TextBoundary.btnArray[6], TextBoundary.btnArray[7], TextBoundary.btnArray[8]);
+		return Integer.parseInt(result);
+	}
 }

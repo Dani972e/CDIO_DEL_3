@@ -28,33 +28,57 @@ public class TextBoundary {
 			{ "20. The Buccaneers", "Fleet", "Pay: 500-4000 ~ Price: 4000" },
 			{ "21. Privateer Armade", "Fleet", "Pay: 500-4000 ~ Price: 4000" }, };
 
+	public static final String title = "Treasure Hunt 2";
+
+	public static final String welcomeMessage = "Welcome to " + title
+			+ "!\n\nPlease choose the amount of players for the game.";
+
 	public static final String playerName = "Player";
+
+	public static final String[] btnArray = { "2", "3", "4", "5", "6", "7", "8", "9", "10", };
+
 	public static final String buttonYesMessage = "Yes";
 	public static final String buttonNoMessage = "No";
 
+	public static final String btnBalancePercentage = "10% of balance";
+
 	public static final String purchaseFieldMessage(Player player, int price) {
-		return "This field is available. Does " + player.getName() + " want to purchase this field for " + price;
+		return landMessage(player) + getFieldName(player) + " is available for purchase. Does " + player.getName()
+				+ " want to purchase this field for " + price + " coins?";
 	}
 
 	public static final String purchaseConfirmedMessage(Player player, int price) {
-		return player.getName() + " bought the field for the price " + price;
+		return player.getName() + " successfully bought " + getFieldName(player) + " for the price of " + price
+				+ " coins.";
+	}
+
+	public static final String purchaseDeniedMessage(Player player) {
+		return player.getName() + " did not purchase " + getFieldName(player) + ".";
 	}
 
 	public static String alreadyPurchasedMessage(Player owner, int rent) {
-		return "The field is already purchased. You'll need to pay a rent of " + rent + " for the owner, "
+		return getFieldName(owner) + " is already purchased. You'll need to pay a rent of " + rent + " to the owner, "
 				+ owner.getName() + ".";
 	}
 
 	public static String bonusMessage(Player player, int bonus) {
-		return player.getName() + " earned a bonus of " + bonus + "!";
+		return landMessage(player) + player.getName() + " earned a bonus of " + bonus + "!";
 	}
 
-	public static String taxMessage(int rent) {
-		return "You pay " + rent + " for landing on a Tax field.";
+	public static String taxMessage(Player player, int rent) {
+		return player.getName() + " pay " + rent + " for landing on " + getFieldName(player);
 	}
 
 	public static String taxChoiceMessage(Player player) {
 		return player.getName() + " choose one button.";
 	}
 
-}
+	public static String getFieldName(Player player) {
+		return TextBoundary.fieldText[player.getPosition()][0];
+	}
+
+	public static String landMessage(Player player) {
+		return player.getName() + " lands on " + getFieldName(player) + "!\n\n";
+	}
+
+};
