@@ -1,10 +1,11 @@
- package spil.entity;
+package spil.entity;
 
+import spil.boundary.GUIBoundary;
 import spil.boundary.TextBoundary;
 
 public class PlayerList {
 
-	private final int MAX_PLAYER_COUNT = 10;
+	private final int MAX_PLAYER_COUNT = 6;
 	private final int MIN_PLAYER_COUNT = 2;
 
 	private Player[] playerList;
@@ -18,8 +19,10 @@ public class PlayerList {
 			playerCount = MIN_PLAYER_COUNT;
 		}
 
-		for (int i = 0; i < playerCount; i++)
+		for (int i = 0; i < playerCount; i++) {
 			playerList[i] = new Player(TextBoundary.playerName + " " + (i + 1), maxCoinAmount, minCoinAmount, coins);
+			GUIBoundary.addPlayer(playerList[i]);
+		}
 	}
 
 	public void move(int playerIndex, int amount) {
@@ -33,8 +36,12 @@ public class PlayerList {
 		playerList[playerIndex].setPosition(newPosition);
 	}
 
-	public int getPosition(int playerIndex) {
-		return playerList[playerIndex].getPosition();
+	public Player getPlayer(int index) {
+		return playerList[index];
+	}
+
+	public int getPosition(int index) {
+		return playerList[index].getPosition();
 	}
 
 	public int getPlayersLeft() {

@@ -16,21 +16,33 @@ public final class LaborCamp extends Ownable {
 		super(price);
 	}
 
-	// Dette tal skal så ganges med antallet af Labor camps med den samme ejer.
-
 	@Override
 	public void landOnField(Player player) {
-
-		// int sameOwnerCount = getSameOwnerCount();
-
-		// TESTING PURPOSES!!!
-		player.setCurrentRoll(6);
-
+		int sameOwnerCount = getSameOwnerCount();
 		baseRent = ((FieldBoundary.DICE_MULTIPLIER * player.getCurrentRoll()) * sameOwnerCount);
+
 		if (super.purchaseField(player, price, baseRent)) {
 			ownerNameList.add(player.getName());
 		}
 
+		System.out.println(getSameOwnerCount());
+
+	}
+
+	private int getSameOwnerCount() {
+		if (owner == null) {
+			return 0;
+		}
+
+		int count = 0;
+
+		if (ownerNameList.size() > 0) {
+			for (String ownerName : ownerNameList) {
+				if (ownerName.equals(owner.getName()))
+					count++;
+			}
+		}
+		return count;
 	}
 
 	@Override

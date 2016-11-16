@@ -30,17 +30,20 @@ public class TextBoundary {
 
 	public static final String title = "Treasure Hunt 2";
 
-	public static final String welcomeMessage = "Welcome to " + title
-			+ "!\n\nPlease choose the amount of players for the game.";
+	public static final String welcomeMessage = "Welcome to " + title + "!\n\nPlease choose the number of players.";
 
 	public static final String playerName = "Player";
 
-	public static final String[] btnArray = { "2", "3", "4", "5", "6", "7", "8", "9", "10", };
+	public static final String[] btnArray = { "2", "3", "4", "5", "6"};
 
 	public static final String buttonYesMessage = "Yes";
 	public static final String buttonNoMessage = "No";
 
 	public static final String btnBalancePercentage = "10% of balance";
+
+	public static final String playerAmountMessage(int playerAmount) {
+		return playerAmount + " players will play the game!\n\nTo proceed, click the \"OK\" button.";
+	}
 
 	public static final String purchaseFieldMessage(Player player, int price) {
 		return landMessage(player) + getFieldName(player) + " is available for purchase. Does " + player.getName()
@@ -54,6 +57,10 @@ public class TextBoundary {
 
 	public static final String purchaseDeniedMessage(Player player) {
 		return player.getName() + " did not purchase " + getFieldName(player) + ".";
+	}
+
+	public static final String ownFieldMessage(Player player) {
+		return "This field is already owned by " + player.getName() + ", nothing will happen.";
 	}
 
 	public static String alreadyPurchasedMessage(Player owner, int rent) {
