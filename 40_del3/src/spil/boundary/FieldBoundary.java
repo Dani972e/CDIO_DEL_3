@@ -8,10 +8,11 @@ public class FieldBoundary {
 
 	}
 
+	public static final int FIELD_COUNT = 22;
 	public static final int DICE_MULTIPLIER = 100;
 	public static final double TAX_MULTIPLICITY = 0.1;
 
-	public static final Color[][] fieldColors = { { Color.DARK_GRAY, Color.WHITE }, { Color.DARK_GRAY, Color.WHITE },
+	public static final Color[][] fieldColors = {  { Color.WHITE, Color.BLACK }, { Color.DARK_GRAY, Color.WHITE }, { Color.DARK_GRAY, Color.WHITE },
 			{ Color.DARK_GRAY, Color.WHITE }, { Color.DARK_GRAY, Color.WHITE }, { Color.DARK_GRAY, Color.WHITE },
 			{ Color.DARK_GRAY, Color.WHITE }, { Color.DARK_GRAY, Color.WHITE }, { Color.DARK_GRAY, Color.WHITE },
 			{ Color.DARK_GRAY, Color.WHITE }, { Color.DARK_GRAY, Color.WHITE }, { Color.DARK_GRAY, Color.WHITE },
