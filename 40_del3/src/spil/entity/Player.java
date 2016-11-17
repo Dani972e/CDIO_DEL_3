@@ -8,10 +8,10 @@ public class Player {
 
 	private BankAccount acc;
 
-	public Player(String name, int maxBalance, int minBalance, int balance) {
+	public Player(String name, int maxBalance, int minBalance, int balance, int position) {
 		this.name = name;
+		this.position = position;
 		acc = new BankAccount(maxBalance, minBalance, balance);
-		position = 0;
 	}
 
 	public void addBalance(int amount) {
