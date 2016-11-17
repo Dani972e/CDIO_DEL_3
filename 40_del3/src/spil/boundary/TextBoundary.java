@@ -31,7 +31,9 @@ public class TextBoundary {
 
 	public static final String title = "Treasure Hunt 2";
 
-	public static final String welcomeMessage = "Welcome to " + title + "!\n\nPlease choose the number of players.";
+	public static final String welcomeMessage = "Welcome to " + title + "!\n\nThis game is a Monopoly-like game, with a few tweaks. You'll roll with two dice"
+			+ " and land on a field. The field will have an effect on your bank account. If you reach bankruptcy, you're out. The game will"
+			+ " continue until only one player is left, who will be the winner.\n\nTo proceed, please choose the number of players.";
 
 	public static final String playerName = "Player";
 
