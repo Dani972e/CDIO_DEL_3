@@ -14,7 +14,7 @@ public class BankAccount {
 
 	public void addBalance(int amount) {
 		int newBalance = balance + amount;
-
+		// Spaghetti/ghetto solution?
 		if (newBalance < MIN_BALANCE) {
 			newBalance = MIN_BALANCE;
 		} else if (newBalance > MAX_BALANCE) {
@@ -25,7 +25,7 @@ public class BankAccount {
 
 	public void removeBalance(int amount) {
 		int newBalance = balance - amount;
-
+		// Spaghetti/ghetto solution?
 		if (newBalance < MIN_BALANCE) {
 			newBalance = MIN_BALANCE;
 		} else if (newBalance > MAX_BALANCE) {

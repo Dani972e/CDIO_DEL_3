@@ -18,6 +18,7 @@ public class GameBoard {
 	private final desktop_fields.Field[] guiFields;
 
 	private final spil.entity.field.Field[] fields = {
+			// DO THIS IN A FOR LOOP FOR EFFICIENY!!!!!!!!!!!!!!!!
 			new Territory(FieldBoundary.territoryPrices[0], FieldBoundary.territoryRents[0]),
 			new Territory(FieldBoundary.territoryPrices[1], FieldBoundary.territoryRents[1]),
 			new Territory(FieldBoundary.territoryPrices[2], FieldBoundary.territoryRents[2]),

@@ -6,6 +6,7 @@ import spil.entity.Player;
 
 public final class Refugee extends Field {
 
+	/* Variable to hold the Field bonus amount */
 	private int bonus;
 
 	public Refugee(int bonus) {

@@ -23,8 +23,10 @@ public abstract class Ownable extends Field {
 			} else {
 				GUIBoundary.print(TextBoundary.purchaseDeniedMessage(player));
 			}
-			return true; // TODO Test this return statement. Does the code
-							// really work as intended?
+			return true; /*
+							 * TODO Test this return statement. Does the code
+							 * really work as intended?
+							 */
 		} else {
 			if (player.getName().equals(owner.getName())) {
 				GUIBoundary.print(TextBoundary.ownFieldMessage(player));

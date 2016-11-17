@@ -34,7 +34,8 @@ public class PlayerList {
 		while (newPosition > numberOfFields) {
 			newPosition -= numberOfFields;
 		}
-
+		
+		// Spaghetti/ghetto solution?
 		GUIBoundary.removePlayerCar(playerList[playerIndex]);
 		playerList[playerIndex].setPosition(newPosition);
 		GUIBoundary.placePlayerCar(playerList[playerIndex]);
@@ -51,7 +52,8 @@ public class PlayerList {
 	public int getTotalPlayers() {
 		return playerList.length;
 	}
-
+	
+	// Spaghetti/ghetto solution?
 	public void setHomeCars() {
 		System.out.println(playerList.length);
 		for (Player player : playerList) {

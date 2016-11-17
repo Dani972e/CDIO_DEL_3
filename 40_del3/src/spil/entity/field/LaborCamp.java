@@ -10,7 +10,7 @@ public final class LaborCamp extends Ownable {
 
 	private static List<String> ownerNameList = new ArrayList<String>();
 
-	private int baseRent;
+	private int rent;
 
 	public LaborCamp(int price) {
 		super(price);
@@ -19,14 +19,11 @@ public final class LaborCamp extends Ownable {
 	@Override
 	public void landOnField(Player player) {
 		int sameOwnerCount = getSameOwnerCount();
-		baseRent = ((FieldBoundary.DICE_MULTIPLIER * player.getCurrentRoll()) * sameOwnerCount);
+		rent = ((FieldBoundary.DICE_MULTIPLIER * player.getCurrentRoll()) * sameOwnerCount);
 
-		if (super.purchaseField(player, price, baseRent)) {
+		if (super.purchaseField(player, price, rent)) {
 			ownerNameList.add(player.getName());
 		}
-
-		System.out.println(getSameOwnerCount());
-
 	}
 
 	private int getSameOwnerCount() {
@@ -47,7 +44,7 @@ public final class LaborCamp extends Ownable {
 
 	@Override
 	public int getRent() {
-		return baseRent;
+		return rent;
 	}
 
 }

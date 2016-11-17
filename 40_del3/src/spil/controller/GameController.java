@@ -14,6 +14,7 @@ public class GameController {
 	private PlayerList playerList;
 	private GameBoard gameBoard;
 
+	// Spaghetti/ghetto solution? Hvordan er denne klasse generelt? Er den OK?
 	public GameController() {
 		diceCup = new DiceCup(2, 6);
 		gameBoard = new GameBoard();
@@ -45,8 +46,9 @@ public class GameController {
 				// TODO create this.
 				GUI.showMessage("GAME IS WON!");
 			}
-			
-			// TODO NOT SURE IF THIS IS FINE EHEHE
+
+			// TODO NOT SURE IF THIS IS FINE EHEHE. // Spaghetti/ghetto
+			// solution?? Hvor skal vi tjekke for bankruptcy?
 			if (index == playerList.getTotalPlayers() - 1) {
 				index = 0;
 				continue;

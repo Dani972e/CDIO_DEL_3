@@ -31,6 +31,7 @@ public class DiceCup {
 			rollList[i] = diceList[i].roll();
 			total += rollList[i];
 		}
+		// Spaghetti/ghetto solution?
 		GUIBoundary.print(TextBoundary.rollMessage(player, rollList));
 		return total;
 	}

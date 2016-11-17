@@ -2,6 +2,7 @@ package spil.entity.field;
 
 import spil.entity.Player;
 
+/* final class so nobody accidently inherits from this class */
 public final class Territory extends Ownable {
 
 	/* Rent for the Territory field */
@@ -15,9 +16,11 @@ public final class Territory extends Ownable {
 
 	@Override
 	public void landOnField(Player player) {
+		/* Prompts the player to purchase the field or not */
 		super.purchaseField(player, price, rent);
 	}
 
+	/* Getter method for rent */
 	@Override
 	public int getRent() {
 		return rent;

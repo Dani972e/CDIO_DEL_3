@@ -28,8 +28,4 @@ public class Die {
 		return faceValue;
 	}
 
-	public String toString() { // spoerg ronnie
-		return Integer.toString(faceValue);
-	}
-
 }
