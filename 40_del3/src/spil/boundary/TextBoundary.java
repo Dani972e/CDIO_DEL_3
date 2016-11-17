@@ -8,8 +8,7 @@ public class TextBoundary {
 
 	}
 
-	public static final String[][] fieldText = { 
-			{ "1. Home", "Home", "Home Sweet Home" },
+	public static final String[][] fieldText = { { "1. Home", "( ͡° ͜ʖ ͡°)", "Home, sweet home." },
 			{ "2. Tribe Encampment", "Territory", "Rent: 100 ~ Price: 1000" },
 			{ "3. Crater", "Territory", "Rent: 300 ~ Price: 1500" },
 			{ "4. Mountain", "Territory", "Rent: 500 ~ Price: 2000" },
@@ -21,11 +20,9 @@ public class TextBoundary {
 			{ "10. Palace Gates", "Territory", "Rent: 2600 ~ Price: 5500" },
 			{ "11. Tower", "Territory", "Rent: 3200 ~ Price: 6000" },
 			{ "12. Castle", "Territory", "Rent: 4000 ~ Price: 8000" },
-			{ "13. Walled city", "Refugee", "Receive: 5000" },
-			{ "14. Monastery", "Refugee", "Receive: 500" },
+			{ "13. Walled city", "Refugee", "Receive: 5000" }, { "14. Monastery", "Refugee", "Receive: 500" },
 			{ "15. Huts in the Mountain", "Labor camp", "Pay: 100 * dice ~ Price: 2500" },
-			{ "16. The Pit", "Labor camp", "Pay: 100 * dice ~ Price: 2500" }, 
-			{ "17. Gold Mine", "Tax", "Pay: 2000" },
+			{ "16. The Pit", "Labor camp", "Pay: 100 * dice ~ Price: 2500" }, { "17. Gold Mine", "Tax", "Pay: 2000" },
 			{ "18. Caravan", "Tax", "Pay: 4000 or 10% of your coins" },
 			{ "19. Second Sail", "Fleet", "Pay: 500-4000 ~ Price: 4000" },
 			{ "20. Sea Grover", "Fleet", "Pay: 500-4000 ~ Price: 4000" },
@@ -103,7 +100,7 @@ public class TextBoundary {
 	}
 
 	public static String getFieldName(Player player) {
-		return TextBoundary.fieldText[player.getPosition()][0];
+		return TextBoundary.fieldText[player.getPosition() - 1][0];
 	}
 
 	public static String landMessage(Player player) {

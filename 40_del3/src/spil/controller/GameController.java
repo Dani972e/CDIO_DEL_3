@@ -15,7 +15,6 @@ public class GameController {
 	private GameBoard gameBoard;
 
 	public GameController() {
-
 		diceCup = new DiceCup(2, 6);
 		gameBoard = new GameBoard();
 
@@ -23,9 +22,11 @@ public class GameController {
 
 		int playerAmount = GUIBoundary.decidePlayerAmount();
 
-		playerList = new PlayerList(playerAmount, 10000000, 0, 30000);
+		playerList = new PlayerList(playerAmount, 10000000, 0, 30000, 0);
+		playerList.setHomeCars();
 
 		GUIBoundary.print(TextBoundary.playerAmountMessage(playerAmount));
+
 		initGameLoop();
 	}
 
@@ -37,14 +38,21 @@ public class GameController {
 
 			int rollTotal = diceCup.rollDice(currentPlayer);
 
-			playerList.movePlayer(currentPlayer.getPosition(), rollTotal);
+			playerList.movePlayer(index, rollTotal);
 			gameBoard.landOnField(currentPlayer);
 
 			if (playerList.getPlayersLeft() == 1) {
 				// TODO create this.
 				GUI.showMessage("GAME IS WON!");
 			}
+			
+			// TODO NOT SURE IF THIS IS FINE EHEHE
+			if (index == playerList.getTotalPlayers() - 1) {
+				index = 0;
+				continue;
+			}
 			index++;
+
 		}
 	}
 }
