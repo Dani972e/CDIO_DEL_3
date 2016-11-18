@@ -61,7 +61,11 @@ public class TextBoundary {
 	}
 
 	public static final String playerAmountMessage(int playerAmount) {
-		return playerAmount + " players will play the game!\n\nTo proceed, click the \"OK\" button.";
+		return playerAmount + " players will play the game!\n\nTo proceed, please click the \"OK\" button.";
+	}
+
+	public static String rollInfoMessage(Player player) {
+		return player.getName() + ", please click the \"OK\" button to roll.";
 	}
 
 	public static String rollMessage(Player player, int[] rollValues) {

@@ -38,6 +38,7 @@ public class GameController {
 		while (playerList.getPlayersLeft() > 1) {
 			Player currentPlayer = playerList.getPlayer(index);
 
+			GUIBoundary.print(TextBoundary.rollInfoMessage(currentPlayer));
 			rollTotal = diceCup.rollDice(currentPlayer);
 
 			playerList.movePlayer(index, rollTotal);
