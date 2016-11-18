@@ -1,7 +1,7 @@
 package spil.entity;
 
-
-import java.awt.Color;
+import java.util.Arrays;
+import java.util.Collections;
 
 import desktop_codebehind.Car;
 import desktop_fields.Street;
@@ -18,9 +18,8 @@ public class GameBoard {
 
 	private final desktop_fields.Field[] guiFields;
 
-	private final spil.entity.field.Field[] fields = {
-			// DO THIS IN A FOR LOOP FOR EFFICIENY!!!!!!!!!!!!!!!!
-			new Refugee(FieldBoundary.refugeeReceive[0]), new Refugee(FieldBoundary.refugeeReceive[1]),
+	private final spil.entity.field.Field[] fields = { new Refugee(FieldBoundary.refugeeReceive[0]),
+			new Refugee(FieldBoundary.refugeeReceive[1]),
 			new Territory(FieldBoundary.territoryPrices[0], FieldBoundary.territoryRents[0]),
 			new Territory(FieldBoundary.territoryPrices[1], FieldBoundary.territoryRents[1]),
 			new Territory(FieldBoundary.territoryPrices[2], FieldBoundary.territoryRents[2]),
@@ -39,20 +38,18 @@ public class GameBoard {
 			new Fleet(FieldBoundary.fleetPrices[2]), new Fleet(FieldBoundary.fleetPrices[3]) };
 
 	private final Car[] playerCars = {
-			new Car.Builder().patternHorizontalGradiant().typeRacecar().primaryColor(new Color(0x000000))
-					.secondaryColor(new Color(0xFF0010)).build(),
-			new Car.Builder().patternZebra().typeRacecar().primaryColor(new Color(0x0400FF))
-					.secondaryColor(new Color(0xFF00E1)).build(),
-			new Car.Builder().patternHorizontalGradiant().typeUfo().primaryColor(new Color(0xAF4342))
-					.secondaryColor(new Color(0xFF0910)).build(),
-			new Car.Builder().patternZebra().typeUfo().primaryColor(new Color(0xFA4039))
-					.secondaryColor(new Color(0xF023E1)).build(),
-			new Car.Builder().patternHorizontalDualColor().typeTractor().primaryColor(new Color(0xABC423))
-					.secondaryColor(new Color(0xAB0FA0)).build(),
-			new Car.Builder().patternZebra().typeTractor().primaryColor(new Color(0xABC423))
-					.secondaryColor(new Color(0xAB0FA0)).build() };
-
-	private final boolean[] carTaken = { false, false, false, false, false, false };
+			new Car.Builder().patternHorizontalGradiant().typeRacecar().primaryColor(FieldBoundary.carColors[0][0])
+					.secondaryColor(FieldBoundary.carColors[0][1]).build(),
+			new Car.Builder().patternZebra().typeUfo().primaryColor(FieldBoundary.carColors[1][0])
+					.secondaryColor(FieldBoundary.carColors[1][1]).build(),
+			new Car.Builder().patternDotted().typeTractor().primaryColor(FieldBoundary.carColors[2][0])
+					.secondaryColor(FieldBoundary.carColors[2][1]).build(),
+			new Car.Builder().patternHorizontalGradiant().typeTractor().primaryColor(FieldBoundary.carColors[3][0])
+					.secondaryColor(FieldBoundary.carColors[3][1]).build(),
+			new Car.Builder().patternZebra().typeRacecar().primaryColor(FieldBoundary.carColors[4][0])
+					.secondaryColor(FieldBoundary.carColors[4][1]).build(),
+			new Car.Builder().patternDotted().typeUfo().primaryColor(FieldBoundary.carColors[5][0])
+					.secondaryColor(FieldBoundary.carColors[5][1]).build(), };
 
 	public GameBoard() {
 		guiFields = new desktop_fields.Field[FieldBoundary.FIELD_COUNT];
@@ -70,9 +67,9 @@ public class GameBoard {
 
 	public void landOnField(Player player) {
 		int pos = player.getPosition();
-		if (pos>1)
-		fields[pos].landOnField(player);
-		
+		if (pos > 1)
+			fields[pos].landOnField(player);
+
 		GUIBoundary.updatePlayer(player);
 	}
 
@@ -80,13 +77,9 @@ public class GameBoard {
 		GUIBoundary.placePlayerCar(player);
 	}
 
-	public Car getRandomCar() {
-		int index = (int) ((Math.random() * playerCars.length));
-		if (!carTaken[index]) {
-			carTaken[index] = true;
-			return playerCars[index];
-		}
-		return getRandomCar();
+	public Car[] getRandomUniqueCars() {
+		Collections.shuffle(Arrays.asList(playerCars));
+		return playerCars;
 	}
 
 }

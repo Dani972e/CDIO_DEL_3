@@ -1,5 +1,6 @@
 package spil.boundary;
 
+import desktop_codebehind.Car;
 import desktop_fields.Field;
 import desktop_resources.GUI;
 import spil.entity.Player;
@@ -28,8 +29,8 @@ public class GUIBoundary {
 		GUI.create(fields);
 	}
 
-	public static void addPlayer(Player player) {
-		GUI.addPlayer(player.getName(), player.getBalance());
+	public static void addPlayer(Player player, Car car) {
+		GUI.addPlayer(player.getName(), player.getBalance(), car);
 	}
 
 	public static void updatePlayer(Player player) {

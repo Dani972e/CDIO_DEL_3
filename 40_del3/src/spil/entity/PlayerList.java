@@ -1,5 +1,6 @@
 package spil.entity;
 
+import desktop_codebehind.Car;
 import spil.boundary.FieldBoundary;
 import spil.boundary.GUIBoundary;
 import spil.boundary.TextBoundary;
@@ -11,7 +12,7 @@ public class PlayerList {
 
 	private Player[] playerList;
 
-	public PlayerList(int playerCount, int maxCoinAmount, int minCoinAmount, int coins, int position) {
+	public PlayerList(int playerCount, int maxCoinAmount, int minCoinAmount, int coins, int position, Car[] cars) {
 
 		if (playerCount > MAX_PLAYER_COUNT) {
 			playerCount = MAX_PLAYER_COUNT;
@@ -24,7 +25,7 @@ public class PlayerList {
 		for (int i = 0; i < playerCount; i++) {
 			playerList[i] = new Player(TextBoundary.playerName + " " + (i + 1), maxCoinAmount, minCoinAmount, coins,
 					position);
-			GUIBoundary.addPlayer(playerList[i]);
+			GUIBoundary.addPlayer(playerList[i], cars[i]);
 		}
 	}
 
