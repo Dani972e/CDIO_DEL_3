@@ -81,11 +81,9 @@ public class testDie {
 
 		System.out.println("other: " + other);
 
-		if (other > 0) {
-			fail("other > 0 is true: Fail, since other MUST be 0.");
-		}
-
 		int expected = 0;
+
+		assertEquals("other > 0 is true: Fail, since other MUST be 0.", expected, other);
 
 		assertEquals("expected: " + expected + "\nother " + other, expected, other);
 	}
@@ -142,11 +140,9 @@ public class testDie {
 
 		System.out.println("other: " + other);
 
-		if (other > 0) {
-			fail("other > 0 is true: Fail, since other MUST be 0.");
-		}
-
 		int expected = 0;
+
+		assertEquals("other > 0 is true: Fail, since other MUST be 0.", expected, other);
 
 		assertEquals("expected: " + expected + "\nother: " + other, expected, other);
 	}

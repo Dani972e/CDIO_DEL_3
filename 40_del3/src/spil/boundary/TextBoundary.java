@@ -31,7 +31,8 @@ public class TextBoundary {
 
 	public static final String title = "Treasure Hunt 2";
 
-	public static final String welcomeMessage = "Welcome to " + title + "!\n\nThis game is a Monopoly-like game, with a few tweaks. You'll roll with two dice"
+	public static final String welcomeMessage = "Welcome to " + title
+			+ "!\n\nThis game is a Monopoly-like game, with a few tweaks. You'll roll with two dice"
 			+ " and land on a field. The field will have an effect on your bank account. If you reach bankruptcy, you're out. The game will"
 			+ " continue until only one player is left, who will be the winner.\n\nTo proceed, please choose the number of players.";
 
@@ -99,6 +100,17 @@ public class TextBoundary {
 
 	public static String taxChoiceMessage(Player player) {
 		return player.getName() + " choose one button.";
+	}
+
+	public static String fleetOwnedMessage(Player player, Player owner, int sameOwnerCount, int rent) {
+		return landMessage(player) + "This field is owned by " + owner.getName() + ", who owns a total of "
+				+ sameOwnerCount + " fleet Fields." + "Therefore " + player.getName() + "will pay a rent of " + rent
+				+ ".";
+	}
+
+	public static String fleetMessage(Player player, int sameOwnerCount, int rent) {
+		return landMessage(player) + "This field is owned by no one, who owns a total of " + sameOwnerCount
+				+ " fleet Fields." + "Therefore " + player.getName() + "will pay a rent of " + rent + ".";
 	}
 
 	public static String getFieldName(Player player) {

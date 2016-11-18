@@ -19,7 +19,36 @@ public final class Fleet extends Ownable {
 
 	@Override
 	public void landOnField(Player player) {
-		// TODO Create this!
+		int sameOwnerCount = getSameOwnerCount();
+		System.out.println(sameOwnerCount);
+
+		if ((sameOwnerCount - 1) < 1) {
+			sameOwnerCount = 0;
+		} else {
+			sameOwnerCount -= 1;
+		}
+		int rent = rents[sameOwnerCount];
+		System.out.println("owner count:" + sameOwnerCount);
+		System.out.println("rent fleet: " + rent);
+
+		purchaseField(player, price, rent);
+
+	}
+
+	private int getSameOwnerCount() {
+		if (owner == null) {
+			return 0;
+		}
+
+		int count = 0;
+
+		if (ownerNameList.size() > 0) {
+			for (String ownerName : ownerNameList) {
+				if (ownerName.equals(owner.getName()))
+					count++;
+			}
+		}
+		return count;
 	}
 
 	@Override
