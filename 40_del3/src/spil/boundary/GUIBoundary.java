@@ -14,11 +14,20 @@ public class GUIBoundary {
 	public static boolean purchaseField(Player player, int price) {
 		String result = GUI.getUserButtonPressed(TextBoundary.purchaseFieldMessage(player, price),
 				TextBoundary.buttonYesMessage, TextBoundary.buttonNoMessage);
-		if (result.equals(TextBoundary.buttonYesMessage)) {
+		if (result.equals(TextBoundary.buttonYesMessage) && (checkBalance(player, price))) {
 			print((TextBoundary.purchaseConfirmedMessage(player, price)));
 			return true;
 		}
 		return false;
+	}
+	
+	private static boolean checkBalance(Player player, int price) {
+		if (player.getBalance() >= price) {
+			return true;
+		} else {
+			GUIBoundary.print(TextBoundary.insufficientBalance(player, price));
+			return false;
+		}
 	}
 
 	public static void print(String message) {

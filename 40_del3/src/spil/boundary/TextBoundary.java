@@ -118,6 +118,10 @@ public class TextBoundary {
 		return player.getName() + " has won the game! Congratulations!";
 	}
 
+	public static String insufficientBalance(Player player, int price) {
+		return player.getName() + " does not have enough balance to purchase a field for " + price + "!";
+	}
+
 	public static String getFieldName(Player player) {
 		return TextBoundary.fieldText[player.getPosition() - 1][0];
 	}
