@@ -4,8 +4,16 @@ import spil.boundary.GUIBoundary;
 import spil.boundary.TextBoundary;
 import spil.entity.Player;
 
+/* 
+ * abstract class since an Ownable field is a concept,
+ * and other Fields will inherit from this class.
+ */
 public abstract class Ownable extends Field {
 
+	/* 
+	 * The price variable represents the price of the Field.
+	 * The player variable represents
+	 */
 	protected int price;
 	protected Player owner = null;
 

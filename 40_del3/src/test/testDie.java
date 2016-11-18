@@ -19,7 +19,7 @@ public class testDie {
 	@Test
 	public void testRoll10() {
 
-		die = new Die(100); // 100 inserted to check Die faceValue bounds.
+		die = new Die(100); /* 100 inserted to check Die faceValue bounds */
 
 		int iterations = 1000000;
 
@@ -77,7 +77,7 @@ public class testDie {
 
 		int expected = 0;
 
-		assertEquals(expected, other);
+		assertEquals("expected: " + expected + "\nother " + other, expected, other);
 	}
 
 	@Test
@@ -129,7 +129,39 @@ public class testDie {
 
 		int expected = 0;
 
-		assertEquals(expected, other);
+		assertEquals("expected: " + expected + "\nother: " + other, expected, other);
+	}
+
+	@Test
+	public void testMaxFaceValueOverflow() {
+		die = new Die(Integer.MAX_VALUE + 2);
+
+		/* 
+		 * 6, since the minimum allowed minimum faceValue is 6.
+		 * Since the Integer.MAX_VALUE + 2 wraps around to a negative
+		 * value, the expected value is considered to be 6.
+		 */
+		int expected = 6;
+
+		int actual = die.getCurrMaxFaceValue();
+
+		assertEquals("expected: " + expected + "\nactual: " + actual, expected, actual);
+	}
+
+	@Test
+	public void testMaxFaceValueUnderflow() {
+		die = new Die(Integer.MIN_VALUE - 2);
+
+		/* 
+		 * 10, since the maximum allowed maximum faceValue is 6.
+		 * Since the Integer.MIN_VALUE - 2 wraps around to a positive
+		 * value, the expected value is considered to be 10.
+		 */
+		int expected = 10;
+
+		int actual = die.getCurrMaxFaceValue();
+
+		assertEquals("expected: " + expected + "\nactual: " + actual, expected, actual);
 	}
 
 }
