@@ -29,7 +29,7 @@ public final class Territory extends Ownable {
 	}
 
 	/*
-	 * Getter method for rent.
+	 * Getter method for rent variable.
 	 */
 	@Override
 	public int getRent() {

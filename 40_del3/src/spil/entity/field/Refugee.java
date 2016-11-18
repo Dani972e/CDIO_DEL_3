@@ -15,7 +15,7 @@ public final class Refugee extends Field {
 	private int bonus;
 
 	/* 
-	 * Refugee constructor which sets variable Bonus.
+	 * Refugee constructor which sets variable bonus.
 	 */
 	public Refugee(int bonus) {
 		this.bonus = bonus;

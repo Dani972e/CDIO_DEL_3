@@ -2,7 +2,7 @@ package spil.main;
 
 import spil.controller.GameController;
 
-public final class Main {
+public class Main {
 
 	/*
 	 * Code execution starts here when program is run. 

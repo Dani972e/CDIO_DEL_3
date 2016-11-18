@@ -11,8 +11,8 @@ import spil.entity.Player;
 public abstract class Ownable extends Field {
 
 	/* 
-	 * The price variable represents the price of the Field.
-	 * The player variable represents
+	 * The price variable represents the price of the field.
+	 * The owner variable represents the owner of the field.
 	 */
 	protected int price;
 	protected Player owner = null;
@@ -27,7 +27,8 @@ public abstract class Ownable extends Field {
 
 	/* 
 	 * abstract method, since all classes that inherits
-	 * from this class needs this method.
+	 * from this class needs a getter method for the
+	 * rent variable.
 	 */
 	public abstract int getRent();
 
@@ -43,7 +44,7 @@ public abstract class Ownable extends Field {
 			} else {
 				GUIBoundary.print(TextBoundary.purchaseDeniedMessage(player));
 			}
-			return true; /* TODO Test this return statement. Does the code really work as intended? */
+			return true;
 		} else {
 			if (player.getName().equals(owner.getName())) {
 				GUIBoundary.print(TextBoundary.ownFieldMessage(player));
@@ -52,7 +53,6 @@ public abstract class Ownable extends Field {
 				player.removeBalance(rent);
 				owner.addBalance(rent);
 				GUIBoundary.updatePlayer(owner);
-				System.out.println("Owner of this field: " + owner.getName());
 			}
 			return false;
 		}
