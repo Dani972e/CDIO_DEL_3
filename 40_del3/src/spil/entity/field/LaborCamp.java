@@ -8,7 +8,7 @@ import spil.entity.Player;
 
 public final class LaborCamp extends Ownable {
 
-	private static List<String> ownerNameList = new ArrayList<String>();
+	private static List<Player> ownerList = new ArrayList<Player>();
 
 	private int rent;
 
@@ -22,7 +22,7 @@ public final class LaborCamp extends Ownable {
 		rent = ((FieldBoundary.DICE_MULTIPLIER * player.getCurrentRoll()) * sameOwnerCount);
 
 		if (super.purchaseField(player, price, rent)) {
-			ownerNameList.add(player.getName());
+			ownerList.add(player);
 		}
 	}
 
@@ -33,9 +33,9 @@ public final class LaborCamp extends Ownable {
 
 		int count = 0;
 
-		if (ownerNameList.size() > 0) {
-			for (String ownerName : ownerNameList) {
-				if (ownerName.equals(owner.getName()))
+		if (ownerList.size() > 0) {
+			for (Player ownerP : ownerList) {
+				if (ownerP.equals(owner))
 					count++;
 			}
 		}

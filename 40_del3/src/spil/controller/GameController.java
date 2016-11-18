@@ -7,7 +7,6 @@ import spil.entity.GameBoard;
 import spil.entity.Player;
 import spil.entity.PlayerList;
 
-
 public class GameController {
 
 	private DiceCup diceCup;
@@ -17,7 +16,7 @@ public class GameController {
 	// Spaghetti/ghetto solution? Hvordan er denne klasse generelt? Er den OK?
 	public GameController() {
 		diceCup = new DiceCup(2, 6);
-		
+
 		gameBoard = new GameBoard();
 
 		gameBoard.initFields();
@@ -35,20 +34,20 @@ public class GameController {
 	private void initGameLoop() {
 		int rollTotal;
 		int index = 0;
-		while (playerList.getPlayersLeft()>1) {
+		while (playerList.getPlayersLeft() > 1) {
 			Player currentPlayer = playerList.getPlayer(index);
 
 			rollTotal = diceCup.rollDice(currentPlayer);
 
 			playerList.movePlayer(index, rollTotal);
 			gameBoard.landOnField(currentPlayer);
-			
+
 			if (currentPlayer.isBankrupt())
 				playerList.removePlayer(currentPlayer);
-			
+
 			index++;
 		}
-		
-		GUIBoundary.print(playerList.getLastPlayer().getName()+" has won");
+
+		GUIBoundary.print(playerList.getLastPlayer().getName() + " has won!");
 	}
 }

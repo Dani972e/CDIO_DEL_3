@@ -42,21 +42,6 @@ public class PlayerList {
 		GUIBoundary.placePlayerCar(playerList[playerIndex]);
 	}
 
-<<<<<<< HEAD
-	public Player getPlayer(int index) {
-		return playerList[index];
-	}
-
-	public int getPosition(int index) {
-		return playerList[index].getPosition();
-	}
-
-	public int getTotalPlayers() {
-		return playerList.length;
-	}
-
-=======
->>>>>>> branch 'development' of https://github.com/Dani972e/CDIO_DEL_3.git
 	// Spaghetti/ghetto solution?
 	public void setHomeCars() {
 		for (Player player : playerList) {
@@ -66,49 +51,42 @@ public class PlayerList {
 		}
 	}
 
-<<<<<<< HEAD
-	public void removePlayer(Player playerToDelete){
-		int index=0;
+	public void removePlayer(Player playerToDelete) {
+		int index = 0;
 
-		for(Player player : playerList){
-			//System.out.println(">");
-			if (playerToDelete.equals(player)){
-				//System.out.println("-");
-				playerList[index]=null;
+		for (Player player : playerList) {
+			if (playerToDelete.equals(player)) {
+				playerList[index] = null;
 			}
 			++index;
-		}	
-=======
+		}
+	}
+
 	public Player getPlayer(int index) {
 		return playerList[index];
 	}
 
 	public int getTotalPlayers() {
 		return playerList.length;
->>>>>>> branch 'development' of https://github.com/Dani972e/CDIO_DEL_3.git
 	}
 
 	public int getPlayersLeft() {
 		int left = 0;
 		for (Player player : playerList) {
-			if (player instanceof Player){
+			if (player instanceof Player) {
 				++left;
 			}
 		}
 		return left;
 	}
-	
-	public Player getLastPlayer(){
-		Player last=null;
-		for(Player player : playerList){
-			if(player instanceof Player)
-				last=player;
+
+	public Player getLastPlayer() {
+		Player last = null;
+		for (Player player : playerList) {
+			if (player instanceof Player)
+				last = player;
 		}
 		return last;
-		
 	}
-
-
-
 
 }

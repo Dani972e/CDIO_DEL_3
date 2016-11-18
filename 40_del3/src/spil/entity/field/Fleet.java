@@ -12,7 +12,7 @@ public final class Fleet extends Ownable {
 			FieldBoundary.fleetRents[3] };
 	private int rent;
 
-	private static List<String> ownerNameList = new ArrayList<String>();
+	private static List<Player> ownerList = new ArrayList<Player>();
 
 	public Fleet(int price) {
 		super(price);
@@ -28,7 +28,7 @@ public final class Fleet extends Ownable {
 		} else {
 			sameOwnerCount -= 1;
 		}
-		
+
 		rent = rents[sameOwnerCount];
 
 		purchaseField(player, price, rent);
@@ -41,9 +41,9 @@ public final class Fleet extends Ownable {
 
 		int count = 0;
 
-		if (ownerNameList.size() > 0) {
-			for (String ownerName : ownerNameList) {
-				if (ownerName.equals(owner.getName()))
+		if (ownerList.size() > 0) {
+			for (Player ownerP : ownerList) {
+				if (ownerP.equals(owner))
 					count++;
 			}
 		}
