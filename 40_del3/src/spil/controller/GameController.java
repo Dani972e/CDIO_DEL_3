@@ -34,6 +34,7 @@ public class GameController {
 	private void initGameLoop() {
 		int rollTotal;
 		int index = 0;
+
 		while (playerList.getPlayersLeft() > 1) {
 			Player currentPlayer = playerList.getPlayer(index);
 
@@ -42,12 +43,21 @@ public class GameController {
 			playerList.movePlayer(index, rollTotal);
 			gameBoard.landOnField(currentPlayer);
 
-			if (currentPlayer.isBankrupt())
+			if (currentPlayer.isBankrupt()) {
+				GUIBoundary.print(TextBoundary.removePlayerMessage(currentPlayer));
 				playerList.removePlayer(currentPlayer);
+			}
 
-			index++;
+			index = calculateIndex(index);
 		}
 
-		GUIBoundary.print(playerList.getLastPlayer().getName() + " has won!");
+		GUIBoundary.print(TextBoundary.winnerMessage(playerList.getLastPlayer()));
+	}
+
+	private int calculateIndex(int index) {
+		if (index == (playerList.getTotalPlayers() - 1)) {
+			return index = 0;
+		}
+		return index + 1;
 	}
 }

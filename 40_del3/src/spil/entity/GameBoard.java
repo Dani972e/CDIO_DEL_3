@@ -40,7 +40,7 @@ public class GameBoard {
 	private final Car[] playerCars = {
 			new Car.Builder().patternHorizontalGradiant().typeRacecar().primaryColor(FieldBoundary.carColors[0][0])
 					.secondaryColor(FieldBoundary.carColors[0][1]).build(),
-			new Car.Builder().patternZebra().typeUfo().primaryColor(FieldBoundary.carColors[1][0])
+			new Car.Builder().patternZebra().typeCar().primaryColor(FieldBoundary.carColors[1][0])
 					.secondaryColor(FieldBoundary.carColors[1][1]).build(),
 			new Car.Builder().patternDotted().typeTractor().primaryColor(FieldBoundary.carColors[2][0])
 					.secondaryColor(FieldBoundary.carColors[2][1]).build(),
@@ -48,7 +48,7 @@ public class GameBoard {
 					.secondaryColor(FieldBoundary.carColors[3][1]).build(),
 			new Car.Builder().patternZebra().typeRacecar().primaryColor(FieldBoundary.carColors[4][0])
 					.secondaryColor(FieldBoundary.carColors[4][1]).build(),
-			new Car.Builder().patternDotted().typeUfo().primaryColor(FieldBoundary.carColors[5][0])
+			new Car.Builder().patternDotted().typeCar().primaryColor(FieldBoundary.carColors[5][0])
 					.secondaryColor(FieldBoundary.carColors[5][1]).build(), };
 
 	public GameBoard() {

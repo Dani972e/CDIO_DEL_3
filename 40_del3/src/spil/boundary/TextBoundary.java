@@ -92,7 +92,7 @@ public class TextBoundary {
 	}
 
 	public static String taxMessage(Player player, int rent) {
-		return player.getName() + " pay " + rent + " for landing on " + getFieldName(player);
+		return player.getName() + " pays " + rent + " for landing on " + getFieldName(player);
 	}
 
 	public static String taxChoiceMessage(Player player) {
@@ -108,6 +108,14 @@ public class TextBoundary {
 	public static String fleetMessage(Player player, int sameOwnerCount, int rent) {
 		return landMessage(player) + "This field is owned by no one, who owns a total of " + sameOwnerCount
 				+ " fleet Fields." + "Therefore " + player.getName() + "will pay a rent of " + rent + ".";
+	}
+
+	public static String removePlayerMessage(Player player) {
+		return player.getName() + " has been declared bankrupt, and has been removed from the game!";
+	}
+
+	public static String winnerMessage(Player player) {
+		return player.getName() + " has won the game! Congratulations!";
 	}
 
 	public static String getFieldName(Player player) {
