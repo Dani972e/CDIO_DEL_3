@@ -17,12 +17,24 @@ public abstract class Ownable extends Field {
 	protected int price;
 	protected Player owner = null;
 
+	/* 
+	 * Constructor for the Ownable class which 
+	 * sets the value of the price variable.
+	 */
 	public Ownable(int price) {
 		this.price = price;
 	}
 
+	/* 
+	 * abstract method, since all classes that inherits
+	 * from this class needs this method.
+	 */
 	public abstract int getRent();
 
+	/* 
+	 * General method for all Ownable subclasses, that 
+	 * needs to be able to be purchased by a player.
+	 */
 	public boolean purchaseField(Player player, int price, int rent) {
 		if (owner == null) {
 			if (GUIBoundary.purchaseField(player, price)) {

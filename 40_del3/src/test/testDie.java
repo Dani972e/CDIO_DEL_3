@@ -1,6 +1,7 @@
 package test;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.fail;
 
 import org.junit.After;
 import org.junit.Test;
@@ -16,6 +17,11 @@ public class testDie {
 		die = null;
 	}
 
+	/* 
+	 * Tests whether the Die roll values are within the expected bounds. 
+	 * This is a positive test, since the Die should be able to handle
+	 * a maximum faceValue of 10.
+	 */
 	@Test
 	public void testRoll10() {
 
@@ -75,11 +81,20 @@ public class testDie {
 
 		System.out.println("other: " + other);
 
+		if (other > 0) {
+			fail("other > 0 is true: Fail, since other MUST be 0.");
+		}
+
 		int expected = 0;
 
 		assertEquals("expected: " + expected + "\nother " + other, expected, other);
 	}
 
+	/* 
+	 * Tests whether the Die roll values are within the expected bounds. 
+	 * This is a positive test, since the Die should be able to handle
+	 * a maximum faceValue of 6.
+	 */
 	@Test
 	public void testRoll6() {
 
@@ -127,14 +142,26 @@ public class testDie {
 
 		System.out.println("other: " + other);
 
+		if (other > 0) {
+			fail("other > 0 is true: Fail, since other MUST be 0.");
+		}
+
 		int expected = 0;
 
 		assertEquals("expected: " + expected + "\nother: " + other, expected, other);
 	}
 
+	/* 
+	 * Tests whether the upper bound for the faceValue is working as intended. 
+	 * If the faceValue is over 10, it should revert to 10. If its lower than 6,
+	 * it should revert to 6. This is a positive test, since it should be able
+	 * to handle this.
+	 */
 	@Test
-	public void testMaxFaceValueOverflow() {
-		die = new Die(Integer.MAX_VALUE + 2);
+	public void testMaxFaceValue1() {
+		int faceValueAmount = 1;
+
+		die = new Die(faceValueAmount);
 
 		/* 
 		 * 6, since the minimum allowed minimum faceValue is 6.
@@ -145,9 +172,155 @@ public class testDie {
 
 		int actual = die.getCurrMaxFaceValue();
 
+		if (actual == faceValueAmount) {
+			fail("faceValue == -1, true: The lower bound is not working.");
+		}
+
+		if (actual != 6) {
+			fail("faceValue != 6, true: The faceValue variable is not equal to 6, which it should be.");
+		}
+
 		assertEquals("expected: " + expected + "\nactual: " + actual, expected, actual);
 	}
 
+	/* 
+	 * Tests whether the upper bound for the faceValue is working as intended. 
+	 * If the faceValue is over 10, it should revert to 10. If its lower than 6,
+	 * it should revert to 6. This is a positive test, since it should be able
+	 * to handle this.
+	 */
+	@Test
+	public void testMaxFaceValueNeg1() {
+		int faceValueAmount = -1;
+
+		die = new Die(faceValueAmount);
+
+		/* 
+		 * 6, since the minimum allowed minimum faceValue is 6.
+		 * Since the Integer.MAX_VALUE + 2 wraps around to a negative
+		 * value, the expected value is considered to be 6.
+		 */
+		int expected = 6;
+
+		int actual = die.getCurrMaxFaceValue();
+
+		if (actual == faceValueAmount) {
+			fail("faceValue == -1, true: The lower bound is not working.");
+		}
+
+		if (actual != 6) {
+			fail("faceValue != 6, true: The faceValue variable is not equal to 6, which it should be.");
+		}
+
+		assertEquals("expected: " + expected + "\nactual: " + actual, expected, actual);
+	}
+
+	/* 
+	 * Tests whether the upper bound for the faceValue is working as intended. 
+	 * If the faceValue is over 10, it should revert to 10. If its lower than 6,
+	 * it should revert to 6. This is a positive test, since it should be able
+	 * to handle this.
+	 */
+	@Test
+	public void testMaxFaceValueNeg50() {
+		int faceValueAmount = -50;
+
+		die = new Die(faceValueAmount);
+
+		/* 
+		 * 6, since the minimum allowed minimum faceValue is 6.
+		 * Since the Integer.MAX_VALUE + 2 wraps around to a negative
+		 * value, the expected value is considered to be 6.
+		 */
+		int expected = 6;
+
+		int actual = die.getCurrMaxFaceValue();
+
+		if (actual == faceValueAmount) {
+			fail("faceValue == -50, true: The lower bound is not working.");
+		}
+
+		if (actual != 6) {
+			fail("faceValue != 6, true: The faceValue variable is not equal to 6, which it should be.");
+		}
+
+		assertEquals("expected: " + expected + "\nactual: " + actual, expected, actual);
+	}
+
+	/* 
+	 * Tests whether the upper bound for the faceValue is working as intended. 
+	 * If the faceValue is over 10, it should revert to 10. If its lower than 6,
+	 * it should revert to 6. This is a positive test, since it should be able
+	 * to handle this.
+	 */
+	@Test
+	public void testMaxFaceValue50() {
+		int faceValueAmount = 50;
+
+		die = new Die(faceValueAmount);
+
+		/* 
+		 * 10, since the maximum allowed maximum faceValue is 10.
+		 * Since the Die class has a higher bounds of 10 for the 
+		 * maximum faceValue, it will be changed to 10 instead of 50.
+		 */
+		int expected = 10;
+
+		int actual = die.getCurrMaxFaceValue();
+
+		if (actual == faceValueAmount) {
+			fail("faceValue == 50, true: The higher bound is not working.");
+		}
+
+		if (actual != 10) {
+			fail("faceValue != 10, true: The faceValue variable is not equal to 10, which it should be.");
+		}
+
+		assertEquals("expected: " + expected + "\nactual: " + actual, expected, actual);
+	}
+
+	/* 
+	 * Tests whether the Die roll values are within the expected bounds, 
+	 * even when an overflow occurs. This is a positive test, since the 
+	 * Die should be able to handle an overflow without any exception throws.
+	 * 
+	 * This introduces a slight problem in the program however, since the
+	 * lower bounds of the faceValue would not be expected in this case.
+	 * 
+	 * This also means, that its debatable whether this is a negative or positive
+	 * test.
+	 */
+	@Test
+	public void testMaxFaceValueOverflow() {
+		die = new Die(Integer.MAX_VALUE + 2);
+
+		/* 
+		 * 6, since the minimum allowed minimum faceValue is 6.
+		 * Since the Integer.MAX_VALUE + 2 wraps around to a negative
+		 * value, the expected value is considered to be 6.
+		 */
+		int expected = 10;
+
+		int actual = die.getCurrMaxFaceValue();
+
+		if (actual != expected) {
+			fail("actual != expected, true: Actual is not equal to the expected value.");
+		}
+
+		assertEquals("expected: " + expected + "\nactual: " + actual, expected, actual);
+	}
+
+	/* 
+	 * Tests whether the Die roll values are within the expected bounds, 
+	 * even when an underflow occurs. This is a positive test, since the 
+	 * Die should be able to handle an underflow without any exception throws.
+	 * 
+	 * This introduces a slight problem in the program however, since the
+	 * higher bounds of the faceValue would not be expected in this case.
+	 * 
+	 * This also means, that its debatable whether this is a negative or positive
+	 * test.
+	 */
 	@Test
 	public void testMaxFaceValueUnderflow() {
 		die = new Die(Integer.MIN_VALUE - 2);
@@ -157,9 +330,13 @@ public class testDie {
 		 * Since the Integer.MIN_VALUE - 2 wraps around to a positive
 		 * value, the expected value is considered to be 10.
 		 */
-		int expected = 10;
+		int expected = 6;
 
 		int actual = die.getCurrMaxFaceValue();
+
+		if (actual != expected) {
+			fail("actual != expected, true: Actual is not equal to the expected value.");
+		}
 
 		assertEquals("expected: " + expected + "\nactual: " + actual, expected, actual);
 	}
