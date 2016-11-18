@@ -1,12 +1,12 @@
 package spil.controller;
 
-import desktop_resources.GUI;
 import spil.boundary.GUIBoundary;
 import spil.boundary.TextBoundary;
 import spil.entity.DiceCup;
 import spil.entity.GameBoard;
 import spil.entity.Player;
 import spil.entity.PlayerList;
+
 
 public class GameController {
 
@@ -17,6 +17,7 @@ public class GameController {
 	// Spaghetti/ghetto solution? Hvordan er denne klasse generelt? Er den OK?
 	public GameController() {
 		diceCup = new DiceCup(2, 6);
+		
 		gameBoard = new GameBoard();
 
 		gameBoard.initFields();
@@ -32,29 +33,22 @@ public class GameController {
 	}
 
 	private void initGameLoop() {
-
+		int rollTotal;
 		int index = 0;
-		while (true) {
+		while (playerList.getPlayersLeft()>1) {
 			Player currentPlayer = playerList.getPlayer(index);
 
-			int rollTotal = diceCup.rollDice(currentPlayer);
+			rollTotal = diceCup.rollDice(currentPlayer);
 
 			playerList.movePlayer(index, rollTotal);
 			gameBoard.landOnField(currentPlayer);
-
-			if (playerList.getPlayersLeft() == 1) {
-				// TODO create this.
-				GUI.showMessage("GAME IS WON!");
-			}
-
-			// TODO NOT SURE IF THIS IS FINE EHEHE. // Spaghetti/ghetto
-			// solution?? Hvor skal vi tjekke for bankruptcy?
-			if (index == playerList.getTotalPlayers() - 1) {
-				index = 0;
-				continue;
-			}
+			
+			if (currentPlayer.isBankrupt())
+				playerList.removePlayer(currentPlayer);
+			
 			index++;
-
 		}
+		
+		GUIBoundary.print(playerList.getLastPlayer().getName()+" has won");
 	}
 }
