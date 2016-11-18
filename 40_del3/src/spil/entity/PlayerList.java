@@ -12,14 +12,15 @@ public class PlayerList {
 	private Player[] playerList;
 
 	public PlayerList(int playerCount, int maxCoinAmount, int minCoinAmount, int coins, int position) {
-		playerList = new Player[playerCount];
-
+		
 		if (playerCount > MAX_PLAYER_COUNT) {
 			playerCount = MAX_PLAYER_COUNT;
 		} else if (playerCount < MIN_PLAYER_COUNT) {
 			playerCount = MIN_PLAYER_COUNT;
 		}
 
+		playerList = new Player[playerCount];
+		
 		for (int i = 0; i < playerCount; i++) {
 			playerList[i] = new Player(TextBoundary.playerName + " " + (i + 1), maxCoinAmount, minCoinAmount, coins,
 					position);
@@ -34,7 +35,8 @@ public class PlayerList {
 		while (newPosition > numberOfFields) {
 			newPosition -= numberOfFields;
 		}
-
+		
+		// Spaghetti/ghetto solution?
 		GUIBoundary.removePlayerCar(playerList[playerIndex]);
 		playerList[playerIndex].setPosition(newPosition);
 		GUIBoundary.placePlayerCar(playerList[playerIndex]);
@@ -51,7 +53,8 @@ public class PlayerList {
 	public int getTotalPlayers() {
 		return playerList.length;
 	}
-
+	
+	// Spaghetti/ghetto solution?
 	public void setHomeCars() {
 		System.out.println(playerList.length);
 		for (Player player : playerList) {

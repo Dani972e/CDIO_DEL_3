@@ -48,7 +48,7 @@ public class GUIBoundary {
 		GUI.removeCar(player.getPosition(), player.getName());
 	}
 
-	public static boolean decideTaxChoice(Player player, int taxAmount) {
+	public static boolean chooseTaxEffect(Player player, int taxAmount) {
 		String btn1 = Integer.toString(taxAmount);
 		String btn2 = TextBoundary.btnBalancePercentage;
 

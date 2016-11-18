@@ -28,4 +28,8 @@ public class Die {
 		return faceValue;
 	}
 
+	public int getCurrMaxFaceValue() {
+		return currMaxFaceValue;
+	}
+
 }

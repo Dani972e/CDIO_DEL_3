@@ -11,13 +11,14 @@ public class DiceCup {
 	private Die[] diceList;
 
 	public DiceCup(int dieCount, int maxFaceValue) {
-		diceList = new Die[dieCount];
 
 		if (dieCount > MAX_DIE_COUNT) {
 			dieCount = MAX_DIE_COUNT;
 		} else if (dieCount < MIN_DIE_COUNT) {
 			dieCount = MIN_DIE_COUNT;
 		}
+
+		diceList = new Die[dieCount];
 
 		for (int i = 0; i < dieCount; i++) {
 			diceList[i] = new Die(maxFaceValue);
@@ -31,8 +32,13 @@ public class DiceCup {
 			rollList[i] = diceList[i].roll();
 			total += rollList[i];
 		}
+		// Spaghetti/ghetto solution?
 		GUIBoundary.print(TextBoundary.rollMessage(player, rollList));
 		return total;
+	}
+
+	public int getDieAmount() {
+		return diceList.length;
 	}
 
 }
