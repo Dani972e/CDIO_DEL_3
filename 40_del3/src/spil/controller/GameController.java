@@ -53,6 +53,8 @@ public class GameController {
 		}
 
 		GUIBoundary.print(TextBoundary.winnerMessage(playerList.getLastPlayer()));
+
+		System.exit(0);
 	}
 
 	private int calculateIndex(int index) {

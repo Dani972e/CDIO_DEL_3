@@ -21,7 +21,6 @@ public final class Fleet extends Ownable {
 	@Override
 	public void landOnField(Player player) {
 		int sameOwnerCount = getSameOwnerCount();
-		System.out.println(sameOwnerCount);
 
 		if ((sameOwnerCount - 1) < 1) {
 			sameOwnerCount = 0;
