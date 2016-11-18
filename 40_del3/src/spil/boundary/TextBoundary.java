@@ -8,6 +8,9 @@ public class TextBoundary {
 
 	}
 
+	public static final String TITLE = "Treasure Hunt 2";
+	public static final String VERSION = "v0.01";
+
 	public static final String[][] fieldText = { { "1. Home", "( ͡° ͜ʖ ͡°)", "Home, sweet home." },
 			{ "2. Tribe Encampment", "Territory", "Rent: 100 ~ Price: 1000" },
 			{ "3. Crater", "Territory", "Rent: 300 ~ Price: 1500" },
@@ -29,25 +32,19 @@ public class TextBoundary {
 			{ "21. The Buccaneers", "Fleet", "Pay: 500-4000 ~ Price: 4000" },
 			{ "22. Privateer Armade", "Fleet", "Pay: 500-4000 ~ Price: 4000" }, };
 
-	public static final String title = "Treasure Hunt 2";
-
-	public static final String welcomeMessage = "Welcome to " + title
+	public static final String welcomeMessage = "Welcome to " + TITLE + ", " + VERSION
 			+ "!\n\nThis game is a Monopoly-like game, with a few tweaks. You'll roll with two dice"
 			+ " and land on a field. The field will have an effect on your bank account. If you reach bankruptcy, you're out. The game will"
 			+ " continue until only one player is left, who will be the winner.\n\nTo proceed, please choose the number of players.";
 
-	public static final String playerName = "Player";
-
 	public static final String[] btnArray = { "2", "3", "4", "5", "6" };
+
+	public static final String playerName = "Player";
 
 	public static final String buttonYesMessage = "Yes";
 	public static final String buttonNoMessage = "No";
 
 	public static final String btnBalancePercentage = "10% of balance";
-
-	public static final String playerAmountMessage(int playerAmount) {
-		return playerAmount + " players will play the game!\n\nTo proceed, click the \"OK\" button.";
-	}
 
 	public static final String purchaseFieldMessage(Player player, int price) {
 		return landMessage(player) + getFieldName(player) + " is available for purchase. Does " + player.getName()
@@ -63,21 +60,21 @@ public class TextBoundary {
 		return player.getName() + " did not purchase " + getFieldName(player) + ".";
 	}
 
+	public static final String playerAmountMessage(int playerAmount) {
+		return playerAmount + " players will play the game!\n\nTo proceed, click the \"OK\" button.";
+	}
+
 	public static String rollMessage(Player player, int[] rollValues) {
 		StringBuilder sb = new StringBuilder();
-
 		sb.append("[");
 		for (int i = 0, n = rollValues.length; i < n; i++) {
-
 			if (i == rollValues.length - 1) {
 				sb.append(Integer.toString(rollValues[i]));
 				break;
 			}
-
 			sb.append(Integer.toString(rollValues[i]) + ", ");
 		}
 		sb.append("]");
-
 		return player.getName() + " rolled " + sb.toString() + "!";
 	}
 
