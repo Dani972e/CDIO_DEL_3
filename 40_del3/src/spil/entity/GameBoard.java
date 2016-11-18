@@ -19,6 +19,7 @@ public class GameBoard {
 
 	private final spil.entity.field.Field[] fields = {
 			// DO THIS IN A FOR LOOP FOR EFFICIENY!!!!!!!!!!!!!!!!
+			new Refugee(FieldBoundary.refugeeReceive[0]), new Refugee(FieldBoundary.refugeeReceive[1]),
 			new Territory(FieldBoundary.territoryPrices[0], FieldBoundary.territoryRents[0]),
 			new Territory(FieldBoundary.territoryPrices[1], FieldBoundary.territoryRents[1]),
 			new Territory(FieldBoundary.territoryPrices[2], FieldBoundary.territoryRents[2]),
@@ -67,7 +68,10 @@ public class GameBoard {
 	}
 
 	public void landOnField(Player player) {
-		fields[player.getPosition() - 2].landOnField(player);
+		int pos = player.getPosition();
+		if (pos>1)
+		fields[pos].landOnField(player);
+		
 		GUIBoundary.updatePlayer(player);
 	}
 
