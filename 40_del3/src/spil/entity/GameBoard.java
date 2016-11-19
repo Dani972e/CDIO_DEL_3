@@ -18,8 +18,10 @@ public class GameBoard {
 
 	private final desktop_fields.Field[] guiFields;
 
-	private final spil.entity.field.Field[] fields = { new Refugee(FieldBoundary.refugeeReceive[0]),
-			new Refugee(FieldBoundary.refugeeReceive[1]),
+	private final spil.entity.field.Field[] fields = { 
+			
+			//new Refugee(FieldBoundary.refugeeReceive[0]),
+			//new Refugee(FieldBoundary.refugeeReceive[1]),
 			new Territory(FieldBoundary.territoryPrices[0], FieldBoundary.territoryRents[0]),
 			new Territory(FieldBoundary.territoryPrices[1], FieldBoundary.territoryRents[1]),
 			new Territory(FieldBoundary.territoryPrices[2], FieldBoundary.territoryRents[2]),
@@ -31,7 +33,8 @@ public class GameBoard {
 			new Territory(FieldBoundary.territoryPrices[8], FieldBoundary.territoryRents[8]),
 			new Territory(FieldBoundary.territoryPrices[9], FieldBoundary.territoryRents[9]),
 			new Territory(FieldBoundary.territoryPrices[10], FieldBoundary.territoryRents[10]),
-			new Refugee(FieldBoundary.refugeeReceive[0]), new Refugee(FieldBoundary.refugeeReceive[1]),
+			new Refugee(FieldBoundary.refugeeReceive[0]), 
+			new Refugee(FieldBoundary.refugeeReceive[1]),
 			new LaborCamp(FieldBoundary.laborCampPrices[0]), new LaborCamp(FieldBoundary.laborCampPrices[1]),
 			new Tax(FieldBoundary.taxRents[0]), new Tax(FieldBoundary.taxRents[1]),
 			new Fleet(FieldBoundary.fleetPrices[0]), new Fleet(FieldBoundary.fleetPrices[1]),
@@ -85,7 +88,6 @@ public class GameBoard {
 		} else {
 			GUIBoundary.print(TextBoundary.homeMessage(player));
 		}
-		GUIBoundary.updatePlayer(player);
 	}
 
 	public void placePlayer(Player player) {

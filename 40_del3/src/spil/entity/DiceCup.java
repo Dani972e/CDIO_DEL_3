@@ -30,6 +30,14 @@ public class DiceCup {
 		return rollList;
 	}
 
+	public int getTotalRoll(int[] rollList) {
+		int total = 0;
+		for (int i = 0, n = rollList.length; i < n; i++) {
+			total += rollList[i];
+		}
+		return total;
+	}
+
 	public int getDieAmount() {
 		return diceList.length;
 	}

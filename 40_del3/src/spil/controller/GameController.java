@@ -13,7 +13,6 @@ public class GameController {
 	private PlayerList playerList;
 	private GameBoard gameBoard;
 
-	// Spaghetti/ghetto solution? Hvordan er denne klasse generelt? Er den OK?
 	public GameController() {
 		diceCup = new DiceCup(2, 6);
 
@@ -40,16 +39,17 @@ public class GameController {
 			GUIBoundary.print(TextBoundary.rollInfoMessage(currentPlayer));
 
 			int[] rollList = diceCup.rollDice(currentPlayer);
-			int rollTotal = getTotalRoll(rollList);
+			int rollTotal = diceCup.getTotalRoll(rollList);
+
 			currentPlayer.setLatestRoll(rollTotal);
 			GUIBoundary.print(TextBoundary.rollMessage(currentPlayer, rollList));
-			
+
 			GUIBoundary.removePlayerCar(currentPlayer);
 			gameBoard.movePlayer(currentPlayer, rollTotal);
 			GUIBoundary.placePlayerCar(currentPlayer);
-			
-			
+
 			gameBoard.landOnField(currentPlayer);
+			GUIBoundary.updatePlayer(currentPlayer);
 
 			if (currentPlayer.isBankrupt()) {
 				GUIBoundary.print(TextBoundary.removePlayerMessage(currentPlayer));
@@ -69,14 +69,6 @@ public class GameController {
 			return index = 0;
 		}
 		return index + 1;
-	}
-
-	private int getTotalRoll(int[] rollList) {
-		int total = 0;
-		for (int i = 0, n = rollList.length; i < n; i++) {
-			total += rollList[i];
-		}
-		return total;
 	}
 
 }
