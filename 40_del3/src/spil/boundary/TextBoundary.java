@@ -11,7 +11,8 @@ public class TextBoundary {
 	public static final String TITLE = "Treasure Hunt 2";
 	public static final String VERSION = "v0.01";
 
-	public static final String[][] fieldText = { { "1. Home", "( ͡° ͜ʖ ͡°)", "Home, sweet home." },
+	public static final String[][] fieldText = { 
+			{ "1. Home", "( ͡° ͜ʖ ͡°)", "Home, sweet home." },
 			{ "2. Tribe Encampment", "Territory", "Rent: 100 ~ Price: 1000" },
 			{ "3. Crater", "Territory", "Rent: 300 ~ Price: 1500" },
 			{ "4. Mountain", "Territory", "Rent: 500 ~ Price: 2000" },
@@ -24,7 +25,7 @@ public class TextBoundary {
 			{ "11. Tower", "Territory", "Rent: 3200 ~ Price: 6000" },
 			{ "12. Castle", "Territory", "Rent: 4000 ~ Price: 8000" },
 			{ "13. Walled city", "Refugee", "Receive: 5000" }, { "14. Monastery", "Refugee", "Receive: 500" },
-			{ "15. Huts in the Mountain", "Labor camp", "Pay: 100 * dice ~ Price: 2500" },
+			{ "15. Huts in the Mountain", "Labor Camp", "Pay: 100 * dice ~ Price: 2500" },
 			{ "16. The Pit", "Labor Camp", "Pay: 100 * dice ~ Price: 2500" }, { "17. Gold Mine", "Tax", "Pay: 2000" },
 			{ "18. Caravan", "Tax", "Pay: 4000 or 10% of your coins" },
 			{ "19. Second Sail", "Fleet", "Pay: 500-4000 ~ Price: 4000" },

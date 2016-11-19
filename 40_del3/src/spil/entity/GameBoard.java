@@ -19,9 +19,10 @@ public class GameBoard {
 	private final desktop_fields.Field[] guiFields;
 
 	private final spil.entity.field.Field[] fields = { 
-			
-			//new Refugee(FieldBoundary.refugeeReceive[0]),
-			//new Refugee(FieldBoundary.refugeeReceive[1]),
+			// ... yeah this field is needed. Maybe?
+			new Refugee(FieldBoundary.refugeeReceive[0]),
+			new Refugee(FieldBoundary.refugeeReceive[1]),
+			// These fields are needed, else the text are not lining up, for some reason.
 			new Territory(FieldBoundary.territoryPrices[0], FieldBoundary.territoryRents[0]),
 			new Territory(FieldBoundary.territoryPrices[1], FieldBoundary.territoryRents[1]),
 			new Territory(FieldBoundary.territoryPrices[2], FieldBoundary.territoryRents[2]),
@@ -68,9 +69,6 @@ public class GameBoard {
 		GUIBoundary.initFields(guiFields);
 	}
 
-	/*
-	 * NOT QUITE WORKING AS IT SHOULD.
-	 */
 	public void movePlayer(Player player, int amount) {
 		int newPosition = player.getPosition() + amount;
 		int numberOfFields = FieldBoundary.FIELD_COUNT;

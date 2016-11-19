@@ -6,16 +6,35 @@ import java.util.List;
 import spil.boundary.FieldBoundary;
 import spil.entity.Player;
 
+/* 
+ * final class so nobody accidently inherits from this class.
+ */
 public final class LaborCamp extends Ownable {
 
+	/*
+	 * ArrayList object to keep track of Players who own
+	 * instances of the LaborCamp field.
+	 */
 	private static List<Player> ownerList = new ArrayList<Player>();
 
+	/*
+	 * Rent amount of the field.
+	 */
 	private int rent;
 
+	/*
+	 * Constructor that sets price variable with super constructor.
+	 */
 	public LaborCamp(int price) {
 		super(price);
 	}
 
+	/*
+	 * If a Player lands on a LaborCamp field, the amount of LaborCamp fields
+	 * with the same owner is calculated which then is used to calculate
+	 * the rent of the field. Asks the Player whether they want to purchase the 
+	 * field or not.
+	 */
 	@Override
 	public void landOnField(Player player) {
 		int sameOwnerCount = getSameOwnerCount();
@@ -26,6 +45,10 @@ public final class LaborCamp extends Ownable {
 		}
 	}
 
+	/*
+	 * Returns the amount of LaborCamp fields with
+	 * the same owner, of this specific field.
+	 */
 	private int getSameOwnerCount() {
 		if (owner == null) {
 			return 0;
@@ -42,6 +65,9 @@ public final class LaborCamp extends Ownable {
 		return count;
 	}
 
+	/*
+	 * Returns the rent variable.
+	 */
 	@Override
 	public int getRent() {
 		return rent;
