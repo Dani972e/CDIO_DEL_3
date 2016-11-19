@@ -41,10 +41,14 @@ public class GameController {
 
 			int[] rollList = diceCup.rollDice(currentPlayer);
 			int rollTotal = getTotalRoll(rollList);
-			currentPlayer.setCurrentRoll(rollTotal);
+			currentPlayer.setLatestRoll(rollTotal);
 			GUIBoundary.print(TextBoundary.rollMessage(currentPlayer, rollList));
-
-			playerList.movePlayer(index, rollTotal);
+			
+			GUIBoundary.removePlayerCar(currentPlayer);
+			gameBoard.movePlayer(currentPlayer, rollTotal);
+			GUIBoundary.placePlayerCar(currentPlayer);
+			
+			
 			gameBoard.landOnField(currentPlayer);
 
 			if (currentPlayer.isBankrupt()) {

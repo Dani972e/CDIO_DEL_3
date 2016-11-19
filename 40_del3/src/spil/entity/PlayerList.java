@@ -1,7 +1,6 @@
 package spil.entity;
 
 import desktop_codebehind.Car;
-import spil.boundary.FieldBoundary;
 import spil.boundary.GUIBoundary;
 import spil.boundary.TextBoundary;
 
@@ -29,21 +28,6 @@ public class PlayerList {
 		}
 	}
 
-	public void movePlayer(int playerIndex, int amount) {
-		int newPosition = playerList[playerIndex].getPosition() + amount;
-		int numberOfFields = FieldBoundary.FIELD_COUNT;
-
-		while (newPosition > numberOfFields) {
-			newPosition -= numberOfFields;
-		}
-
-		// Spaghetti/ghetto solution?
-		GUIBoundary.removePlayerCar(playerList[playerIndex]);
-		playerList[playerIndex].setPosition(newPosition);
-		GUIBoundary.placePlayerCar(playerList[playerIndex]);
-	}
-
-	// Spaghetti/ghetto solution?
 	public void setHomeCars() {
 		for (Player player : playerList) {
 			player.setPosition(1);

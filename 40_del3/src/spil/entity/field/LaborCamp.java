@@ -19,7 +19,7 @@ public final class LaborCamp extends Ownable {
 	@Override
 	public void landOnField(Player player) {
 		int sameOwnerCount = getSameOwnerCount();
-		rent = ((FieldBoundary.DICE_MULTIPLIER * player.getCurrentRoll()) * sameOwnerCount);
+		rent = ((FieldBoundary.DICE_MULTIPLIER * player.getLatestRoll()) * sameOwnerCount);
 
 		if (super.purchaseField(player, price, rent)) {
 			ownerList.add(player);

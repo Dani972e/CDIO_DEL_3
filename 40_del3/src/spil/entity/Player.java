@@ -74,11 +74,11 @@ public class Player {
 		return position;
 	}
 
-	public int getCurrentRoll() {
+	public int getLatestRoll() {
 		return latestRoll;
 	}
 
-	public void setCurrentRoll(int currentRoll) {
+	public void setLatestRoll(int currentRoll) {
 		this.latestRoll = currentRoll;
 	}
 

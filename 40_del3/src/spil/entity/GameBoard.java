@@ -65,6 +65,19 @@ public class GameBoard {
 		GUIBoundary.initFields(guiFields);
 	}
 
+	/*
+	 * NOT QUITE WORKING AS IT SHOULD.
+	 */
+	public void movePlayer(Player player, int amount) {
+		int newPosition = player.getPosition() + amount;
+		int numberOfFields = FieldBoundary.FIELD_COUNT;
+
+		while (newPosition > numberOfFields) {
+			newPosition -= numberOfFields;
+		}
+		player.setPosition(newPosition);
+	}
+
 	public void landOnField(Player player) {
 		int pos = player.getPosition();
 		if (pos > 1) {
