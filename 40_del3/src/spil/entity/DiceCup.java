@@ -1,8 +1,5 @@
 package spil.entity;
 
-import spil.boundary.GUIBoundary;
-import spil.boundary.TextBoundary;
-
 public class DiceCup {
 
 	private final int MAX_DIE_COUNT = 1000;
@@ -25,16 +22,12 @@ public class DiceCup {
 		}
 	}
 
-	public int rollDice(Player player) {
+	public int[] rollDice(Player player) {
 		int[] rollList = new int[diceList.length];
-		int total = 0;
 		for (int i = 0, n = rollList.length; i < n; i++) {
 			rollList[i] = diceList[i].roll();
-			total += rollList[i];
 		}
-		// Spaghetti/ghetto solution?
-		GUIBoundary.print(TextBoundary.rollMessage(player, rollList));
-		return total;
+		return rollList;
 	}
 
 	public int getDieAmount() {

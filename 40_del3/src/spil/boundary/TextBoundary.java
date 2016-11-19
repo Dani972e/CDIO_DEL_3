@@ -25,7 +25,7 @@ public class TextBoundary {
 			{ "12. Castle", "Territory", "Rent: 4000 ~ Price: 8000" },
 			{ "13. Walled city", "Refugee", "Receive: 5000" }, { "14. Monastery", "Refugee", "Receive: 500" },
 			{ "15. Huts in the Mountain", "Labor camp", "Pay: 100 * dice ~ Price: 2500" },
-			{ "16. The Pit", "Labor camp", "Pay: 100 * dice ~ Price: 2500" }, { "17. Gold Mine", "Tax", "Pay: 2000" },
+			{ "16. The Pit", "Labor Camp", "Pay: 100 * dice ~ Price: 2500" }, { "17. Gold Mine", "Tax", "Pay: 2000" },
 			{ "18. Caravan", "Tax", "Pay: 4000 or 10% of your coins" },
 			{ "19. Second Sail", "Fleet", "Pay: 500-4000 ~ Price: 4000" },
 			{ "20. Sea Grover", "Fleet", "Pay: 500-4000 ~ Price: 4000" },
@@ -120,6 +120,10 @@ public class TextBoundary {
 
 	public static String winnerMessage(Player player) {
 		return player.getName() + " has won the game! Congratulations!";
+	}
+
+	public static String homeMessage(Player player) {
+		return player.getName() + " lands on " + fieldText[0][0] + "!\n\n" + fieldText[0][1];
 	}
 
 	public static String insufficientBalance(Player player, int price) {

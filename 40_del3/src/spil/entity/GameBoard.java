@@ -67,9 +67,11 @@ public class GameBoard {
 
 	public void landOnField(Player player) {
 		int pos = player.getPosition();
-		if (pos > 1)
+		if (pos > 1) {
 			fields[pos].landOnField(player);
-
+		} else {
+			GUIBoundary.print(TextBoundary.homeMessage(player));
+		}
 		GUIBoundary.updatePlayer(player);
 	}
 

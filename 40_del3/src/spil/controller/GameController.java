@@ -32,14 +32,17 @@ public class GameController {
 	}
 
 	private void initGameLoop() {
-		int rollTotal;
 		int index = 0;
 
 		while (playerList.getPlayersLeft() > 1) {
 			Player currentPlayer = playerList.getPlayer(index);
 
 			GUIBoundary.print(TextBoundary.rollInfoMessage(currentPlayer));
-			rollTotal = diceCup.rollDice(currentPlayer);
+
+			int[] rollList = diceCup.rollDice(currentPlayer);
+			int rollTotal = getTotalRoll(rollList);
+			currentPlayer.setCurrentRoll(rollTotal);
+			GUIBoundary.print(TextBoundary.rollMessage(currentPlayer, rollList));
 
 			playerList.movePlayer(index, rollTotal);
 			gameBoard.landOnField(currentPlayer);
@@ -63,4 +66,13 @@ public class GameController {
 		}
 		return index + 1;
 	}
+
+	private int getTotalRoll(int[] rollList) {
+		int total = 0;
+		for (int i = 0, n = rollList.length; i < n; i++) {
+			total += rollList[i];
+		}
+		return total;
+	}
+
 }
