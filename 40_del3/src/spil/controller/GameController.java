@@ -22,7 +22,8 @@ public class GameController {
 
 		int playerAmount = GUIBoundary.decidePlayerAmount();
 
-		playerList = new PlayerList(playerAmount, 10000000, 0, 30000, 0, gameBoard.getRandomUniqueCars());
+		// Position used to be 0, changed it to 1 for debugging purposes.
+		playerList = new PlayerList(playerAmount, 10000000, 0, 30000, 1, gameBoard.getRandomUniqueCars());
 		playerList.setHomeCars();
 
 		GUIBoundary.print(TextBoundary.playerAmountMessage(playerAmount));

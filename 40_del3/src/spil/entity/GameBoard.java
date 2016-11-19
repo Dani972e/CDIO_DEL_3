@@ -20,8 +20,8 @@ public class GameBoard {
 
 	private final spil.entity.field.Field[] fields = { 
 			// ... yeah this field is needed. Maybe?
-			new Refugee(FieldBoundary.refugeeReceive[0]),
-			new Refugee(FieldBoundary.refugeeReceive[1]),
+			new Refugee(0),
+			new Refugee(0),
 			// These fields are needed, else the text are not lining up, for some reason.
 			new Territory(FieldBoundary.territoryPrices[0], FieldBoundary.territoryRents[0]),
 			new Territory(FieldBoundary.territoryPrices[1], FieldBoundary.territoryRents[1]),

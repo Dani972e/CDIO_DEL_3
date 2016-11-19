@@ -51,6 +51,7 @@ public class GUIBoundary {
 	}
 
 	public static void removePlayerCar(Player player) {
+		// This should not be here.
 		int pos = player.getPosition();
 		if (pos == 0) {
 			player.setPosition(1);
