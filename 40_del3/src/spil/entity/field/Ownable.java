@@ -43,13 +43,13 @@ public abstract class Ownable extends Field {
 				owner.removeBalance(price);
 			} else {
 				GUIBoundary.print(TextBoundary.purchaseDeniedMessage(player));
-			}
+			} // remember to test this. 
 			return true;
 		} else {
 			if (player.getName().equals(owner.getName())) {
 				GUIBoundary.print(TextBoundary.ownFieldMessage(player));
 			} else {
-				GUIBoundary.print(TextBoundary.alreadyPurchasedMessage(owner, rent));
+				GUIBoundary.print(TextBoundary.alreadyPurchasedMessage(player, owner, rent));
 				player.removeBalance(rent);
 				owner.addBalance(rent);
 				GUIBoundary.updatePlayer(owner);

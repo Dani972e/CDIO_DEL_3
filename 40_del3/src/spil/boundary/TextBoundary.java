@@ -11,26 +11,17 @@ public class TextBoundary {
 	public static final String TITLE = "Treasure Hunt 2";
 	public static final String VERSION = "v0.01";
 
-	public static final String[][] fieldText = { 
-			{ "1. Home", "( ͡° ͜ʖ ͡°)", "Home, sweet home." },
-			{ "2. Tribe Encampment", "Territory", "Rent: 100 ~ Price: 1000" },
-			{ "3. Crater", "Territory", "Rent: 300 ~ Price: 1500" },
-			{ "4. Mountain", "Territory", "Rent: 500 ~ Price: 2000" },
-			{ "5. Cold Desert", "Territory", "Rent: 700 ~ Price: 3000" },
-			{ "6. Black Cave", "Territory", "Rent: 1000 ~ Price: 4000" },
-			{ "7. The Werewall", "Territory", "Rent: 1300 ~ Price: 4300" },
-			{ "8. Mountain Village", "Territory", "Rent: 1600 ~ Price: 4750" },
-			{ "9. South Citadel", "Territory", "Rent: 2000 ~ Price: 5000" },
-			{ "10. Palace Gates", "Territory", "Rent: 2600 ~ Price: 5500" },
-			{ "11. Tower", "Territory", "Rent: 3200 ~ Price: 6000" },
-			{ "12. Castle", "Territory", "Rent: 4000 ~ Price: 8000" },
-			{ "13. Walled city", "Refugee", "Receive: 5000" }, { "14. Monastery", "Refugee", "Receive: 500" },
-			{ "15. Huts in the Mountain", "Labor Camp", "Pay: 100 * dice ~ Price: 2500" },
-			{ "16. The Pit", "Labor Camp", "Pay: 100 * dice ~ Price: 2500" }, { "17. Gold Mine", "Tax", "Pay: 2000" },
-			{ "18. Caravan", "Tax", "Pay: 4000 or 10% of your coins" },
-			{ "19. Second Sail", "Fleet", "Pay: 500-4000 ~ Price: 4000" },
-			{ "20. Sea Grover", "Fleet", "Pay: 500-4000 ~ Price: 4000" },
-			{ "21. The Buccaneers", "Fleet", "Pay: 500-4000 ~ Price: 4000" },
+	public static final String[][] fieldText = { { "1. Home", "( ͡° ͜ʖ ͡°)", "Home, sweet home." },
+			{ "2. Tribe Encampment", "Territory", "Rent: 100 ~ Price: 1000" }, { "3. Crater", "Territory", "Rent: 300 ~ Price: 1500" },
+			{ "4. Mountain", "Territory", "Rent: 500 ~ Price: 2000" }, { "5. Cold Desert", "Territory", "Rent: 700 ~ Price: 3000" },
+			{ "6. Black Cave", "Territory", "Rent: 1000 ~ Price: 4000" }, { "7. The Werewall", "Territory", "Rent: 1300 ~ Price: 4300" },
+			{ "8. Mountain Village", "Territory", "Rent: 1600 ~ Price: 4750" }, { "9. South Citadel", "Territory", "Rent: 2000 ~ Price: 5000" },
+			{ "10. Palace Gates", "Territory", "Rent: 2600 ~ Price: 5500" }, { "11. Tower", "Territory", "Rent: 3200 ~ Price: 6000" },
+			{ "12. Castle", "Territory", "Rent: 4000 ~ Price: 8000" }, { "13. Walled city", "Refugee", "Receive: 5000" },
+			{ "14. Monastery", "Refugee", "Receive: 500" }, { "15. Huts in the Mountain", "Labor Camp", "Pay: 100 * dice * owner ~ Price: 2500" },
+			{ "16. The Pit", "Labor Camp", "Pay: 100 * dice * owner ~ Price: 2500" }, { "17. Gold Mine", "Tax", "Pay: 2000" },
+			{ "18. Caravan", "Tax", "Pay: 4000 or 10% of your coins" }, { "19. Second Sail", "Fleet", "Pay: 500-4000 ~ Price: 4000" },
+			{ "20. Sea Grover", "Fleet", "Pay: 500-4000 ~ Price: 4000" }, { "21. The Buccaneers", "Fleet", "Pay: 500-4000 ~ Price: 4000" },
 			{ "22. Privateer Armade", "Fleet", "Pay: 500-4000 ~ Price: 4000" }, };
 
 	public static final String welcomeMessage = "Welcome to " + TITLE + ", " + VERSION
@@ -53,8 +44,7 @@ public class TextBoundary {
 	}
 
 	public static final String purchaseConfirmedMessage(Player player, int price) {
-		return player.getName() + " successfully bought " + getFieldName(player) + " for the price of " + price
-				+ " coins.";
+		return player.getName() + " successfully bought " + getFieldName(player) + " for the price of " + price + " coins.";
 	}
 
 	public static final String purchaseDeniedMessage(Player player) {
@@ -87,9 +77,8 @@ public class TextBoundary {
 		return "This field is already owned by " + player.getName() + ", nothing will happen.";
 	}
 
-	public static String alreadyPurchasedMessage(Player owner, int rent) {
-		return getFieldName(owner) + " is already purchased. You'll need to pay a rent of " + rent + " to the owner, "
-				+ owner.getName() + ".";
+	public static String alreadyPurchasedMessage(Player player, Player owner, int rent) {
+		return getFieldName(player) + " is already purchased. You'll need to pay a rent of " + rent + " to the owner, " + owner.getName() + ".";
 	}
 
 	public static String bonusMessage(Player player, int bonus) {
@@ -101,18 +90,17 @@ public class TextBoundary {
 	}
 
 	public static String taxChoiceMessage(Player player) {
-		return player.getName() + " choose one button.";
+		return player.getName() + " select one of the opportunities.";
 	}
 
 	public static String fleetOwnedMessage(Player player, Player owner, int sameOwnerCount, int rent) {
-		return landMessage(player) + "This field is owned by " + owner.getName() + ", who owns a total of "
-				+ sameOwnerCount + " fleet Fields." + "Therefore " + player.getName() + "will pay a rent of " + rent
-				+ ".";
+		return landMessage(player) + "This field is owned by " + owner.getName() + ", who owns a total of " + sameOwnerCount + " fleet Fields."
+				+ "Therefore " + player.getName() + "will pay a rent of " + rent + ".";
 	}
 
 	public static String fleetMessage(Player player, int sameOwnerCount, int rent) {
-		return landMessage(player) + "This field is owned by no one, who owns a total of " + sameOwnerCount
-				+ " fleet Fields." + "Therefore " + player.getName() + "will pay a rent of " + rent + ".";
+		return landMessage(player) + "This field is owned by no one, who owns a total of " + sameOwnerCount + " fleet Fields." + "Therefore "
+				+ player.getName() + "will pay a rent of " + rent + ".";
 	}
 
 	public static String removePlayerMessage(Player player) {

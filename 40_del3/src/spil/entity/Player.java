@@ -13,7 +13,7 @@ public class Player {
 
 	/*
 	 * The Player classes personal
-	 * BankAccount instance. Servers
+	 * BankAccount instance. Serves
 	 * as a coin manager.
 	 */
 	private BankAccount acc;
@@ -66,20 +66,32 @@ public class Player {
 		return acc.getBalance();
 	}
 
+	/*
+	 * Setter method for position variable.
+	 */
 	public void setPosition(int position) {
 		this.position = position;
 	}
 
+	/*
+	 * Getter method that returns position variable.
+	 */
 	public int getPosition() {
 		return position;
 	}
 
+	/*
+	 * Getter method that returns the latest roll of the player.
+	 */
 	public int getLatestRoll() {
 		return latestRoll;
 	}
 
-	public void setLatestRoll(int currentRoll) {
-		this.latestRoll = currentRoll;
+	/*
+	 * Setter method that sets the latestRoll variable. 
+	 */
+	public void setLatestRoll(int latestRoll) {
+		this.latestRoll = latestRoll;
 	}
 
 }

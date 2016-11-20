@@ -32,8 +32,7 @@ public class PlayerList {
 		playerList = new Player[playerCount];
 
 		for (int i = 0; i < playerCount; i++) {
-			playerList[i] = new Player(TextBoundary.playerName + " " + (i + 1), maxCoinAmount, minCoinAmount, coins,
-					position);
+			playerList[i] = new Player(TextBoundary.playerName + " " + (i + 1), maxCoinAmount, minCoinAmount, coins, position);
 			GUIBoundary.addPlayer(playerList[i], cars[i]);
 		}
 	}
