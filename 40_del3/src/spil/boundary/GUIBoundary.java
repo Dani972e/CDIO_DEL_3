@@ -5,6 +5,11 @@ import desktop_fields.Field;
 import desktop_resources.GUI;
 import spil.entity.Player;
 
+/*
+ * GUIBoundary is a general class that holds all the methods associated with the communication between
+ * the system and the graphical user interface (GUI). If anything is wrong with the GUI calls, then this 
+ * class will probably be the sinner.
+ */
 public class GUIBoundary {
 
 	private GUIBoundary() {
@@ -20,7 +25,7 @@ public class GUIBoundary {
 		}
 		return false;
 	}
-	
+
 	private static boolean checkBalance(Player player, int price) {
 		if (player.getBalance() >= price) {
 			return true;

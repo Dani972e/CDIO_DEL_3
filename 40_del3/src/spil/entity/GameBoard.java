@@ -42,7 +42,7 @@ public class GameBoard {
 			new Fleet(FieldBoundary.fleetPrices[3]) };
 
 	/*
-	 * Array that holds all the cars figures. 
+	 * Array that holds all the car figures. 
 	 */
 	private final Car[] playerCars = {
 			new Car.Builder().patternHorizontalGradiant().typeRacecar().primaryColor(FieldBoundary.carColors[0][0])
@@ -79,7 +79,7 @@ public class GameBoard {
 	}
 
 	/*
-	 * Method that moves a player accros the graphical fields.
+	 * Method that moves a player across the graphical fields.
 	 */
 	public void movePlayer(Player player, int amount) {
 		int newPosition = player.getPosition() + amount;
@@ -92,7 +92,7 @@ public class GameBoard {
 	}
 
 	/*
-	 *  landOnField method that puts a player on the field. 
+	 *  landOnField method that puts a player on a field. 
 	 */
 	public void landOnField(Player player) {
 		int pos = player.getPosition();
@@ -111,7 +111,7 @@ public class GameBoard {
 	}
 
 	/*
-	 * Method that returns a shuffled array of player cars.  
+	 * Method that returns a shuffled array of player car figures.  
 	 */
 	public Car[] getRandomUniqueCars() {
 		Collections.shuffle(Arrays.asList(playerCars));

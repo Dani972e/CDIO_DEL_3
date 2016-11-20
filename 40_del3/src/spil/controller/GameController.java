@@ -9,10 +9,20 @@ import spil.entity.PlayerList;
 
 public class GameController {
 
+	/*
+	 * Objects from the entities package.
+	 * diceCup holds all the dice in the game.
+	 * playerList holds all the players in the game.
+	 * gameBoard manages the fields in the game.
+	 */
 	private DiceCup diceCup;
 	private PlayerList playerList;
 	private GameBoard gameBoard;
 
+	/*
+	 * Constructor that initializes the above objects, and 
+	 * starts the game loop.
+	 */
 	public GameController() {
 		diceCup = new DiceCup(2, 6);
 
@@ -31,6 +41,10 @@ public class GameController {
 		initGameLoop();
 	}
 
+	/*
+	 * The actual game loop of the system. Will run each player through a turn
+	 * until there is only one player left, who then is the winner.
+	 */
 	private void initGameLoop() {
 		int index = 0;
 
@@ -65,6 +79,9 @@ public class GameController {
 		System.exit(0);
 	}
 
+	/*
+	 * Calculate the Player index, so that it is always in the array limit.
+	 */
 	private int calculateIndex(int index) {
 		if (index == (playerList.getTotalPlayers() - 1)) {
 			return index = 0;

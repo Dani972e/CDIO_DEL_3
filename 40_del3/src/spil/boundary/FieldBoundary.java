@@ -2,6 +2,11 @@ package spil.boundary;
 
 import java.awt.Color;
 
+/*
+ * FieldBoundary is a general class, that similar to TextBoundary, holds all the information
+ * associated with the Field objects inside the GameBoard class. If any Field data is needed
+ * to be changed, then this is where you want to be looking first.
+ */
 public class FieldBoundary {
 
 	private FieldBoundary() {
