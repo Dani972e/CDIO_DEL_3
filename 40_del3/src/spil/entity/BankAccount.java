@@ -17,7 +17,7 @@ public class BankAccount {
 	public BankAccount(int maxBalance, int minBalance, int balance) {
 		this.MAX_BALANCE = maxBalance;
 		this.MIN_BALANCE = minBalance;
-		this.balance = balance;
+		balance = checkBalanceBounds(balance);
 	}
 
 	/*
@@ -26,14 +26,7 @@ public class BankAccount {
 	 */
 	public void addBalance(int amount) {
 		int newBalance = balance + amount;
-
-		if (newBalance < MIN_BALANCE) {
-			newBalance = MIN_BALANCE;
-		} else if (newBalance > MAX_BALANCE) {
-			newBalance = MAX_BALANCE;
-		}
-
-		balance = newBalance;
+		balance = checkBalanceBounds(newBalance);
 	}
 
 	/*
@@ -42,14 +35,20 @@ public class BankAccount {
 	 */
 	public void removeBalance(int amount) {
 		int newBalance = balance - amount;
+		balance = checkBalanceBounds(newBalance);
+	}
 
-		if (newBalance < MIN_BALANCE) {
-			newBalance = MIN_BALANCE;
-		} else if (newBalance > MAX_BALANCE) {
-			newBalance = MAX_BALANCE;
+	/*
+	 * Method that checks whether the currentBalance variable
+	 * is within the balance bounds.
+	 */
+	private int checkBalanceBounds(int currentBalance) {
+		if (currentBalance < MIN_BALANCE) {
+			currentBalance = MIN_BALANCE;
+		} else if (currentBalance > MAX_BALANCE) {
+			currentBalance = MAX_BALANCE;
 		}
-
-		balance = newBalance;
+		return currentBalance;
 	}
 
 	/*

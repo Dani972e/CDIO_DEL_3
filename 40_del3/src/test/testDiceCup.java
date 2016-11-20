@@ -59,11 +59,11 @@ public class testDiceCup {
 	@Test
 	public void testDieAmount50() {
 		int dieFaceValue = 6;
-		int amountOfDice = 1;
+		int amountOfDice = 50;
 
 		diceCup = new DiceCup(amountOfDice, dieFaceValue);
 
-		int expected = 2;
+		int expected = 50;
 		int actual = diceCup.getDieAmount();
 
 		if (actual != expected) {
