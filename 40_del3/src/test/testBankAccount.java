@@ -1,20 +1,15 @@
 package test;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
 
 import org.junit.After;
-import org.junit.Before;
 import org.junit.Test;
 
 import spil.entity.BankAccount;
 
 public class testBankAccount {
+
 	private BankAccount b1;
-
-	@Before
-	public void setUp() throws Exception {
-
-	}
 
 	@After
 	public void tearDown() throws Exception {
@@ -46,7 +41,6 @@ public class testBankAccount {
 		int actual = b1.getBalance();
 
 		assertEquals("BankAccount balance is not correct", expected, actual);
-
 	}
 
 	@Test
@@ -56,7 +50,6 @@ public class testBankAccount {
 		int actual = b1.getBalance();
 
 		assertEquals("BankAccount balance is not correct", expected, actual);
-
 	}
 
 	@Test
@@ -78,7 +71,6 @@ public class testBankAccount {
 		int actual = b1.getBalance();
 
 		assertEquals("BankAccount balance is not correct", expected, actual);
-
 	}
 
 	@Test
@@ -90,7 +82,6 @@ public class testBankAccount {
 		int actual = b1.getBalance();
 
 		assertEquals("BankAccount balance is not correct", expected, actual);
-
 	}
 
 	@Test
@@ -102,7 +93,6 @@ public class testBankAccount {
 		int actual = b1.getBalance();
 
 		assertEquals("BankAccount balance is not correct", expected, actual);
-
 	}
 
 	@Test
@@ -114,7 +104,6 @@ public class testBankAccount {
 		int actual = b1.getBalance();
 
 		assertEquals("BankAccount balance is not correct", expected, actual);
-
 	}
 
 	@Test
@@ -126,7 +115,6 @@ public class testBankAccount {
 		int actual = b1.getBalance();
 
 		assertEquals("BankAccount balance is not correct", expected, actual);
-
 	}
 
 	@Test
@@ -138,7 +126,6 @@ public class testBankAccount {
 		int actual = b1.getBalance();
 
 		assertEquals("BankAccount balance is not correct", expected, actual);
-
 	}
 
 	@Test
@@ -150,7 +137,6 @@ public class testBankAccount {
 		int actual = b1.getBalance();
 
 		assertEquals("BankAccount balance is not correct", expected, actual);
-
 	}
 
 	@Test
@@ -162,7 +148,6 @@ public class testBankAccount {
 		int actual = b1.getBalance();
 
 		assertEquals("BankAccount balance is not correct", expected, actual);
-
 	}
 
 	@Test
@@ -174,7 +159,6 @@ public class testBankAccount {
 		int actual = b1.getBalance();
 
 		assertEquals("BankAccount balance is not correct", expected, actual);
-
 	}
 
 	@Test
@@ -186,7 +170,6 @@ public class testBankAccount {
 		int actual = b1.getBalance();
 
 		assertEquals("BankAccount balance is not correct", expected, actual);
-
 	}
 
 	@Test
@@ -198,7 +181,6 @@ public class testBankAccount {
 		int actual = b1.getBalance();
 
 		assertEquals("BankAccount balance is not correct", expected, actual);
-
 	}
 
 	@Test
@@ -209,7 +191,6 @@ public class testBankAccount {
 		boolean expected = true;
 
 		assertEquals("BankAccount is not bankrupt when it should be", expected, actual);
-
 	}
 
 	@Test
@@ -220,6 +201,6 @@ public class testBankAccount {
 		boolean expected = false;
 
 		assertEquals("BankAccount is not bankrupt when it should be", expected, actual);
-
 	}
+
 }
