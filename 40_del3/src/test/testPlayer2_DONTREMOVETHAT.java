@@ -10,7 +10,7 @@ import spil.entity.GameBoard;
 import spil.entity.Player;
 import spil.entity.PlayerList;
 
-public class testPlayer {
+public class testPlayer2_DONTREMOVETHAT {
 
 	private Player playerTest;
 	private GameBoard gameBoard;
