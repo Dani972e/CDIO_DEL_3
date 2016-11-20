@@ -17,7 +17,7 @@ public class BankAccount {
 	public BankAccount(int maxBalance, int minBalance, int balance) {
 		this.MAX_BALANCE = maxBalance;
 		this.MIN_BALANCE = minBalance;
-		balance = checkBalanceBounds(balance);
+		this.balance = checkBalanceBounds(balance);
 	}
 
 	/*

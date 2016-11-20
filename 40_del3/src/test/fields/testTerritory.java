@@ -1,6 +1,6 @@
 package test.fields;
 
-import static org.junit.Assert.fail;
+import static org.junit.Assert.assertEquals;
 
 import org.junit.After;
 import org.junit.Before;
@@ -16,20 +16,21 @@ public class testTerritory {
 	private Player player1;
 	private Player player2;
 	private DiceCup diceCup;
-	private Territory TerritoryP500R1000;
-	private Territory TerritoryP10R20;
-	private Territory TerritoryP50R5000;
-	private Territory TerritoryP5000R50;
+	private Territory TerritoryP1000R100;
+	private Territory TerritoryP4000R1000;
+	private Territory TerritoryP6000R3200;
+	private Territory TerritoryP5500R2600;
 
 	@Before
 	public void setUp() throws Exception {
 		player1 = new Player("Player 1", 1000000, 0, 30000, 0);
 		player2 = new Player("Player 2", 1000000, 0, 30000, 0);
 		diceCup = new DiceCup(2, 6);
-		TerritoryP500R1000 = new Territory(500, 1000);
-		TerritoryP10R20 = new Territory(10, 20);
-		TerritoryP50R5000 = new Territory(50, 5000);
-		TerritoryP5000R50 = new Territory(5000, 50);
+		// pos 2
+		TerritoryP1000R100 = new Territory(1000, 100);
+		TerritoryP4000R1000 = new Territory(4000, 1000);
+		TerritoryP6000R3200 = new Territory(6000, 3200);
+		TerritoryP5500R2600 = new Territory(5500, 2600);
 	}
 
 	@After
@@ -45,21 +46,30 @@ public class testTerritory {
 		Assert.assertNotNull(this.player1);
 		Assert.assertNotNull(this.player2);
 		Assert.assertNotNull(this.diceCup);
-		Assert.assertNotNull(this.TerritoryP500R1000);
-		Assert.assertNotNull(this.TerritoryP10R20);
-		Assert.assertNotNull(this.TerritoryP50R5000);
-		Assert.assertNotNull(this.TerritoryP50R5000);
-		Assert.assertNotNull(this.TerritoryP5000R50);
+		Assert.assertNotNull(this.TerritoryP1000R100);
+		Assert.assertNotNull(this.TerritoryP4000R1000);
+		Assert.assertNotNull(this.TerritoryP6000R3200);
+		Assert.assertNotNull(this.TerritoryP5500R2600);
 	}
 
 	@Test
-	public void testLandOnFieldR5000P1000() {
-		TerritoryP500R1000.landOnField(player);
-	}
+	public void testLandOnFieldP1000R100() {
+		final int price = 1000;
+		final int rent = 100;
+		System.out.println(player1.getBalance());
+		player1.setPosition(2);
 
-	@Test
-	public void testPurchaseField() {
-		fail("Not yet implemented");
+		/* Player 1 lands and purchases the field for 1000. */
+		TerritoryP1000R100.landOnField(player1);
+		
+
+		int expected = player1.getBalance() - price;
+		int actual = player1.getBalance();
+
+		assertEquals("", expected, actual);
+
+		/* Player 2 lands and pays rent of 100. */
+		TerritoryP1000R100.landOnField(player2);
 	}
 
 }
