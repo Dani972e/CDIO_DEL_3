@@ -30,6 +30,7 @@ public class testFleet {
 		player2 = new Player("Player 2", 1000000, 0, 30000, 0);
 			
 	}
+	
 
 	@After
 	public void tearDown() throws Exception {
@@ -40,7 +41,11 @@ public class testFleet {
 		player=null;
 		player2=null;
 	}
-
+	
+	/*
+	 * Assuming that the user want to buy the Fleet
+	 * Testing Prices
+	 */
 	@Test
 	public void testFleet1() {
 		player.setPosition(1);
@@ -82,6 +87,10 @@ public class testFleet {
 		assertEquals("Price is not correct.", expected, actual);
 	}
 	
+	/*
+	 * Assuming that the player1 want to buy 3 Fleets
+	 * player2 lands on fleet1 and pays the correct rent
+	 */
 	@Test
 	public void testBuy3Fleets() {
 		player.setPosition(1);
