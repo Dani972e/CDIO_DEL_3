@@ -74,7 +74,7 @@ public class GameController {
 				GUIBoundary.removePlayerCar(currentPlayer);
 				playerList.removePlayer(currentPlayer);
 			}
-
+			index = calculateIndex(index);
 		}
 
 		GUIBoundary.print(TextBoundary.winnerMessage(playerList.getLastPlayer()));
