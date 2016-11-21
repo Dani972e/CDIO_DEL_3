@@ -30,7 +30,7 @@ public class testPlayerList {
 	}
 
 	@Test
-	public void testPlayerList() {
+	public void testPlayerListAll() {
 		/*
 		 * Tests if the playerList instantiates the correct
 		 * amount of Player objects.
