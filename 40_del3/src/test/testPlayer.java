@@ -10,6 +10,8 @@ import spil.entity.Player;
 
 public class testPlayer {
 
+	private final int MAX_BALANCE = 100000;
+	private final int MIN_BALANCE = 0;
 	private Player player;
 
 	@Before
@@ -78,7 +80,8 @@ public class testPlayer {
 	 * Since there are not any negative positions in the system where the Player object
 	 * is used, the position should not have a negative position.
 	 * 
-	 * This is considered a negative test, since this is not expected to work without.
+	 * This is considered a negative test, since the Players position should 
+	 * not be able to turn negative.
 	 */
 	@Test
 	public void testPlayerPositionNeg10() {
@@ -171,6 +174,7 @@ public class testPlayer {
 	/*
 	 * Tests whether the setLatestRoll() and getLatestRoll() methods
 	 * are working as intended with a positive value of 10.
+	 * Positive test, since the methods should both function with 10.
 	 */
 	@Test
 	public void testsetLatestRoll10() {
@@ -186,6 +190,7 @@ public class testPlayer {
 	/*
 	 * Tests whether the setLatestRoll() and getLatestRoll() methods
 	 * are working as intended with a negative value of -1.
+	 * Positive test, since the methods should both function with -1.
 	 */
 	@Test
 	public void testsetLatestRollNeg1() {
@@ -201,6 +206,7 @@ public class testPlayer {
 	/*
 	 * Tests whether the setLatestRoll() and getLatestRoll() methods
 	 * are working as intended with a neutral value of 0.
+	 * Positive test, since the methods should both function with 0.
 	 */
 	@Test
 	public void testsetLatestRoll0() {
@@ -216,6 +222,7 @@ public class testPlayer {
 	/*
 	 * Tests whether the setLatestRoll() and getLatestRoll() methods
 	 * are working as intended with a positive value of 1000.
+	 * Positive test, since the methods should both function with 1000.
 	 */
 	@Test
 	public void testsetLatestRoll1000() {
@@ -226,6 +233,50 @@ public class testPlayer {
 		int actual = player.getLatestRoll();
 
 		assertEquals("The Player is not assigned the correct LastestRoll value.", expected, actual);
+	}
+
+	@Test // Negative Test
+	public void testBalanceUnderflow() {
+		int expected = MIN_BALANCE;
+
+		player.removeBalance(player.getBalance());
+		player.addBalance(Integer.MIN_VALUE);
+		player.removeBalance(1);
+
+		int actual = player.getBalance();
+		assertEquals(expected, actual);
+	}
+
+	/*
+	 * Tests whether balance related methods are
+	 * working correctly. Positive test.
+	 */
+	@Test
+	public void testBalance() {
+		int expected = 1500;
+		player.addBalance(500);
+		int actual = player.getBalance();
+		assertEquals(expected, actual);
+
+		expected = 500;
+		player.removeBalance(1000);
+		actual = player.getBalance();
+		assertEquals(expected, actual);
+	}
+
+	/*
+	 * Tests whether the balance
+	 */
+	@Test
+	public void testBalanceOverflow() {
+		int expected = MAX_BALANCE;
+
+		player.removeBalance(player.getBalance());
+		player.addBalance(Integer.MAX_VALUE);
+		player.addBalance(1);
+
+		int actual = player.getBalance();
+		assertEquals(expected, actual);
 	}
 
 }

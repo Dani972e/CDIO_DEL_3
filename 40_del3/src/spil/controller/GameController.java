@@ -33,7 +33,7 @@ public class GameController {
 		int playerAmount = GUIBoundary.decidePlayerAmount();
 
 		// Position used to be 0, changed it to 1 for debugging purposes.
-		playerList = new PlayerList(playerAmount, 10000000, 0, 30000, 1, gameBoard.getRandomUniqueCars());
+		playerList = new PlayerList(playerAmount, 10000000, 0, 5000, 1, gameBoard.getRandomUniqueCars());
 		playerList.setHomeCars();
 
 		GUIBoundary.print(TextBoundary.playerAmountMessage(playerAmount));
@@ -49,6 +49,9 @@ public class GameController {
 		int index = 0;
 
 		while (playerList.getPlayersLeft() > 1) {
+			while (playerList.getPlayer(index) == null)
+				++index;
+
 			Player currentPlayer = playerList.getPlayer(index);
 
 			GUIBoundary.print(TextBoundary.rollInfoMessage(currentPlayer));
