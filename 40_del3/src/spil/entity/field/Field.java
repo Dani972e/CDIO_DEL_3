@@ -23,4 +23,8 @@ public abstract class Field {
 	 */
 	public abstract void landOnField(Player player);
 
+	public abstract Player getOwner();
+
+	public abstract void deleteOwner();
+
 }

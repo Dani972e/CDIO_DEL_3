@@ -36,4 +36,9 @@ public final class Territory extends Ownable {
 		return rent;
 	}
 
+	@Override
+	public void deleteOwner() {
+
+	}
+
 }

@@ -94,4 +94,14 @@ public class Player {
 		this.latestRoll = latestRoll;
 	}
 
+	@Override
+	public boolean equals(Object obj) {
+		if (obj instanceof Player) {
+			if (((Player) obj).getName().equals(this.getName())) {
+				return true;
+			}
+		}
+		return false;
+	}
+
 }

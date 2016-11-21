@@ -42,4 +42,14 @@ public final class Tax extends Field {
 		}
 	}
 
+	@Override
+	public Player getOwner() {
+		return null;
+	}
+
+	@Override
+	public void deleteOwner() {
+
+	}
+
 }

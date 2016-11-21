@@ -31,4 +31,14 @@ public final class Refugee extends Field {
 		player.addBalance(bonus);
 	}
 
+	@Override
+	public Player getOwner() {
+		return null;
+	}
+
+	@Override
+	public void deleteOwner() {
+
+	}
+
 }

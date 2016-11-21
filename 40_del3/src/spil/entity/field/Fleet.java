@@ -86,4 +86,9 @@ public final class Fleet extends Ownable {
 		return rent;
 	}
 
+	@Override
+	public void deleteOwner() {
+
+	}
+
 }

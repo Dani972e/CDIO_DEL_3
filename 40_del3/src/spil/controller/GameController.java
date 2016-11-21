@@ -72,6 +72,7 @@ public class GameController {
 			if (currentPlayer.isBankrupt()) {
 				GUIBoundary.print(TextBoundary.removePlayerMessage(currentPlayer));
 				GUIBoundary.removePlayerCar(currentPlayer);
+				gameBoard.deleteFieldOwners(currentPlayer);
 				playerList.removePlayer(currentPlayer);
 			}
 			index = calculateIndex(index);
