@@ -88,7 +88,7 @@ public final class Fleet extends Ownable {
 
 	@Override
 	public void deleteOwner() {
-
+		owner = null;
 	}
 
 }

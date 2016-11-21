@@ -72,10 +72,10 @@ public final class LaborCamp extends Ownable {
 	public int getRent() {
 		return rent;
 	}
-	
+
 	@Override
 	public void deleteOwner() {
-
+		owner = null;
 	}
 
 }

@@ -38,7 +38,7 @@ public final class Territory extends Ownable {
 
 	@Override
 	public void deleteOwner() {
-
+		owner = null;
 	}
 
 }
