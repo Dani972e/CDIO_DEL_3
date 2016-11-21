@@ -36,6 +36,7 @@ public class GUIBoundary {
 	}
 
 	public static void print(String message) {
+		if (message !=null)
 		GUI.showMessage(message);
 	}
 
