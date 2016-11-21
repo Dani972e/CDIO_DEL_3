@@ -49,6 +49,9 @@ public class GameController {
 		int index = 0;
 
 		while (playerList.getPlayersLeft() > 1) {
+			while(playerList.getPlayer(index)==null)
+				++index;
+			
 			Player currentPlayer = playerList.getPlayer(index);
 
 			GUIBoundary.print(TextBoundary.rollInfoMessage(currentPlayer));
