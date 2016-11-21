@@ -27,7 +27,6 @@ public class testRefugee {
 		refugeeUnderflow = new Refugee(Integer.MIN_VALUE - 1);
 
 		p1 = new Player("p1", 100000, 0, 30000, 0);
-
 	}
 
 	@After
@@ -37,7 +36,6 @@ public class testRefugee {
 		refugeeNeg1000 = null;
 		refugeeOverflow = null;
 		p1 = null;
-
 	}
 
 	/*
@@ -114,4 +112,5 @@ public class testRefugee {
 
 		assertEquals("Player does not get af bonus of Interger.MAX_VALUE - 1 coins", expected, actual);
 	}
+	
 }
