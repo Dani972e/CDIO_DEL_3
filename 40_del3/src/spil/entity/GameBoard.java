@@ -121,6 +121,9 @@ public class GameBoard {
 		return playerCars;
 	}
 
+	/*
+	 * Deletes every field that the Player owns.
+	 */
 	public void deleteFieldOwners(Player player) {
 		for (Field field : fields) {
 			if (field.getOwner() != null)

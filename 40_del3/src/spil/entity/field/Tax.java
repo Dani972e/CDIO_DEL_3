@@ -47,9 +47,12 @@ public final class Tax extends Field {
 		return null;
 	}
 
+	/*
+	 * Sets the owner object equal to null.
+	 */
 	@Override
 	public void deleteOwner() {
-		
+
 	}
 
 }

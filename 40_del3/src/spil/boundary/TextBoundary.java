@@ -15,7 +15,7 @@ public class TextBoundary {
 	}
 
 	public static final String TITLE = "Treasure Hunt 2";
-	public static final String VERSION = "v0.01";
+	public static final String VERSION = "v0.02";
 
 	public static final String[][] fieldText = { { "1. Home", "( ͡° ͜ʖ ͡°)", "Home, sweet home." },
 			{ "2. Tribe Encampment", "Territory", "Rent: 100 ~ Price: 1000" },
@@ -51,6 +51,8 @@ public class TextBoundary {
 	public static final String buttonNoMessage = "No";
 
 	public static final String btnBalancePercentage = "10% of balance";
+
+	public static final String errorMessage = "A fatal error has occurred.";
 
 	public static final String purchaseFieldMessage(Player player, int price) {
 		return landMessage(player) + getFieldName(player) + " is available for purchase. Does " + player.getName()

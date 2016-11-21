@@ -73,6 +73,9 @@ public final class LaborCamp extends Ownable {
 		return rent;
 	}
 
+	/*
+	 * Sets the owner object equal to null.
+	 */
 	@Override
 	public void deleteOwner() {
 		owner = null;

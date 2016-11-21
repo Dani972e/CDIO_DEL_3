@@ -23,8 +23,15 @@ public abstract class Field {
 	 */
 	public abstract void landOnField(Player player);
 
+	/*
+	 * Returns the owner of the particular field.
+	 */
 	public abstract Player getOwner();
 
+	/*
+	 * Deletes the owner of a particular field. 
+	 * Essentially setting the owner object equal to null.
+	 */
 	public abstract void deleteOwner();
 
 }

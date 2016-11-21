@@ -60,12 +60,12 @@ public abstract class Ownable extends Field {
 
 	}
 
+	/*
+	 * Returns the owner of the particular field.
+	 */
+	@Override
 	public Player getOwner() {
 		return owner;
-	}
-
-	public void resetOwner() {
-		owner = null;
 	}
 
 }

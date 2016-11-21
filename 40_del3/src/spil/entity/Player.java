@@ -94,6 +94,10 @@ public class Player {
 		this.latestRoll = latestRoll;
 	}
 
+	/*
+	 * Overwriting the object equals() method, to make sure
+	 * that we can compare Player objects.
+	 */
 	@Override
 	public boolean equals(Object obj) {
 		if (obj instanceof Player) {

@@ -36,8 +36,14 @@ public class GUIBoundary {
 	}
 
 	public static void print(String message) {
-		if (message !=null)
-		GUI.showMessage(message);
+		if (message != null) {
+			try {
+				GUI.showMessage(message);
+			} catch (Exception e) {
+				e.printStackTrace();
+				GUI.showMessage(TextBoundary.errorMessage);
+			}
+		}
 	}
 
 	public static void initFields(Field[] fields) {
@@ -80,6 +86,10 @@ public class GUIBoundary {
 		String result = GUI.getUserSelection(TextBoundary.welcomeMessage, TextBoundary.btnArray[0],
 				TextBoundary.btnArray[1], TextBoundary.btnArray[2], TextBoundary.btnArray[3], TextBoundary.btnArray[4]);
 		return Integer.parseInt(result);
+	}
+
+	public static void showDice(int[] rollList) {
+		GUI.setDice(rollList[0], rollList[1]);
 	}
 
 }

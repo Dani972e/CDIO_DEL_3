@@ -30,12 +30,19 @@ public final class Refugee extends Field {
 		GUIBoundary.print(TextBoundary.bonusMessage(player, bonus));
 		player.addBalance(bonus);
 	}
-
+	
+	/*
+	 * Returns the owner of the particular field.
+	 * null, since Refugee can not be owned.
+	 */
 	@Override
 	public Player getOwner() {
 		return null;
 	}
 
+	/*
+	 * Sets the owner object equal to null.
+	 */
 	@Override
 	public void deleteOwner() {
 
