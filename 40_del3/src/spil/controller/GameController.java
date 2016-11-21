@@ -50,7 +50,7 @@ public class GameController {
 
 		while (playerList.getPlayersLeft() > 1) {
 			while (playerList.getPlayer(index) == null)
-				++index;
+				index = calculateIndex(index);
 
 			Player currentPlayer = playerList.getPlayer(index);
 
@@ -71,10 +71,10 @@ public class GameController {
 
 			if (currentPlayer.isBankrupt()) {
 				GUIBoundary.print(TextBoundary.removePlayerMessage(currentPlayer));
+				GUIBoundary.removePlayerCar(currentPlayer);
 				playerList.removePlayer(currentPlayer);
 			}
 
-			index = calculateIndex(index);
 		}
 
 		GUIBoundary.print(TextBoundary.winnerMessage(playerList.getLastPlayer()));
