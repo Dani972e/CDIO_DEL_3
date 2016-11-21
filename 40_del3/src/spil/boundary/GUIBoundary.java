@@ -36,10 +36,6 @@ public class GUIBoundary {
 	}
 
 	public static void print(String message) {
-		// Debug COde
-		if (message == null) {
-			System.out.println("MESSAGE IS EUQAL TO NULLLLL!!!!!!!!!!!!!");
-		}
 		GUI.showMessage(message);
 	}
 
