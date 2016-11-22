@@ -28,7 +28,6 @@ public class testFleet {
 		
 		player = new Player("Player 1", 1000000, 0, 30000, 0);
 		player2 = new Player("Player 2", 1000000, 0, 30000, 0);
-			
 	}
 	
 
@@ -43,8 +42,8 @@ public class testFleet {
 	}
 	
 	/*
-	 * Assuming that the user want to buy the Fleet
-	 * Testing Prices
+	 * Assuming that the user want to buy the Fleet.
+	 * Testing Prices.
 	 */
 	@Test
 	public void testFleet1() {
@@ -88,8 +87,8 @@ public class testFleet {
 	}
 	
 	/*
-	 * Assuming that the player1 want to buy 3 Fleets
-	 * player2 lands on fleet1 and pays the correct rent
+	 * Assuming that the player1 want to buy 3 Fleets.
+	 * player2 lands on fleet1 and pays the correct rent.
 	 */
 	@Test
 	public void testBuy3Fleets() {
@@ -109,5 +108,4 @@ public class testFleet {
 		assertEquals("Rent is not correct.", expected, actual);
 	}
 	
-
 }
