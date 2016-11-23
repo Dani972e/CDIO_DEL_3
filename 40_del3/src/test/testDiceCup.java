@@ -22,11 +22,10 @@ public class testDiceCup {
 	 * work as expected. If the amount is less than 2, the value
 	 * will revert back to 2. If the amount is greater than 1000, the
 	 * amount will revert back to 1000. The bounds can be changed through
-	 * the class. This test tests the scenario when the amount of dice is
+	 * the class. This will test the scenario when the amount of dice is
 	 * equal to 1.
 	 * 
-	 * This is considered a positive test, since the DiceCup object 
-	 * should be able to handle Die amount of 1.
+	 * This is considered as a negative test because 1 is out of the bounds.
 	 */
 	@Test
 	public void testDieAmount1() {
@@ -50,11 +49,10 @@ public class testDiceCup {
 	 * work as expected. If the amount is less than 2, the value
 	 * will revert back to 2. If the amount is greater than 1000, the
 	 * amount will revert back to 1000. The bounds can be changed through
-	 * the class. This test tests the scenario when the amount of dice is
+	 * the class. This will test the scenario when the amount of dice is
 	 * equal to 50.
 	 * 
-	 * This is considered a positive test, since the DiceCup object 
-	 * should be able to handle Die amount of 50.
+	 * This is considered as a positive test because 50 is within the bounds.
 	 */
 	@Test
 	public void testDieAmount50() {
@@ -78,11 +76,12 @@ public class testDiceCup {
 	 * work as expected. If the amount is less than 2, the value
 	 * will revert back to 2. If the amount is greater than 1000, the
 	 * amount will revert back to 1000. The bounds can be changed through
-	 * the class. This test tests the scenario when the amount of dice is
+	 * the class. This will test the scenario when the amount of dice is
 	 * equal to 2000.
 	 * 
-	 * This is considered a positive test, since the DiceCup object 
-	 * should be able to handle Die amount of 2000.
+	 * This is considered a negative test, since the DiceCup object 
+	 * should not be able to handle Die amount of 2000. We expect that the
+	 * system should revert back to 1000. 
 	 */
 	@Test
 	public void testDieAmount2000() {
@@ -106,11 +105,11 @@ public class testDiceCup {
 	 * work as expected. If the amount is less than 2, the value
 	 * will revert back to 2. If the amount is greater than 1000, the
 	 * amount will revert back to 1000. The bounds can be changed through
-	 * the class. This test tests the scenario when the amount of dice is
+	 * the class. This will test the scenario when the amount of dice is
 	 * equal to 0.
 	 * 
-	 * This is considered a positive test, since the DiceCup object 
-	 * should be able to handle Die amount of 0.
+	 * This is considered a negative test, since 0 is out of bounds. The
+	 * system should revert back to two dice objects. 
 	 */
 	@Test
 	public void testDieAmount0() {
@@ -134,11 +133,11 @@ public class testDiceCup {
 	 * work as expected. If the amount is less than 2, the value
 	 * will revert back to 2. If the amount is greater than 1000, the
 	 * amount will revert back to 1000. The bounds can be changed through
-	 * the class. This test tests the scenario when the amount of dice is
+	 * the class. This will test the scenario when the amount of dice is
 	 * equal to -1.
 	 * 
-	 * This is considered a positive test, since the DiceCup object 
-	 * should be able to handle Die amount of -1.
+	 * This is considered a negative test, since we are again out of bounds.
+	 * The system should revert back to 2 dice.
 	 */
 	@Test
 	public void testDieAmountNeg1() {
@@ -162,11 +161,11 @@ public class testDiceCup {
 	 * work as expected. If the amount is less than 2, the value
 	 * will revert back to 2. If the amount is greater than 1000, the
 	 * amount will revert back to 1000. The bounds can be changed through
-	 * the class. This test tests the scenario when the amount of dice is
+	 * the class. This will tests the scenario when the amount of dice is
 	 * equal to -50.
 	 * 
-	 * This is considered a positive test, since the DiceCup object 
-	 * should be able to handle Die amount of -50.
+	 * This is considered a negative test, since the DiceCup object 
+	 * should not be able to handle a Die amount of -50.
 	 */
 	@Test
 	public void testDieAmountNeg50() {
@@ -190,13 +189,14 @@ public class testDiceCup {
 	 * work as expected. If the amount is less than 2, the value
 	 * will revert back to 2. If the amount is greater than 1000, the
 	 * amount will revert back to 1000. The bounds can be changed through
-	 * the class. This test tests the scenario when the amount of dice is
+	 * the class. This will test the scenario when the amount of dice is
 	 * equal to Integer.MAX_VALUE + 2.
 	 * 
 	 * This is considered a negative test, since the DiceCup is not able
-	 * to handle an overflow error. The integer overflows and turns negative,
-	 * so the dieAmount value reverts to 2, which is the lower bound. It would be
-	 * better if it would revert to 1000.
+	 * to handle an overflow error. The integer overflow will turn negative because it
+	 * will wrap to Integer.MIN_VALUE. The dieAmount value reverts to 2, which is the lower bound. 
+	 * It would be better if it would revert to 1000, but because it wraps to negative numbers
+	 * it will just revert back to 2. 
 	 */
 	@Test
 	public void testDieAmountOverflow() {
@@ -220,13 +220,14 @@ public class testDiceCup {
 	 * work as expected. If the amount is less than 2, the value
 	 * will revert back to 2. If the amount is greater than 1000, the
 	 * amount will revert back to 1000. The bounds can be changed through
-	 * the class. This test tests the scenario when the amount of dice is
+	 * the class. This will test the scenario when the amount of dice is
 	 * equal to Integer.MAX_VALUE + 2.
 	 * 
 	 * This is considered a negative test, since the DiceCup is not
-	 * able to handle an underflow error. The integer underflows and turns positive,
-	 * so the dieAmount value reverts to 1000, which is the higher bound. It would be
-	 * better if it would revert to 2.
+	 * able to handle an underflow error. The integer underflow will turn positive,
+	 * because it will wrap to Integer.MIN_VALUE. The dieAmount value reverts to 1000, 
+	 * which is the highest bound. It would be better if it would revert to 2 but because
+	 * it wraps to positive numbers, it will just revert back to 1000. 
 	 */
 	@Test
 	public void testDieAmountUnderflow() {
