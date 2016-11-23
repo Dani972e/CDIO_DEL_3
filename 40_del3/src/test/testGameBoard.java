@@ -84,7 +84,7 @@ public class testGameBoard {
 
 	/*
 	 * Tests whether the movePlayer() method is working correctly.
-	 * Positive test, since the movePlayer method should be able to 
+	 * negative test, since the movePlayer method should not be able to 
 	 * handle a value of -50.
 	 * 
 	 * This is a negative test, since the movePlayer method should

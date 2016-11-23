@@ -42,7 +42,7 @@ public class testPlayer {
 	/*
 	 * Tests whether the setPosition() method works with positive variable 10.
 	 * This is considered a positive test, since this is expected to work without
-	 * any errors.
+	 * any errors and the system should be able to set the position to 10.
 	 */
 	@Test
 	public void testPlayerPosition10() {
@@ -81,7 +81,8 @@ public class testPlayer {
 	 * is used, the position should not have a negative position.
 	 * 
 	 * This is considered a negative test, since the Players position should 
-	 * not be able to turn negative.
+	 * not be able to turn negative. We assumes that it will revert back to
+	 * Homefield, but we can see that it has not been implemented.
 	 */
 	@Test
 	public void testPlayerPositionNeg10() {
@@ -99,7 +100,7 @@ public class testPlayer {
 	/*
 	 * Tests whether the Players initial BankAccount balance 
 	 * is assigned correctly. This is a positive test, since
-	 * this is expected to work without any problems.
+	 * this is expected to work without any problems. It works correctly. 
 	 * 
 	 * ATT: The getBalance() method is thoroughly tested in the
 	 * testBankAccount JUnit test case. Therefore it is not tested
@@ -117,7 +118,8 @@ public class testPlayer {
 	/*
 	 * Tests whether the Players addBalance methods works.
 	 * This is a positive test, since this is expected to 
-	 * work without any problems.
+	 * work without any problems. It works and the player gets an 
+	 * amount of 100 to the current balance.
 	 * 
 	 * ATT: The addBalance() method is thoroughly tested in the
 	 * testBankAccount JUnit test case. Therefore it is not tested
@@ -190,7 +192,8 @@ public class testPlayer {
 	/*
 	 * Tests whether the setLatestRoll() and getLatestRoll() methods
 	 * are working as intended with a negative value of -1.
-	 * Positive test, since the methods should both function with -1.
+	 * Negative test, since the methods should both function with -1.
+	 * We expect it to be the latestRoll. 
 	 */
 	@Test
 	public void testsetLatestRollNeg1() {
@@ -223,6 +226,7 @@ public class testPlayer {
 	 * Tests whether the setLatestRoll() and getLatestRoll() methods
 	 * are working as intended with a positive value of 1000.
 	 * Positive test, since the methods should both function with 1000.
+	 * We are testing if this method is working overall. 
 	 */
 	@Test
 	public void testsetLatestRoll1000() {
@@ -235,7 +239,10 @@ public class testPlayer {
 		assertEquals("The Player is not assigned the correct LastestRoll value.", expected, actual);
 	}
 
-	@Test // Negative Test
+	/*
+	 * This is a negative test because we add underflow.
+	 */
+	@Test
 	public void testBalanceUnderflow() {
 		int expected = MIN_BALANCE;
 
@@ -249,7 +256,8 @@ public class testPlayer {
 
 	/*
 	 * Tests whether balance related methods are
-	 * working correctly. Positive test.
+	 * working correctly. Positive test it the amount
+	 * is within the bounds.
 	 */
 	@Test
 	public void testBalance() {
@@ -265,7 +273,7 @@ public class testPlayer {
 	}
 
 	/*
-	 * Tests whether the balance
+	 * adding overflow which is a negative test.
 	 */
 	@Test
 	public void testBalanceOverflow() {
