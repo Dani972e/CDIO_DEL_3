@@ -34,7 +34,8 @@ public class testLaborCamp {
 
 	/*
 	 * Tests whether the landOnField method works correctly, when both
-	 * LaborCamps are owned.
+	 * LaborCamps are owned. This is a positive test because we are testing
+	 * our requirements. 
 	 */
 	@Test
 	public void testLaborCamp2OwnersRent() {
@@ -59,7 +60,7 @@ public class testLaborCamp {
 		/*
 		 * Sets a sample latestRoll for LaborCamp to work.
 		 * Sets position to 15 to simulate that the Player
-		 * lands on Huts In The Mountain.
+		 * lands on Huts In The Mountain. It works as we have expected. 
 		 */
 		player.setLatestRoll(latestRoll);
 		player.setPosition(15);
@@ -72,7 +73,8 @@ public class testLaborCamp {
 
 	/*
 	 * Tests whether the landOnField method works correctly, when only one
-	 * LaborCamp is owned.
+	 * LaborCamp is owned. This is also a positive test because it should work
+	 * without any errors. 
 	 */
 	@Test
 	public void testLaborCamp1OwnersRent() {
@@ -80,7 +82,7 @@ public class testLaborCamp {
 		int sameOwner = 1;
 
 		/*
-		 * Make sure that the owner object owns both LaborCamp fields. 
+		 * Make sure that the owner object owns one LaborCamp fields. 
 		 */
 
 		// Position 15 for Huts in the Mountain
@@ -93,7 +95,8 @@ public class testLaborCamp {
 		/*
 		 * Sets a sample latestRoll for LaborCamp to work.
 		 * Sets position to 15 to simulate that the Player
-		 * lands on Huts In The Mountain.
+		 * lands on Huts In The Mountain. We can see that this method
+		 * works correctly and functional. 
 		 */
 		player.setLatestRoll(latestRoll);
 		player.setPosition(15);
