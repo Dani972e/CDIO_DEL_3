@@ -40,7 +40,7 @@ public class testRefugee {
 
 	/*
 	 * Testing to see if Refugee can add a bonus of 3000 to the player.
-	 * This is a positive test. 
+	 * This is a positive test since the system should be able to add 3000 coins. 
 	 */
 	@Test
 	public void refugeeB3000() {
@@ -55,7 +55,7 @@ public class testRefugee {
 
 	/*
 	 * Testing to see if Refugee can add a bonus of 1000 to the player. 
-	 * This is a positive test.
+	 * This is also a positive test because the system should be able to handle it.
 	 */
 	@Test
 	public void refugeeB1000() {
@@ -70,7 +70,8 @@ public class testRefugee {
 
 	/*
 	 * Testing for a negative balance to see if the Refugee landOnField method can add -1000 to the balance. 
-	 * This is a negative test.
+	 * This is a negative test because the field Refugee should not be able to add a negative numger to
+	 * the score.
 	 */
 	@Test
 	public void refugeeNeg1000() {
@@ -84,8 +85,9 @@ public class testRefugee {
 	}
 
 	/*
-	 * Testing for overflow  to see if the Refugee landOnField method can add an overflow balance to the player. 
-	 * This is a negative test.
+	 * Testing for overflow to see if the Refugee landOnField method can add an overflow balance to the player. 
+	 * This is a negative test because we are adding the maximum value of an integer + 1. It will wrap  to negative
+	 * numbers. 
 	 */
 	@Test
 	public void refugeeOverflow() {
@@ -100,7 +102,8 @@ public class testRefugee {
 
 	/*
 	 * Testing for underflow  to see if the Refugee landOnField method can add an underflow balance to the player. 
-	 * This is a negative test. 
+	 * This is a negative test because we are adding the minimum value of an integer - 1. It will wrap to negative
+	 * numbers. 
 	 */
 	@Test
 	public void refugeeUnderflow() {
@@ -112,5 +115,5 @@ public class testRefugee {
 
 		assertEquals("Player does not get af bonus of Interger.MAX_VALUE - 1 coins", expected, actual);
 	}
-	
+
 }

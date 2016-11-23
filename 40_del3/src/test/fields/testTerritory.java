@@ -51,6 +51,7 @@ public class testTerritory {
 
 	/*
 	 * Tests whether all the needed objects are null or not.
+	 * It should not be null.
 	 */
 	@Test
 	public void testEntities() {
@@ -65,7 +66,7 @@ public class testTerritory {
 	/*
 	 * Tests whether the landOnField() methods works on a specific Territory field,
 	 * with the price of 1000 and rent of 100. It is needed that Player 1 purchases
-	 * the first field, so that when Player 2 lands on the field, he will pay the 
+	 * the first field, so when Player 2 lands on the field, the player will pay a 
 	 * rent to Player 1.
 	 * 
 	 * This is a positive test, since the landOnField() method should be able
@@ -89,9 +90,7 @@ public class testTerritory {
 
 		int actual = player1.getBalance();
 
-		assertEquals(
-				"Player 1 BankAccount balance is not correct. landOnField() purchase scenario must be manipulating it wrong.",
-				expected, actual);
+		assertEquals("Player 1 BankAccount balance is not correct. landOnField() purchase scenario must be manipulating it wrong.", expected, actual);
 
 		player2.setPosition(position);
 
@@ -102,15 +101,14 @@ public class testTerritory {
 
 		actual = player2.getBalance();
 
-		assertEquals(
-				"Player 2 BankAccount balance is not correct. landOnField() alreadyPurchased scenario must be manipulating it wrong.",
-				expected, actual);
+		assertEquals("Player 2 BankAccount balance is not correct. landOnField() alreadyPurchased scenario must be manipulating it wrong.", expected,
+				actual);
 	}
 
 	/*
 	 * Tests whether the landOnField() methods works on a specific Territory field,
 	 * with the price of 4000 and rent of 1000. It is needed that Player 1 purchases
-	 * the first field, so that when Player 2 lands on the field, he will pay the 
+	 * the first field, so  when Player 2 lands on the field, he will pay the 
 	 * rent to Player 1.
 	 * 
 	 * This is a positive test, since the landOnField() method should be able
@@ -134,9 +132,7 @@ public class testTerritory {
 
 		int actual = player1.getBalance();
 
-		assertEquals(
-				"Player 1 BankAccount balance is not correct. landOnField() purchase scenario must be manipulating it wrong.",
-				expected, actual);
+		assertEquals("Player 1 BankAccount balance is not correct. landOnField() purchase scenario must be manipulating it wrong.", expected, actual);
 
 		player2.setPosition(position);
 
@@ -147,15 +143,14 @@ public class testTerritory {
 
 		actual = player2.getBalance();
 
-		assertEquals(
-				"Player 2 BankAccount balance is not correct. landOnField() alreadyPurchased scenario must be manipulating it wrong.",
-				expected, actual);
+		assertEquals("Player 2 BankAccount balance is not correct. landOnField() alreadyPurchased scenario must be manipulating it wrong.", expected,
+				actual);
 	}
 
 	/*
 	 * Tests whether the landOnField() methods works on a specific Territory field,
 	 * with the price of 6000 and rent of 3200. It is needed that Player 1 purchases
-	 * the first field, so that when Player 2 lands on the field, he will pay the 
+	 * the first field, so when Player 2 lands on the field, he will pay the 
 	 * rent to Player 1.
 	 * 
 	 * This is a positive test, since the landOnField() method should be able
@@ -179,9 +174,7 @@ public class testTerritory {
 
 		int actual = player1.getBalance();
 
-		assertEquals(
-				"Player 1 BankAccount balance is not correct. landOnField() purchase scenario must be manipulating it wrong.",
-				expected, actual);
+		assertEquals("Player 1 BankAccount balance is not correct. landOnField() purchase scenario must be manipulating it wrong.", expected, actual);
 
 		player2.setPosition(position);
 
@@ -192,9 +185,8 @@ public class testTerritory {
 
 		actual = player2.getBalance();
 
-		assertEquals(
-				"Player 2 BankAccount balance is not correct. landOnField() alreadyPurchased scenario must be manipulating it wrong.",
-				expected, actual);
+		assertEquals("Player 2 BankAccount balance is not correct. landOnField() alreadyPurchased scenario must be manipulating it wrong.", expected,
+				actual);
 	}
 
 	/*
@@ -224,9 +216,7 @@ public class testTerritory {
 
 		int actual = player1.getBalance();
 
-		assertEquals(
-				"Player 1 BankAccount balance is not correct. landOnField() purchase scenario must be manipulating it wrong.",
-				expected, actual);
+		assertEquals("Player 1 BankAccount balance is not correct. landOnField() purchase scenario must be manipulating it wrong.", expected, actual);
 
 		player2.setPosition(position);
 
@@ -237,14 +227,13 @@ public class testTerritory {
 
 		actual = player2.getBalance();
 
-		assertEquals(
-				"Player 2 BankAccount balance is not correct. landOnField() alreadyPurchased scenario must be manipulating it wrong.",
-				expected, actual);
+		assertEquals("Player 2 BankAccount balance is not correct. landOnField() alreadyPurchased scenario must be manipulating it wrong.", expected,
+				actual);
 	}
 
 	/*
-	 * Tests whether the Player can purchase a field when the player does not
-	 * have enough balance to do so.
+	 * Tests whether the player can purchase a field when the player does not
+	 * have enough balance to buy the field.
 	 * 
 	 * This is a positive test, since the landOnField() method should be able
 	 * to handle this scenario without any errors.
@@ -265,9 +254,7 @@ public class testTerritory {
 
 		int actual = player1.getBalance();
 
-		assertEquals(
-				"Player 1 BankAccount balance is not correct. landOnField() purchase scenario must be manipulating it wrong.",
-				expected, actual);
+		assertEquals("Player 1 BankAccount balance is not correct. landOnField() purchase scenario must be manipulating it wrong.", expected, actual);
 	}
 
 	/*
@@ -294,9 +281,7 @@ public class testTerritory {
 
 		int actual = player1.getBalance();
 
-		assertEquals(
-				"Player 1 BankAccount balance is not correct. landOnField() purchase scenario must be manipulating it wrong.",
-				expected, actual);
+		assertEquals("Player 1 BankAccount balance is not correct. landOnField() purchase scenario must be manipulating it wrong.", expected, actual);
 
 		/* Player 1 lands on the Field again */
 		territoryP4000R1000.landOnField(player1);
@@ -326,9 +311,7 @@ public class testTerritory {
 
 		int actual = player1.getBalance();
 
-		assertEquals(
-				"Player 1 BankAccount balance is not correct. landOnField() purchase scenario must be manipulating it wrong.",
-				expected, actual);
+		assertEquals("Player 1 BankAccount balance is not correct. landOnField() purchase scenario must be manipulating it wrong.", expected, actual);
 
 		/* Player 1 lands on the Field again */
 		territoryP4000R1000.landOnField(player1);
@@ -362,9 +345,7 @@ public class testTerritory {
 
 		int actual = player1.getBalance();
 
-		assertEquals(
-				"Player 1 BankAccount balance is not correct. landOnField() purchase scenario must be manipulating it wrong.",
-				expected, actual);
+		assertEquals("Player 1 BankAccount balance is not correct. landOnField() purchase scenario must be manipulating it wrong.", expected, actual);
 
 		/* Player 2 lands on the Field */
 		territoryP4000R1000.landOnField(player2);
