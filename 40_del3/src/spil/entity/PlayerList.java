@@ -57,6 +57,7 @@ public class PlayerList {
 		for (Player player : playerList) {
 			if (playerToDelete.equals(player)) {
 				playerList[index] = null;
+				
 			}
 			++index;
 		}
