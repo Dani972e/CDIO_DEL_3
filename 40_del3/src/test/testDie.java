@@ -148,10 +148,10 @@ public class testDie {
 	}
 
 	/* 
-	 * Tests whether the upper bound for the faceValue is working as intended. 
+	 * Tests whether the lower bound for the faceValue is working as intended. 
 	 * If the faceValue is over 10, it should revert to 10. If its lower than 6,
-	 * it should revert to 6. This is a positive test, since it should be able
-	 * to handle this.
+	 * it should revert to 6. This is a negative test, since we are putting a 
+	 * Die faceValue that is not in the bounds. 
 	 */
 	@Test
 	public void testMaxFaceValue1() {
@@ -180,10 +180,10 @@ public class testDie {
 	}
 
 	/* 
-	 * Tests whether the upper bound for the faceValue is working as intended. 
+	 * Tests whether the lower bound for the faceValue is working as intended. 
 	 * If the faceValue is over 10, it should revert to 10. If its lower than 6,
-	 * it should revert to 6. This is a positive test, since it should be able
-	 * to handle this.
+	 * it should revert to 6. This is a negative test because we are giving a
+	 * negative FaceValue. 
 	 */
 	@Test
 	public void testMaxFaceValueNeg1() {
@@ -193,8 +193,8 @@ public class testDie {
 
 		/* 
 		 * 6, since the minimum allowed minimum faceValue is 6.
-		 * Since the Integer.MAX_VALUE + 2 wraps around to a negative
-		 * value, the expected value is considered to be 6.
+		 * Since the Integer -1 is less than 6, then it will revert
+		 * back to  6 which is the expected value.
 		 */
 		int expected = 6;
 
@@ -212,7 +212,7 @@ public class testDie {
 	}
 
 	/* 
-	 * Tests whether the upper bound for the faceValue is working as intended. 
+	 * Tests whether the lower bound for the faceValue is working as intended. 
 	 * If the faceValue is over 10, it should revert to 10. If its lower than 6,
 	 * it should revert to 6. This is a positive test, since it should be able
 	 * to handle this.
@@ -225,7 +225,7 @@ public class testDie {
 
 		/* 
 		 * 6, since the minimum allowed minimum faceValue is 6.
-		 * Since the Integer.MAX_VALUE + 2 wraps around to a negative
+		 * Since -50 wraps around to a negative
 		 * value, the expected value is considered to be 6.
 		 */
 		int expected = 6;
@@ -246,8 +246,8 @@ public class testDie {
 	/* 
 	 * Tests whether the upper bound for the faceValue is working as intended. 
 	 * If the faceValue is over 10, it should revert to 10. If its lower than 6,
-	 * it should revert to 6. This is a positive test, since it should be able
-	 * to handle this.
+	 * it should revert to 6. This is a negative test since the faceValue should
+	 * not be a value of 50. It will revert back to 10. 
 	 */
 	@Test
 	public void testMaxFaceValue50() {
@@ -256,8 +256,8 @@ public class testDie {
 		die = new Die(faceValueAmount);
 
 		/* 
-		 * 10, since the maximum allowed maximum faceValue is 10.
-		 * Since the Die class has a higher bounds of 10 for the 
+		 * 10, since the maximum of the faceValue is 10.
+		 * Since the Die class has the highest bounds of 10 for the 
 		 * maximum faceValue, it will be changed to 10 instead of 50.
 		 */
 		int expected = 10;
@@ -277,23 +277,21 @@ public class testDie {
 
 	/* 
 	 * Tests whether the Die roll values are within the expected bounds, 
-	 * even when an overflow occurs. This is a positive test, since the 
+	 * even when an overflow occurs. This is a negative test, since the 
 	 * Die should be able to handle an overflow without any exception throws.
+	 * It should revert back to 6.
 	 * 
 	 * This introduces a slight problem in the program however, since the
 	 * lower bounds of the faceValue would not be expected in this case.
-	 * 
-	 * This also means, that its debatable whether this is a negative or positive
-	 * test.
 	 */
 	@Test
 	public void testMaxFaceValueOverflow() {
 		die = new Die(Integer.MAX_VALUE + 2);
 
 		/* 
-		 * 6, since the minimum allowed minimum faceValue is 6.
+		 * 10, since the maximum faceValue is 10.
 		 * Since the Integer.MAX_VALUE + 2 wraps around to a negative
-		 * value, the expected value is considered to be 6.
+		 * value, the expected value is considered to be 10.
 		 */
 		int expected = 10;
 
@@ -308,23 +306,20 @@ public class testDie {
 
 	/* 
 	 * Tests whether the Die roll values are within the expected bounds, 
-	 * even when an underflow occurs. This is a positive test, since the 
+	 * even when an underflow occurs. This is a negative test, since the 
 	 * Die should be able to handle an underflow without any exception throws.
 	 * 
 	 * This introduces a slight problem in the program however, since the
 	 * higher bounds of the faceValue would not be expected in this case.
-	 * 
-	 * This also means, that its debatable whether this is a negative or positive
-	 * test.
 	 */
 	@Test
 	public void testMaxFaceValueUnderflow() {
 		die = new Die(Integer.MIN_VALUE - 2);
 
 		/* 
-		 * 10, since the maximum allowed maximum faceValue is 6.
+		 * 6, since the minimum faceValue is 6.
 		 * Since the Integer.MIN_VALUE - 2 wraps around to a positive
-		 * value, the expected value is considered to be 10.
+		 * value, the expected value is considered to be 6.
 		 */
 		int expected = 6;
 
