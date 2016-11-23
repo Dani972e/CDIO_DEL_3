@@ -232,9 +232,9 @@ public class testBankAccount {
 	}
 
 	/*
-	 *  Testing if the BankAccount can remove 30000 coins from the balance.
-	 *  This is a positive test because it the system should be able to 
-	 *  remove 30000 coins.  
+	 * Testing if the BankAccount can remove 30000 coins from the balance.
+	 * This is a positive test because the system should be able to 
+	 * remove 30000 coins.  
 	 */
 	@Test
 	public void testRemoveBalance30000() {
@@ -248,8 +248,9 @@ public class testBankAccount {
 	}
 
 	/*
-	 *  Testing if the BankAccount can remove 0 coins from the balance.
-	 *  This is also positive test.
+	 * Testing if the BankAccount can remove 0 coins from the balance.
+	 * This is a positive test, since the it should be allowed to 
+	 * remove 0 from the BankAccount's balance.
 	 */
 	@Test
 	public void testRemoveBalance0() {
@@ -263,9 +264,10 @@ public class testBankAccount {
 	}
 
 	/*
-	 *  Testing if the BankAccount can remove Integer.MIN_VALUE coins from the balance.
-	 *  This is a negative test because the BankAccount should not be able to remove a value 
-	 *  of Integer.MIN_VALUE, but we assume that it will revert back to 0.
+	 * Testing if the BankAccount can remove Integer.MIN_VALUE from the balance.
+	 * This is a negative test because the BankAccount should not be able to remove a value 
+	 * of Integer.MIN_VALUE, but we assume that it will revert back to 0, since its a
+	 * very negative number.
 	 */
 	@Test
 	public void testRemoveBalanceMinInt() {
@@ -279,9 +281,10 @@ public class testBankAccount {
 	}
 
 	/*
-	 *  Testing if the BankAccount can remove Integer.MAX_VALUE coins from the balance.
-	 *  This is a negative test because the BankAccount should not be able to remove a value 
-	 *  of Integer.MAX_VALUE, but we assume that it will revert back to 0.
+	 * Testing if the BankAccount can remove Integer.MAX_VALUE from the balance.
+	 * This is a negative test because the BankAccount should not be able to remove a value 
+	 * of Integer.MAX_VALUE, but we assume that it will revert back to 0, since its a very large
+	 * integer.
 	 */
 	@Test
 	public void testRemoveBalanceMaxInt() {
@@ -296,8 +299,8 @@ public class testBankAccount {
 
 	/*
 	 * Testing if the player gets bankrupt.
-	 * This is a positive test because a player the player will get his balance
-	 * to zero and he will be declared bankrupt. 
+	 * This is a positive test because the player will get their balance
+	 * to zero and therefore will be declared bankrupt. 
 	 */
 	@Test
 	public void testIsBankrupt0() {
