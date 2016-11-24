@@ -39,8 +39,8 @@ public class TextBoundary {
 			{ "22. Privateer Armade", "Fleet", "Pay: 500-4000 ~ Price: 4000" }, };
 
 	public static final String welcomeMessage = "Welcome to " + TITLE + ", " + VERSION
-			+ "!\n\nThis game is a Monopoly-like game, with a few tweaks. You'll roll with two dice"
-			+ " and land on a field. The field will have an effect on your bank account. If you reach bankruptcy, you're out. The game will"
+			+ "!\n\nThis game is a Monopoly-like game. You'll roll with two dice"
+			+ " and land on a field where the field will have an effect on your bank account. If you reach bankruptcy, you're out. The game will"
 			+ " continue until only one player is left, who will be the winner.\n\nTo proceed, please choose the number of players.";
 
 	public static final String[] btnArray = { "2", "3", "4", "5", "6" };
