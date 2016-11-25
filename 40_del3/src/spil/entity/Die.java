@@ -10,7 +10,7 @@ public class Die {
 
 	/*
 	 * currMaxFaceValue is the current maximum faceValue. 
-	 * faceValue is the current side of a dice.
+	 * faceValue is the current side value of a dice.
 	 */
 	private int currMaxFaceValue;
 	private int faceValue = 1;

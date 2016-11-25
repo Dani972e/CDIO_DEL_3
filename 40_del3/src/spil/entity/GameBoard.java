@@ -27,6 +27,7 @@ public class GameBoard {
 	private final spil.entity.field.Field[] fields = {
 			// Debug code do not delete.  
 			new Refugee(0), new Refugee(0),
+			
 			new Territory(FieldBoundary.territoryPrices[0], FieldBoundary.territoryRents[0]),
 			new Territory(FieldBoundary.territoryPrices[1], FieldBoundary.territoryRents[1]),
 			new Territory(FieldBoundary.territoryPrices[2], FieldBoundary.territoryRents[2]),

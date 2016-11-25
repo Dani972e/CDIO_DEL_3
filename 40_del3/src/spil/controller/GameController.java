@@ -85,7 +85,7 @@ public class GameController {
 	}
 
 	/*
-	 * Calculate the Player index, so that it is always in the array limit.
+	 * Calculate the Player index, so that it is always in the arrays limit.
 	 */
 	private int calculateIndex(int index) {
 		if (index == (playerList.getTotalPlayers() - 1)) {

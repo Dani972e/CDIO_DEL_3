@@ -10,7 +10,7 @@ public abstract class Field {
 
 	/*
 	 * The Field constructor is protected, to make
-	 * sure that it isnt possible to instantiate
+	 * sure that it is not possible to instantiate
 	 * objects of this class.
 	 */
 	protected Field() {
