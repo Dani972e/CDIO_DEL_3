@@ -70,7 +70,7 @@ public class testRefugee {
 
 	/*
 	 * Testing for a negative balance to see if the Refugee landOnField method can add -1000 to the balance. 
-	 * This is a negative test because the field Refugee should not be able to add a negative numger to
+	 * This is a negative test because the field Refugee should not be able to add a negative number to
 	 * the score.
 	 */
 	@Test
