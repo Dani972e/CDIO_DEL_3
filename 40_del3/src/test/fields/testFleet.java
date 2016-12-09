@@ -90,7 +90,7 @@ public class testFleet {
 
 		assertEquals("Price is not correct.", expected, actual);
 	}
-	
+
 	/*
 	 * Assuming that the user wants to buy the Fleet.
 	 * Testing Prices.
